@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import './LoginForm.css';
+import webAuth from './icons8-fingerprint-50.png';
+import google from './icons8-google-48.png';
+import apple from './Apple_logo_black.svg';
 
 const LoginFormPage = () => {
     const dispatch = useDispatch();
@@ -36,6 +39,8 @@ const LoginFormPage = () => {
         setPasswordShown(!passwordShown);
     }
 
+    // const webAuthn = <img src="/icons8-fingerprint-50.png"/>
+
     return (
         <div className="loginMain">
             <div className="loginHeader">
@@ -44,6 +49,8 @@ const LoginFormPage = () => {
             </div>
             <div className="formBox">
                 <div className="signInBoxContainer">
+                    <div className="form">
+
                     <form  onSubmit={handleSubmit}>
                         <h3 className='signInTitle'>Sign In to TechGurus</h3>
                         <ul>
@@ -62,6 +69,7 @@ const LoginFormPage = () => {
                         <label className='showPassword'>
                             <input type="checkbox" onChange={handleOnclick}/>
                             <span className='toggle'></span>
+                            Show Password
                         </label>
                         <br />
                         <label>
@@ -74,8 +82,41 @@ const LoginFormPage = () => {
                             />
                         </label>
                         <br />
-                        <button id="signInButton" type="submit">Sign In</button>
+                        <div className="fogetPassword">
+                            <Link to="/">Forget your password?</Link>
+                        </div>
+                        <div className="buttonContainer">
+                            <button id="signInButton" type="submit">Sign In</button>
+                        </div>
                     </form>
+                    <br />
+                    {/* <div className="afterOr"> */}
+                        <div className="or">
+                            <div className="text">or</div>
+                            <hr className='hr'/>
+                        </div>
+                        <div className="webAuthnContainer">
+                            <button id="webAuthnButton" type="submit"><img src={webAuth} id="figurePrint" /> Sign In with WebAuthn</button>
+                        </div>
+                        <div className="appleContainer">
+                            <button id="appleButton" type="submit"><img src={apple} id="apple" /> Sign In with Apple</button>
+                        </div>
+                        <div className="googleContainer">
+                            <button id="googleButton" type="submit"><img src={google} id="google" /> Sign In with Google</button>
+                        </div>
+                    {/* </div> */}
+                    <div className="agreement">
+                        By continuing you agree to our <Link to="/">Terms and Conditions</Link>, our <Link to="/">Privacy Policy</Link>,
+                        and the <Link>My TechGurus Program Terms.</Link>
+                    </div>
+
+                    <div className="buttomBreak">
+                        <hr className='hr'/>
+                    </div>
+                    <div className="noAcc">
+                        Don't have an account? <Link to="/signup">Create an account</Link>
+                    </div>
+                    </div>
                 </div>
             </div>
         </div>
