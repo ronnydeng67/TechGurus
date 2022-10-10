@@ -10,6 +10,7 @@ const LoginFormPage = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState([]);
+    const [passwordShown, setPasswordShown] = useState(false);
 
     if (sessionUser) return <Redirect to="/" />
 
@@ -28,6 +29,11 @@ const LoginFormPage = () => {
                 else if (data) setErrors([data]);
                 else setErrors([res.statusText]);
             })
+    }
+
+    const handleOnclick = e => {
+        // e.preventDefault();
+        setPasswordShown(!passwordShown);
     }
 
     return (
@@ -53,10 +59,15 @@ const LoginFormPage = () => {
                             />
                         </label>
                         <br />
+                        <label className='showPassword'>
+                            <input type="checkbox" onChange={handleOnclick}/>
+                            <span className='toggle'></span>
+                        </label>
+                        <br />
                         <label>
                             Password
                             <br />
-                            <input id="passwordBox" type="password"
+                            <input id="passwordBox" type={passwordShown ? "text" : "password"}
                                 value={password}
                                 onChange={e => setPassword(e.target.value)}
                                 required

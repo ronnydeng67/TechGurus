@@ -48,3 +48,48 @@
 #passwordBox {
 
 }
+
+.showPassword {
+    position: relative;
+    display: inline-flex;
+}
+
+input[type=checkbox] {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+.toggle {
+    cursor: pointer;
+    width: 40px;
+    height: 21px;
+    background-color: grey;
+    display: block;
+    border-radius: 100px;
+    position: relative;
+}
+
+.toggle::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 1px;
+    bottom: 1px;
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    border-radius: 10px;
+    transition: 0.3s;
+    padding-top: 1px;
+}
+
+input:checked + .toggle {
+    background-color: blue;
+}
+
+input:checked + .toggle:after{
+    left: calc(100% - 2px);
+    transform: translateX(-100%);
+}
