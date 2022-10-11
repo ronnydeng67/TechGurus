@@ -69,7 +69,11 @@ const LoginFormPage = () => {
         setPasswordShown(!passwordShown);
     }
 
-    // const webAuthn = <img src="/icons8-fingerprint-50.png"/>
+    const renderDemo = (e) => {
+        e.preventDefault();
+        setEmail("demo@user.com")
+        setPassword("password")
+    }
 
     return (
         <div className="loginMain">
@@ -124,7 +128,7 @@ const LoginFormPage = () => {
                         </div>
                     </form>
                         <div className="demo">
-                            <button className='demo-user'>Demo User</button>
+                            <button className='demo-user' onClick={renderDemo}>Demo User</button>
                         </div>
                     <br />
                     {/* <div className="afterOr"> */}

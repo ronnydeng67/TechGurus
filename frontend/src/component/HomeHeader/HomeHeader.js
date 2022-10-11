@@ -14,7 +14,7 @@ const HomeHeader = ({ user }) => {
 
     const handleClick = () => {
         if(sessionUser) {
-            logout();
+            dispatch(logout());
         } else {
             history.push('/login');
         }
