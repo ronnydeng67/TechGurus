@@ -52,7 +52,9 @@ const LoginFormPage = () => {
                     <div className="form">
 
                     <form  onSubmit={handleSubmit}>
-                        <h3 className='signInTitle'>Sign In to TechGurus</h3>
+                        <div className='signInTitle'>
+                            <h3>Sign In to TechGurus</h3>
+                        </div>
                         <ul>
                             {errors.map(error => <p>{error}</p>)}
                         </ul>
