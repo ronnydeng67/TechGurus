@@ -48,7 +48,7 @@ const HomeHeader = ({ user }) => {
                     </div>
                     <div className="dropdown-menu">
                         <i class="fa-solid fa-bars"></i>
-                        Menu
+                        <p>&nbsp;Menu</p>
                     </div>
                     <div className="search-bar">
                         <input type="text"
@@ -57,15 +57,17 @@ const HomeHeader = ({ user }) => {
                             onChange={e => setSearch(e.target.value)}
                             value={search}
                         />
-                        <span id="magnify"><i class="fa-solid fa-magnifying-glass"></i></span>
+                        <button id="magnify"><i class="fa-solid fa-magnifying-glass"></i></button>
                     </div>
                 </div>
                 <div className="home-header-right">
                     <div className="store-finder">
-                        Store
+                        <i class="fa-solid fa-shop"></i>
+                        <p>&nbsp;Union Square</p>
                     </div>
                     <div className="cart">
-                        Cart
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <p>&nbsp;Cart</p>
                     </div>
                 </div>
             </div>

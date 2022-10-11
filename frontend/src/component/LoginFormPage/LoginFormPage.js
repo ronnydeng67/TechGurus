@@ -14,8 +14,38 @@ const LoginFormPage = () => {
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState([]);
     const [passwordShown, setPasswordShown] = useState(false);
+    const [emailError, setEmailError] = useState("");
+    const [passwordError, setPassowrdError] = useState("");
 
     if (sessionUser) return <Redirect to="/" />
+
+    const isValidEmail = (email) => {
+        return /\S+@\S+\.\S+/.test(email);
+    }
+
+    const isValidPassword = (password) => {
+        return password.length > 1;
+    }
+
+    const handlePassword = (e) => {
+        if (!isValidPassword(e.target.value)) {
+            setPassowrdError("Please enter your password.")
+        } else {
+            setPassowrdError("")
+        }
+
+        setPassword(e.target.value)
+    }
+
+    const handleEmail = (e) => {
+        if (!isValidEmail(e.target.value)) {
+            setEmailError("Please enter a valid email address.")
+        } else {
+            setEmailError("");
+        }
+
+        setEmail(e.target.value);
+    }
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -63,9 +93,10 @@ const LoginFormPage = () => {
                             <br />
                             <input id="emailBox" type="text"
                                 value={email}
-                                onChange={e => setEmail(e.target.value)}
+                                onChange={handleEmail}
                                 required
                             />
+                            {emailError && <p style={{color: 'red'}}>{emailError}</p>}
                         </label>
                         <br />
                         <label className='showPassword'>
@@ -79,9 +110,10 @@ const LoginFormPage = () => {
                             <br />
                             <input id="passwordBox" type={passwordShown ? "text" : "password"}
                                 value={password}
-                                onChange={e => setPassword(e.target.value)}
+                                onChange={handlePassword}
                                 required
                             />
+                            {passwordError && <p style={{color: 'red'}}>{passwordError}</p>}
                         </label>
                         <br />
                         <div className="fogetPassword">
@@ -91,6 +123,9 @@ const LoginFormPage = () => {
                             <button id="signInButton" type="submit">Sign In</button>
                         </div>
                     </form>
+                        <div className="demo">
+                            <button className='demo-user'>Demo User</button>
+                        </div>
                     <br />
                     {/* <div className="afterOr"> */}
                         <div className="or">

@@ -7,6 +7,15 @@
     justify-content: space-around;
 }
 
+.login-icon {
+    padding-top: 6px;
+    width: 6%;
+}
+
+#login-logo {
+    width: 100%;
+}
+
 .headerTitle {
     color: white;
     /* text-align: center; */

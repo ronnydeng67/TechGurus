@@ -70,6 +70,7 @@
 .buttonContainer {
     margin-top: 12px;
     height: 50px;
+    /* cursor: pointer; */
 }
 
 .webAuthnContainer,
@@ -104,6 +105,28 @@
     padding-top: 20px;
     width: 40%;
     font-size: 0.9rem;
+}
+
+.demo {
+    margin-top: 20px;
+}
+
+.demo-user {
+    margin-top: 10px;
+    width: 30%;
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 4px;
+}
+
+.demo-user:hover {
+    cursor: pointer;
+    color: gray;
+}
+
+.demo-user:active {
+    background-color: gray;
+    color: white;
 }
 
 input[type=checkbox] {
@@ -149,7 +172,8 @@ input:checked + .toggle:after{
 .or {
     display: flex;
     justify-content: center;
-    padding-bottom: 10px;
+    /* margin-top: 10px; */
+    /* padding-bottom: 10px; */
     width: 100%;
 }
 
