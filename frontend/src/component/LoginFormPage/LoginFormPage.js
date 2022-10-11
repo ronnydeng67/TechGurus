@@ -43,10 +43,10 @@ const LoginFormPage = () => {
 
     return (
         <div className="loginMain">
-            <div className="loginHeader">
+            {/* <div className="loginHeader">
                 <h1 className='headerTitle'>TechGurus</h1>
                 <a id="headerReturn" href=""><h4>Return to previous page</h4></a>
-            </div>
+            </div> */}
             <div className="formBox">
                 <div className="signInBoxContainer">
                     <div className="form">
