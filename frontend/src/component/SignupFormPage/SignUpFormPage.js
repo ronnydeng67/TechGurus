@@ -153,7 +153,7 @@ const SignUpFormPage = () => {
                 </div>
                 <div className="bus-acc-container">
                     <div className="business-acc">Shopping for your business? 
-                        <Link to="/">&nbsp;Create a business account.</Link>
+                        <Link id="business-acc" to="/">&nbsp;Create a business account.</Link>
                     </div>
                 </div>
                 <ul className="errors">

@@ -46,6 +46,11 @@
 
 .business-acc {
     padding-top: 10px;
+    text-decoration: none;
+}
+
+#business-acc:hover {
+    text-decoration: underline;
 }
 
 .form-container  {
