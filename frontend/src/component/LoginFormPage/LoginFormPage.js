@@ -16,8 +16,9 @@ const LoginFormPage = () => {
     const [passwordShown, setPasswordShown] = useState(false);
     const [emailError, setEmailError] = useState("");
     const [passwordError, setPassowrdError] = useState("");
+    // console.log(sessionUser);
 
-    if (sessionUser) return <Redirect to="/" />
+    if (sessionUser) return <Redirect to="/" />;
 
     const isValidEmail = (email) => {
         return /\S+@\S+\.\S+/.test(email);

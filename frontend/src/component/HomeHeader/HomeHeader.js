@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { NavLink, Redirect, useHistory, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
+// import { logoutUser } from '../../store/session';
 import logo from './logo1.png';
 import './HomeHeader.css';
 
@@ -14,7 +15,7 @@ const HomeHeader = ({ user }) => {
 
     const handleClick = () => {
         if(sessionUser) {
-            dispatch(logout());
+            dispatch(sessionActions.logoutUser());
         } else {
             history.push('/login');
         }
@@ -29,13 +30,7 @@ const HomeHeader = ({ user }) => {
         document.addEventListener('click', closeAcc);
         return () => document.removeEventListener('click', closeAcc)
     }, [showAccount])
-
-
-    const logout = (e) => {
-        // e.preventDefault();
-        dispatch(sessionActions.logoutUser())
-    }
-
+    
 
     return (
         <div className="home-header">
