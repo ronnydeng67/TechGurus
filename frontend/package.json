@@ -8,6 +8,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.2.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@mui/material": "^5.10.9",
+    "@mui/styled-engine-sc": "^5.10.6",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
@@ -17,7 +18,8 @@
     "react-router-dom": "^5.3.4",
     "react-scripts": "5.0.1",
     "redux": "^4.2.0",
-    "redux-thunk": "^2.4.1"
+    "redux-thunk": "^2.4.1",
+    "styled-components": "^5.3.6"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -89,6 +89,11 @@
     height: 100%;
     border-radius: 5px;
     cursor: pointer;
+    transition: 0.4s;
+}
+
+#signInbutton:hover {
+    background-color: darkblue;
 }
 
 .form {
