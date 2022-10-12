@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+.signup-page {
+    width: 100%;
+    height: 900px;
+    display: flex;
+    justify-content: center;
+    background-color: #f0f2f4;
+}
+
+.signup-box {
+    display: flex;
+    border: 1px solid lightgray;
+    flex-direction: column;
+    align-items: center;
+    width: 22%;
+    height: 90%;
+    background-color: white;
+    margin-top: 30px;
+    border-radius: 3px;
+}
+
+.title-box {
+    width: 50%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    /* border: 1px solid black; */
+}
+
+.title {
+    font-size: x-large;
+}
+
+.bus-acc-container {
+    height: 5%;
+    /* border: 1px solid black; */
+}
+
+.business-acc {
+    padding-top: 10px;
+}
+
+.form-container  {
+    width: 98%;
+    border: 1px solid black;
+    height: 72%;
+}
+
+.name,
+.email,
+.password,
+.confirm-password {
+    /* display: flex; */
+    /* border: 1px solid black; */
+    height: 45px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+#name,
+#email,
+#password,
+#confirm-password {
+    border: 1px solid black;
+    padding: 10px;
+    width: 100%;
+    max-width: 359px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+#name-holder,
+#email-holder,
+#password-holder,
+#con-pass-holder {
+    position: absolute;
+    top: 10px;
+    left: 35px;
+    font-size: large;
+    transition: 0.3s;
+    pointer-events: none;
+}
+
+#name:focus + #name-holder,
+#email:focus + #email-holder,
+#password:focus + #password-holder,
+#confirm-password:focus + #con-pass-holder {
+    top: -10px;
+    /* left: 3px; */
+    color: blue;
+    background-color: white;
+    transform: scale(0.8);
+}

@@ -43,55 +43,67 @@ const SignUpFormPage = () => {
     return (
         <div className="signup-page">
             <div className="signup-box">
-                <h3 className='title'>Create an Account</h3>
-                <span className="business-acc">Shopping for your business? <Link to="/">Create a business account.</Link></span>
+                <div className="title-box">
+                    <h3 className='title'>Create an Account</h3>
+                </div>
+                <div className="bus-acc-container">
+                    <div className="business-acc">Shopping for your business? 
+                        <Link to="/">&nbsp;Create a business account.</Link>
+                    </div>
+                </div>
                 <ul className="errors">
                     {errors.map(error => <li key={error}>{error}</li>)}
                 </ul>
-                <form onSubmit={handleSubmit}>
-                    <div className="name">
-                        <input type="text" required 
-                            value={name}
-                            onChange={e => setName(e.target.value)}
-                        />
-                        <label>Full Name</label>
-                    </div>
-                    <div className="email">
-                        <input type="text" required 
-                            value={email}
-                            onChange={e => setEmail(e.target.value)}
-                        />
-                        <label>Email Address</label>
-                    </div>
-                    <label className='show-password'>
-                            <input type="checkbox" onChange={handleOnclick}/>
-                            <span className='toggle'></span>
-                            Show Password
-                    </label>
-                    <div className="password">
-                        <input type={passwordShown ? "text" : "password"} required 
-                            value={password}
-                            onChange={e => setPassword(e.target.value)}
-                        />
-                        <label>Password</label>
-                    </div>
-                    <div className="confirm-password">
-                        <input type={passwordShown ? "text" : "password"} required 
-                            value={confirmPassword}
-                            onChange={e => setConfirmPassword(e.target.value)}
-                        />
-                        <label>Confirm Password</label>
-                    </div>
-                    <div className="create-button">
-                        <button type="submit">Create an Account</button>
-                    </div>
-                </form>
-            </div>
-            <div className="or">
+                <div className="form-container">
+                    <form onSubmit={handleSubmit}>
+                        <div className="name">
+                            <input type="text" required 
+                                id="name"
+                                value={name}
+                                onChange={e => setName(e.target.value)}
+                            />
+                            <label id="name-holder">Full Name</label>
+                        </div>
+                        <div className="email">
+                            <input type="text" required
+                                id="email" 
+                                value={email}
+                                onChange={e => setEmail(e.target.value)}
+                            />
+                            <label id="email-holder">Email Address</label>
+                        </div>
+                        <label className='show-password'>
+                                <input type="checkbox" onChange={handleOnclick}/>
+                                <span className='toggle'></span>
+                                Show Password
+                        </label>
+                        <div className="password">
+                            <input type={passwordShown ? "text" : "password"} required
+                                id="password"
+                                value={password}
+                                onChange={e => setPassword(e.target.value)}
+                            />
+                            <label id="password-holder">Password</label>
+                        </div>
+                        <div className="confirm-password">
+                            <input type={passwordShown ? "text" : "password"} required
+                                id="confirm-password" 
+                                value={confirmPassword}
+                                onChange={e => setConfirmPassword(e.target.value)}
+                            />
+                            <label id="con-pass-holder">Confirm Password</label>
+                        </div>
+                        <div className="create-button">
+                            <button type="submit">Create an Account</button>
+                        </div>
+                    </form>
+                </div>
+                <div className="or">
 
-            </div>
-            <div className="signup-google">
+                </div>
+                <div className="signup-google">
 
+                </div>
             </div>
         </div>
     );
