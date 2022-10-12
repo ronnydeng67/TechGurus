@@ -83,7 +83,7 @@
 #password-holder,
 #con-pass-holder {
     position: absolute;
-    top: 10px;
+    /* top: 10px; */
     left: 35px;
     font-size: large;
     transition: 0.3s;
@@ -100,3 +100,19 @@
     background-color: white;
     transform: scale(0.8);
 }
+
+.name-holder {
+    top: -10px;
+    /* left: 3px; */
+    color: blue;
+    background-color: white;
+    transform: scale(0.8);
+}
+
+.placeHolder {
+    top: -10px;
+    left: 3px;
+    color: blue;
+    background-color: white;
+    transform: scale(0.8);
+} 

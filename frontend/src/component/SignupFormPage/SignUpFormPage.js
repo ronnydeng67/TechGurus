@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Redirect, Link } from 'react-router-dom';
 import * as sessionActions from "../../store/session";
 import './SignUpFormPage.css';
+import TextField from '@mui/material/TextField';
 
 const SignUpFormPage = () => {
     const dispatch = useDispatch();
@@ -14,6 +15,14 @@ const SignUpFormPage = () => {
     const [errors, setErrors] = useState([]);
     const [passwordShown, setPasswordShown] = useState(false);
     if (sessionUser) return <Redirect to="/"/>
+
+    const nameHolder = document.querySelector("#name-holder")
+    // if(name.length > 0) {
+    //     nameHolder.id = 'name-holder'
+    // }
+    // else {
+        
+    // }
 
     const handleOnclick = e => {
         setPasswordShown(!passwordShown);
@@ -57,13 +66,22 @@ const SignUpFormPage = () => {
                 <div className="form-container">
                     <form onSubmit={handleSubmit}>
                         <div className="name">
-                            <input type="text" required 
-                                id="name"
+                            {/* <input type="text" required 
+                                id="name1"
                                 value={name}
                                 onChange={e => setName(e.target.value)}
                             />
-                            <label id="name-holder">Full Name</label>
+                            <label id="name-holder" className={name.length > 0 ? 'name-holder' : "" }>Full Name</label> */}
+                            <TextField
+                                error
+                                id="name"
+                                label="Full Name"
+                                variant="outlined">
+                            </TextField>
                         </div>
+
+
+
                         <div className="email">
                             <input type="text" required
                                 id="email" 
