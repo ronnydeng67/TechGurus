@@ -243,7 +243,7 @@ const SignUpFormPage = () => {
                 <div className="bottom-text">
                     <span>
                         Already have an account? 
-                        <Link to='login'>Sign In</Link>
+                        <Link to='login'>&nbsp;Sign In</Link>
                     </span>
                 </div>
             </div>
