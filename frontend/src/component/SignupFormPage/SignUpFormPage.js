@@ -5,6 +5,7 @@ import * as sessionActions from "../../store/session";
 import './SignUpFormPage.css';
 import TextField from '@mui/material/TextField';
 import { styled } from '@mui/material/styles';
+import ReportGmailerrorredIcon from '@mui/icons-material/ReportGmailerrorred';
 
 const NameField = styled(TextField)({
     '& label.Mui-focused': {
@@ -128,12 +129,13 @@ const SignUpFormPage = () => {
                     data = await res.text();
                 }
 
-                if (data?.errors) setErrors(data.erros);
+                if (data?.errors) setErrors(data.errors);
                 else if (data) setErrors([data]);
-                else setErrors([res.statusText]);
+                else return setErrors([res.statusText]);
             })
+        } else {
+            return setErrors(['Please confirm you typed in the correct password!'])
         }
-        return setErrors(['Please confirm you typed in the correct password!'])
     }
 
 
@@ -145,20 +147,27 @@ const SignUpFormPage = () => {
     //     }
     // }
 
+    const errorIcon = <ReportGmailerrorredIcon fontSize='large'/>;
+    console.log(errors)
     return (
         <div className="signup-page">
             <div className="signup-box">
                 <div className="title-box">
                     <h3 className='title'>Create an Account</h3>
                 </div>
+                    <div className={errors.length === 0 ? "" : "errors"}>
+                        <div className={(errors.length > 0) && ("error-icon")}>
+                            {errors.length > 0 ? errorIcon : ""}
+                        </div>
+                        <div className={(errors.length > 0) && "error"}>
+                            {errors}
+                        </div>
+                    </div>
                 <div className="bus-acc-container">
                     <div className="business-acc">Shopping for your business? 
                         <Link id="business-acc" to="/">&nbsp;Create a business account.</Link>
                     </div>
                 </div>
-                <ul className="errors">
-                    {errors.map(error => <li key={error}>{error}</li>)}
-                </ul>
                 <div className="form-container">
                     <form onSubmit={handleSubmit}>
                         <div className="name">

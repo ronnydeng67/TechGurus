@@ -186,3 +186,28 @@
     margin-top: 24px;
     font-size: small;
 }
+
+.errors {
+    width: 80%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    border: 2px solid #bb0628;
+    border-left: 8px solid #bb0628;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 5px;
+    font-weight: 800;
+    padding-top: 18px;
+}
+
+.errors-icon {
+    text-align: center;
+    width: 25%;
+    height: 100%;
+    background-color: burlywood;
+}
+
+.error {
+    margin-left: 10px;
+}

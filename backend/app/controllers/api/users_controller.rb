@@ -10,7 +10,8 @@ class Api::UsersController < ApplicationController
       login!(@user)
       render :show
     else
-      render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
+      # render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
+      render json: { errors: ["Sorry, something went wrong. Please try again."] }, status: :unprocessable_entity
     end
   end
 
