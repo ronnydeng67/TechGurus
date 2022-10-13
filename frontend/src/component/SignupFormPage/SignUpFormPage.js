@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect, Link } from 'react-router-dom';
 import * as sessionActions from "../../store/session";
@@ -115,7 +115,11 @@ const SignUpFormPage = () => {
     const [emailError, setEmailError] = useState(false);
     const [passwordError, setPasswordError] = useState(false);
     const [conPassError, setConPassError] = useState(false);
-    const [matchMsg, setMatchMsg] = useState("")
+    const [matchMsg, setMatchMsg] = useState("");
+    const nameRef = useRef(null);
+    const emailRef = useRef(null);
+    const passwordRef = useRef(null);
+    const confirmRef = useRef(null);
 
     if (sessionUser) return <Redirect to="/"/>
 
@@ -125,7 +129,7 @@ const SignUpFormPage = () => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        if (password === confirmPassword) {
+        if ((password === confirmPassword) && (isValidName(name)) && (isValidEmail(email)) && (password.length > 5)) {
             setErrors([]);
             return dispatch(sessionActions.signup({name, email, password}))
             .catch(async (res) => {
@@ -141,7 +145,24 @@ const SignUpFormPage = () => {
                 else return setErrors([res.statusText]);
             })
         } else {
-            return setErrors(['Please confirm you typed in the correct password!'])
+            // setErrors(['make sure something'])
+            if ((password !== confirmPassword) || (confirmPassword.length === 0)) {
+                setConPassError(true);
+                confirmRef.current.focus();
+                setMatchMsg("Passwords do not match.")
+            }
+            if (!isValidPassword(password)) {
+                setPasswordError(true);
+                passwordRef.current.focus();
+            }
+            if (!isValidEmail(email)) {
+                setEmailError(true);
+                emailRef.current.focus();
+            }
+            if (!isValidName(name)){
+                setNameError(true)
+                nameRef.current.focus();
+            } 
         }
     }
 
@@ -225,6 +246,7 @@ const SignUpFormPage = () => {
                     <form onSubmit={handleSubmit}>
                         <div className="name">
                             <NameField
+                                inputRef={nameRef}
                                 id="name1"
                                 label="Full Name"
                                 variant="outlined"
@@ -239,6 +261,7 @@ const SignUpFormPage = () => {
 
                         <div className="email">
                             <EmailField
+                                inputRef={emailRef}
                                 id="email1"
                                 label="Email Address"
                                 variant="outlined"
@@ -259,6 +282,7 @@ const SignUpFormPage = () => {
 
                         <div className="password">
                             <PasswordField
+                                inputRef={passwordRef}
                                 id="password1"
                                 type={passwordShown ? "text" : "password"}
                                 label="Password"
@@ -273,6 +297,7 @@ const SignUpFormPage = () => {
 
                         <div className="confirm-password">
                             <ConField
+                                inputRef={confirmRef}
                                 id="confirm-password1"
                                 type={passwordShown ? "text" : "password"}
                                 label="Confirm Password"

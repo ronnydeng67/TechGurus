@@ -39,8 +39,9 @@
     display: flex;
     border: 1px solid lightgray;
     justify-content: center;
-    width: 22%;
-    height: 90%;
+    width: 395px;
+    min-width: 395px;
+    height: 93%;
     background-color: white;
     margin-top: 30px;
     border-radius: 3px;
