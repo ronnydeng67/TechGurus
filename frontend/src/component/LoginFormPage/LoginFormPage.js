@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
@@ -63,9 +63,10 @@ const LoginFormPage = () => {
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState([]);
     const [passwordShown, setPasswordShown] = useState(false);
-    const [emailError, setEmailError] = useState("");
-    const [passwordError, setPassowrdError] = useState("");
-    // console.log(sessionUser);
+    const [emailError, setEmailError] = useState(false);
+    const [passwordError, setPasswordError] = useState(false);
+    const emailRef = useRef(null);
+    const passwordRef = useRef(null);
 
     if (sessionUser) return <Redirect to="/" />;
 
@@ -74,24 +75,25 @@ const LoginFormPage = () => {
     }
 
     const isValidPassword = (password) => {
-        return password.length > 1;
+        return password.length > 5;
     }
 
     const handlePassword = (e) => {
         if (!isValidPassword(e.target.value)) {
-            setPassowrdError("Please enter your password.")
+            setPasswordError(true)
         } else {
-            setPassowrdError("")
+            setPasswordError(false)
         }
 
         setPassword(e.target.value)
     }
 
+    
     const handleEmail = (e) => {
         if (!isValidEmail(e.target.value)) {
-            setEmailError("Please enter a valid email address.")
+            setEmailError(true)
         } else {
-            setEmailError("");
+            setEmailError(false);
         }
 
         setEmail(e.target.value);
@@ -100,18 +102,29 @@ const LoginFormPage = () => {
     const handleSubmit = e => {
         e.preventDefault();
         setErrors([]);
-        return dispatch(sessionActions.loginUser({email, password}))
-            .catch(async(res) => {
-                let data;
-                try {
-                    data = await res.clone().json();
-                } catch {
-                    data = await res.text();
-                }
-                if (data?.errors) setErrors(data.errors);
-                else if (data) setErrors([data]);
-                else setErrors([res.statusText]);
-            })
+        if (isValidEmail(email) && isValidPassword(password)) {
+            return dispatch(sessionActions.loginUser({email, password}))
+                .catch(async(res) => {
+                    let data;
+                    try {
+                        data = await res.clone().json();
+                    } catch {
+                        data = await res.text();
+                    }
+                    if (data?.errors) setErrors(data.errors);
+                    else if (data) setErrors([data]);
+                    else setErrors([res.statusText]);
+                })
+        } else {
+            if ((!isValidPassword(password))) {
+                setPasswordError(true)
+                passwordRef.current.focus();
+            }
+            if (!isValidEmail(email)) {
+                setEmailError(true)
+                emailRef.current.focus();
+            }
+        }
     }
 
     const handleOnclick = e => {
@@ -134,50 +147,63 @@ const LoginFormPage = () => {
             <div className="formBox">
                 <div className="signInBoxContainer">
                     <div className="form">
-
-                    <form  onSubmit={handleSubmit}>
-                        <div className='signInTitle'>
-                            <h3>Sign In to TechGurus</h3>
-                        </div>
-                        <ul>
-                            {errors.map(error => <p>{error}</p>)}
-                        </ul>
-                        <div className="name">
-                            <EmailField
-                                id="email-box"
-                                label="Email Address"
-                                variant='outlined'
-                                size="medium"
-                                onChange={handleEmail}
-                                error={emailError}
-                                >
-                            </EmailField>
-                        </div>
-                        <br />
-                        <div className="password">
-                            <PasswordField
-                                id="password-box"
-                                label="Password"
-                                size='medium'
-                                variant='outlined'
-                                onChange={handlePassword}
-                                error={passwordError}
-                                >
-                            </PasswordField>
-                        </div>
-                        <br />
-                        <div className="fogetPassword">
-                            <Link to="/">Forget your password?</Link>
-                        </div>
-                        <div className="buttonContainer">
-                            <button id="signInButton" type="submit">Sign In</button>
-                        </div>
-                    </form>
+                        <form  onSubmit={handleSubmit} className="form-self">
+                            <div className='signInTitle'>
+                                <h3>Sign In to TechGurus</h3>
+                            </div>
+                            <ul>
+                                {errors.map(error => <p>{error}</p>)}
+                            </ul>
+                            <div className="input-fields">
+                                <div className="name">
+                                    <EmailField
+                                        inputRef={emailRef}
+                                        id="email-box"
+                                        label="Email Address"
+                                        variant='outlined'
+                                        size="medium"
+                                        onChange={handleEmail}
+                                        error={emailError}
+                                        helperText={emailError ? "Please enter a valid email address." : ""}
+                                        >
+                                    </EmailField>
+                                </div>
+                                <div className="show-pass-container">
+                                    <label className='show-password'>
+                                            <input type="checkbox" onChange={handleOnclick}/>
+                                            <span className='toggle'></span>
+                                            &nbsp;&nbsp;Show Password
+                                    </label>
+                                </div>
+                                <div className="password">
+                                    <PasswordField
+                                        inputRef={passwordRef}
+                                        type={passwordShown ? "text" : "password"}
+                                        id="password-box"
+                                        label="Password"
+                                        size='medium'
+                                        variant='outlined'
+                                        onChange={handlePassword}
+                                        error={passwordError}
+                                        helperText={passwordError ? "Please enter password with minimum 6 characters" : ""}
+                                        >
+                                    </PasswordField>
+                                </div>
+                            </div>
+                            <br />
+                            <div className="foget-password">
+                                <Link to="/" id="forget-text">Forget your password?</Link>
+                            </div>
+                            <div className="buttonContainer">
+                                <button id="signInButton" type="submit">Sign In</button>
+                            </div>
+                        </form>
+                    
                         <div className="demo">
                             <button className='demo-user' onClick={renderDemo}>Demo User</button>
                         </div>
-                    <br />
-                    {/* <div className="afterOr"> */}
+                        <br />
+                        {/* <div className="afterOr"> */}
                         <div className="or">
                             <div className="text">or</div>
                             <hr className='hr'/>
@@ -191,7 +217,7 @@ const LoginFormPage = () => {
                         <div className="googleContainer">
                             <button id="googleButton" type="submit"><img src={google} id="google" /> Sign In with Google</button>
                         </div>
-                    {/* </div> */}
+                        {/* </div> */}
                     <div className="agreement">
                         By continuing you agree to our <Link to="/">Terms and Conditions</Link>, our <Link to="/">Privacy Policy</Link>,
                         and the <Link>My TechGurus Program Terms.</Link>

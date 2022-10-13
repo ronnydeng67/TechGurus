@@ -199,7 +199,7 @@ const SignUpFormPage = () => {
     }
 
     const handleConPass = (e) => {
-        if ((e.target.value) === password) {
+        if (((e.target.value) === password) && (password !== 0)) {
             setConPassError(false)
             setMatchMsg("Your passwords match!")
         } else {
