@@ -164,6 +164,7 @@ const LoginFormPage = () => {
                                         size="medium"
                                         onChange={handleEmail}
                                         error={emailError}
+                                        value={email}
                                         helperText={emailError ? "Please enter a valid email address." : ""}
                                         >
                                     </EmailField>
@@ -182,6 +183,7 @@ const LoginFormPage = () => {
                                         id="password-box"
                                         label="Password"
                                         size='medium'
+                                        value={password}
                                         variant='outlined'
                                         onChange={handlePassword}
                                         error={passwordError}
