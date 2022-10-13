@@ -239,7 +239,7 @@ const SignUpFormPage = () => {
                     </div>
                 <div className="bus-acc-container">
                     <div className="business-acc">Shopping for your business? 
-                        <Link id="business-acc" to="/">&nbsp;Create a business account.</Link>
+                        <Link to="/" id="business-acc" >&nbsp;Create a business account.</Link>
                     </div>
                 </div>
                 <div className="form-container">
@@ -332,7 +332,7 @@ const SignUpFormPage = () => {
 
                     <div className="terms">
                         By continuing you agree to our <Link to="/">Terms and Conditions</Link>, our <Link to="/">Privacy Policy</Link>,
-                        and the <Link>My TechGurus Program Terms.</Link>
+                        and the <Link to="/">My TechGurus Program Terms.</Link>
                     </div>
 
                     <hr className='hr'/>
