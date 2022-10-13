@@ -77,6 +77,9 @@ const PasswordField = styled(TextField)({
 });
 
 const ConField = styled(TextField)({
+    '& .MuiFormHelperText-root': {
+        color: 'green',
+    },
     '& label.Mui-focused': {
         color: 'black',
     },
@@ -108,9 +111,13 @@ const SignUpFormPage = () => {
     const [confirmPassword, setConfirmPassword] = useState("");
     const [errors, setErrors] = useState([]);
     const [passwordShown, setPasswordShown] = useState(false);
-    if (sessionUser) return <Redirect to="/"/>
+    const [nameError, setNameError] = useState(false);
+    const [emailError, setEmailError] = useState(false);
+    const [passwordError, setPasswordError] = useState(false);
+    const [conPassError, setConPassError] = useState(false);
+    const [matchMsg, setMatchMsg] = useState("")
 
-    
+    if (sessionUser) return <Redirect to="/"/>
 
     const handleOnclick = e => {
         setPasswordShown(!passwordShown);
@@ -138,17 +145,63 @@ const SignUpFormPage = () => {
         }
     }
 
+    const isValidName = (name) => {
+        return name.length > 0;
+    }
 
+    const isValidEmail = (email) => {
+        return /\S+@\S+\.\S+/.test(email);
+    }
 
-    // const handleNameError = () => {
-    //     if (!name.length) {
-    //         nameErrors.error = true;
-    //         nameErrors.helperText = "sdasdasdasdas";
-    //     }
-    // }
+    const isValidPassword = (password) => {
+        return password.length > 5;
+    }
+
+    const handleName = (e) => {
+        if(!isValidName(e.target.value)) {
+            setNameError(true)
+        } else {
+            setNameError(false)
+        }
+
+        setName(e.target.value)
+    }
+
+    const handleEmail = (e) => {
+        if (!isValidEmail(e.target.value)) {
+            setEmailError(true)
+        } else {
+            setEmailError(false);
+        }
+
+        setEmail(e.target.value);
+    }
+
+    const handleConPass = (e) => {
+        if ((e.target.value) === password) {
+            setConPassError(false)
+            setMatchMsg("Your passwords match!")
+        } else {
+            setConPassError(true)
+            setMatchMsg("Passwords do not match.")
+        }
+
+        setConfirmPassword(e.target.value)
+    }
+
+    const handlePassword = (e) => {
+        if (!isValidPassword(e.target.value)) {
+            setPasswordError(true)
+        } else {
+            setPasswordError(false)
+        }
+
+        setPassword(e.target.value);
+    }
 
     const errorIcon = <ReportGmailerrorredIcon fontSize='large'/>;
-    console.log(errors)
+
+
     return (
         <div className="signup-page">
             <div className="signup-box">
@@ -176,20 +229,24 @@ const SignUpFormPage = () => {
                                 label="Full Name"
                                 variant="outlined"
                                 size="medium"
-                                onChange={e => setName(e.target.value)}
+                                value={name}
+                                onChange={handleName}
+                                error={nameError}
+                                helperText={nameError ? "Please enter your full name." : ""}
                                 >
                             </NameField>
                         </div>
 
                         <div className="email">
                             <EmailField
-                                // error
-                                // helperText="dasdasdsadas"
                                 id="email1"
                                 label="Email Address"
                                 variant="outlined"
                                 size="medium"
-                                onChange={e => setEmail(e.target.value)}>
+                                onChange={handleEmail}
+                                error={emailError}
+                                helperText={emailError ? "Please enter a valid email address." : ""}
+                                >
                             </EmailField>
                         </div>
                         <div className="show-pass-container">
@@ -207,7 +264,10 @@ const SignUpFormPage = () => {
                                 label="Password"
                                 size="medium"
                                 variant="outlined"
-                                onChange={e => setPassword(e.target.value)}>
+                                onChange={handlePassword}
+                                error={passwordError}
+                                helperText={passwordError ? "Please enter password with minimum 6 characters" : ""}
+                                >
                             </PasswordField>
                         </div>
 
@@ -218,7 +278,10 @@ const SignUpFormPage = () => {
                                 label="Confirm Password"
                                 variant="outlined"
                                 size="medium"
-                                onChange={e => setConfirmPassword(e.target.value)}>
+                                onChange={handleConPass}
+                                error={conPassError}
+                                helperText={matchMsg}
+                                >
                             </ConField>
                         </div>
                         
