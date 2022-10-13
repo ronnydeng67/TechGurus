@@ -56,16 +56,16 @@
     font-size: large;
 }
 
+.password {
+    
+}
 
+#email-box {
+    width: 331px;
+}
 
-#emailBox,
-#passwordBox {
-    width: 98%;
-    border: 1px solid #90959e;
-    line-height: normal;
-    height: 40px;
-    border-radius: 5px;
-    padding-left: 10px;
+#password-box {
+    width: 331px;
 }
 
 .buttonContainer {

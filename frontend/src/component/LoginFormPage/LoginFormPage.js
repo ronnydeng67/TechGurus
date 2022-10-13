@@ -6,6 +6,55 @@ import './LoginForm.css';
 import webAuth from './icons8-fingerprint-50.png';
 import google from './icons8-google-48.png';
 import apple from './Apple_logo_black.svg';
+import TextField from '@mui/material/TextField';
+import { styled } from '@mui/material/styles';
+
+const EmailField = styled(TextField)({
+    '& label.Mui-focused': {
+        color: 'black',
+    },
+    '& label': {
+        color: 'black',
+    },
+    '& .MuiInput-underline:after': {
+        borderBottomColor: 'blue',
+    },
+    '& .MuiOutlinedInput-root': {
+        '& fieldset': {
+        borderColor: 'light-gray',
+        },
+        '&:hover fieldset': {
+        borderColor: 'blue',
+        },
+        '&.Mui-focused fieldset': {
+        borderColor: 'blue',
+        },
+    },
+});
+
+const PasswordField = styled(TextField)({
+    '& label.Mui-focused': {
+        color: 'black',
+    },
+    '& label': {
+        color: 'black',
+    },
+    '& .MuiInput-underline:after': {
+        borderBottomColor: 'blue',
+    },
+    '& .MuiOutlinedInput-root': {
+        '& fieldset': {
+        borderColor: 'light-gray',
+        },
+        '&:hover fieldset': {
+        borderColor: 'blue',
+        },
+        '&.Mui-focused fieldset': {
+        borderColor: 'blue',
+        },
+    },
+});
+
 
 const LoginFormPage = () => {
     const dispatch = useDispatch();
@@ -93,33 +142,29 @@ const LoginFormPage = () => {
                         <ul>
                             {errors.map(error => <p>{error}</p>)}
                         </ul>
-                        <label>
-                            Email Address
-                            <br />
-                            <input id="emailBox" type="text"
-                                value={email}
+                        <div className="name">
+                            <EmailField
+                                id="email-box"
+                                label="Email Address"
+                                variant='outlined'
+                                size="medium"
                                 onChange={handleEmail}
-                                required
-                            />
-                            {emailError && <p style={{color: 'red'}}>{emailError}</p>}
-                        </label>
+                                error={emailError}
+                                >
+                            </EmailField>
+                        </div>
                         <br />
-                        <label className='showPassword'>
-                            <input type="checkbox" onChange={handleOnclick}/>
-                            <span className='toggle'></span>
-                            Show Password
-                        </label>
-                        <br />
-                        <label>
-                            Password
-                            <br />
-                            <input id="passwordBox" type={passwordShown ? "text" : "password"}
-                                value={password}
+                        <div className="password">
+                            <PasswordField
+                                id="password-box"
+                                label="Password"
+                                size='medium'
+                                variant='outlined'
                                 onChange={handlePassword}
-                                required
-                            />
-                            {passwordError && <p style={{color: 'red'}}>{passwordError}</p>}
-                        </label>
+                                error={passwordError}
+                                >
+                            </PasswordField>
+                        </div>
                         <br />
                         <div className="fogetPassword">
                             <Link to="/">Forget your password?</Link>
