@@ -67,10 +67,33 @@ const HomeHeader = ({ user }) => {
                 </div>
             </div>
             <div className="lower-header">
-                <div className="acc">
-                    <button onClick={handleClick} id="acc-button">
-                        {(sessionUser) ? "Logout" : "Sign In"}
-                    </button>
+                <div className="lower-left">
+                    <ul className='left-list'>
+                        <li><Link to='/' className='deal' style={{ color: 'white', fontSize: '0.9rem'}}>Top Deal</Link></li>
+                        <li><Link to='/' className='deal' style={{ color: 'white', fontSize: '0.9rem'}}>Top Deal</Link></li>
+                        <li><Link to='/' className='deal' style={{ color: 'white', fontSize: '0.9rem'}}>Top Deal</Link></li>
+                        <li><Link to='/' className='deal' style={{ color: 'white', fontSize: '0.9rem'}}>Top Deal</Link></li>
+                        <li><Link to='/' className='deal' style={{ color: 'white', fontSize: '0.9rem'}}>Top Deal</Link></li>
+                        <li><Link to='/' className='deal' style={{ color: 'white', fontSize: '0.9rem'}}>Top Deal</Link></li>
+                        <li><Link to='/' className='deal' style={{ color: 'white', fontSize: '0.9rem'}}>Top Deal</Link></li>
+                        <li><Link to='/' className='deal' style={{ color: 'white', fontSize: '0.9rem'}}>Top Deal</Link></li>
+                    </ul>
+                </div>
+                <div className="lower-right">
+                    <div className="acc">
+                        <button onClick={handleClick} id="acc-button">
+                          {(sessionUser) ? "Logout" : "Sign In"}
+                        </button>
+                    </div>
+                    <div className="recent-view">
+                        <button>Recently Views</button>
+                    </div>
+                    <div className="order-status">
+                        <li><Link to='/' id='order-status' style={{ color: 'white', fontSize: '0.9rem'}}>Order Status</Link></li>
+                    </div>
+                    <div className="Saved-items">
+                        <button> Saved Items</button>
+                    </div>
                 </div>
             </div>
         </div>

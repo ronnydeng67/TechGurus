@@ -5,6 +5,7 @@
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+	list-style: none;
 }
 
 .home-header {
@@ -98,9 +99,40 @@
 }
 
 .lower-header {
-
+	width: 100vw;
+	height: 42px;
+	display: flex;
 }
 
-#acc-button {
+.lower-left {
+	width: 958px;
+	height: 38px;
+	/* border: 2px solid black; */
+	margin-left: 190px;	
+}
+
+.lower-right {
+	width: 477px;
+	height: 38px;
+	/* border: 2px solid black; */
+	margin-left: 110px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: white;
+	font-size: 0.9rem;
+}
+
+button {
 	cursor: pointer;
+	background-color: transparent;
+	color: white;
 }
+
+.left-list {
+	display: flex;
+	justify-content: space-between;
+	text-decoration: none;
+	padding-top: 10px;
+}
+
