@@ -8,6 +8,7 @@ import google from './icons8-google-48.png';
 import apple from './Apple_logo_black.svg';
 import TextField from '@mui/material/TextField';
 import { styled } from '@mui/material/styles';
+import ReportGmailerrorredIcon from '@mui/icons-material/ReportGmailerrorred';
 
 const EmailField = styled(TextField)({
     '& label.Mui-focused': {
@@ -54,6 +55,7 @@ const PasswordField = styled(TextField)({
         },
     },
 });
+
 
 
 const LoginFormPage = () => {
@@ -136,14 +138,14 @@ const LoginFormPage = () => {
         e.preventDefault();
         setEmail("demo@user.com")
         setPassword("password")
+        setEmailError(false)
+        setPasswordError(false)
     }
+
+    const errorIcon = <ReportGmailerrorredIcon fontSize='large'/>;
 
     return (
         <div className="loginMain">
-            {/* <div className="loginHeader">
-                <h1 className='headerTitle'>TechGurus</h1>
-                <a id="headerReturn" href=""><h4>Return to previous page</h4></a>
-            </div> */}
             <div className="formBox">
                 <div className="signInBoxContainer">
                     <div className="form">
@@ -151,9 +153,17 @@ const LoginFormPage = () => {
                             <div className='signInTitle'>
                                 <h3>Sign In to TechGurus</h3>
                             </div>
-                            <ul>
+                            {/* <ul>
                                 {errors.map(error => <p>{error}</p>)}
-                            </ul>
+                            </ul> */}
+                            <div className={errors.length === 0 ? "" : "login-errors"}>
+                                <div className={(errors.length > 0) && ("login-error-icon")}>
+                                    {errors.length > 0 ? errorIcon : ""}
+                                </div>
+                                <div className={(errors.length > 0) && "login-error"}>
+                                    {errors}
+                                </div>
+                            </div>
                             <div className="input-fields">
                                 <div className="name">
                                     <EmailField
