@@ -136,10 +136,18 @@ const LoginFormPage = () => {
 
     const renderDemo = (e) => {
         e.preventDefault();
-        setEmail("demo@user.com")
-        setPassword("password")
-        setEmailError(false)
-        setPasswordError(false)
+        return dispatch(sessionActions.loginUser({email: "demo@user.com", password: "password"}))
+                .catch(async(res) => {
+                    let data;
+                    try {
+                        data = await res.clone().json();
+                    } catch {
+                        data = await res.text();
+                    }
+                    if (data?.errors) setErrors(data.errors);
+                    else if (data) setErrors([data]);
+                    else setErrors([res.statusText]);
+                })
     }
 
     const errorIcon = <ReportGmailerrorredIcon fontSize='large'/>;

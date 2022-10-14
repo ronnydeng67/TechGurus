@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import {  useHistory, Link } from 'react-router-dom';
+import {  useHistory, NavLink, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
-import Typography from '@mui/material/Typography';
-import Modal from '@mui/material/Modal';
-import Box from '@mui/material/Box';
 import logo from './logo1.png';
 import './HomeHeader.css';
+import LoginForm from './TheModal';
+import ShowAccForm from './ShowAccModal';
 
 const style = {
     '& .MuiModal-root': {
@@ -40,18 +39,31 @@ const HomeHeader = ({ user }) => {
             history.push('/login');
         }
     }
-    console.log("showAccount: ", showAccount)
+    // console.log("showAccount: ", showAccount)
     const handleAccOpen = () => {
         console.log('open run')
         setShowAccount(true)
     }
 
     const handleAccClose = () => {
-        console.log('open close')
+        // console.log('open close')
 
         setShowAccount(false)
     }
 
+    let sessionLinks;
+    if (sessionUser) {
+        sessionLinks = (
+        <button onClick={handleClick}>Logout</button>
+        );
+    } else {
+        sessionLinks = (
+        <>
+            <ShowAccForm />
+            {/* <NavLink to="/signup" className="button">Sign Up</NavLink> */}
+        </>
+        );
+    }
     
 
     return (
@@ -103,20 +115,7 @@ const HomeHeader = ({ user }) => {
                 </div>
                 <div className="lower-right">
                     <div className="acc">
-                        <button onClick={handleAccOpen} id="acc-button">
-                          {(sessionUser) ? "Logout" : "Sign In"}
-                        </button>
-                        <Modal
-                            open={showAccount}
-                            onClose={handleAccClose}
-                            aria-labelledby="acc-modal"
-                        >
-                            <Box sx={style}>
-                                <Typography id="acc-modal" variant="h6" component="h2">
-                                    <button>Sign In</button>
-                                </Typography>
-                            </Box>
-                        </Modal>
+                        {sessionLinks}
                     </div>
                     <div className="recent-view">
                         <button>Recently Views</button>

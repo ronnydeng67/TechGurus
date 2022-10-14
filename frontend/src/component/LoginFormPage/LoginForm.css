@@ -110,11 +110,14 @@
     background-color: white;
     border: 1px solid gray;
     border-radius: 4px;
+    color: #0346be;
+    transition: 0.5s;
 }
 
 .demo-user:hover {
     cursor: pointer;
-    color: gray;
+    color: white;
+    background-color: #0346be;
 }
 
 .demo-user:active {
@@ -198,6 +201,7 @@ input:checked + .toggle:after{
     cursor: pointer;
     border: 1px solid #84a4df;
     background-color: white;
+    color: #0346be;
 }
 
 #webAuthnButton:hover {
@@ -213,6 +217,7 @@ input:checked + .toggle:after{
     cursor: pointer;
     background-color: white;
     border: 1px solid black;
+    color: black;
 }
 
 #appleButton:hover {
@@ -228,6 +233,7 @@ input:checked + .toggle:after{
     cursor: pointer;
     background-color: white;
     border: 1px solid #84a4df;
+    color: #0346be;
 }
 
 #googleButton:hover {
