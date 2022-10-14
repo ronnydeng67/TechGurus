@@ -12,7 +12,7 @@
 #  updated_at :datetime         not null
 #
 class Item < ApplicationRecord
-    validates :name, :price, :desciption, :detail, :department
+    validate :name, :price, :desciption, :detail, :department
 
 
 end
