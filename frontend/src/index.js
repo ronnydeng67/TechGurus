@@ -8,6 +8,7 @@ import configureStore from './store/index'
 import csrfFetch from './store/csrfFetch';
 import * as sessionActions from './store/session';
 import { ModalProvider } from './component/AccModal/AccModal';
+import * as itemActions from './store/items';
 
 const store = configureStore();
 
@@ -15,7 +16,7 @@ if (process.env.NODE_ENV !== 'production') {
   window.store = store;
   window.csrfFetch = csrfFetch;
   window.sessionActions = sessionActions;
-  // window.restoreSession = restoreSession;
+  window.itemActions = itemActions;
 }
 
 function Root() {

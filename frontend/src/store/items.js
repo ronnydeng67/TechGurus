@@ -1,8 +1,8 @@
 
 
-export const RECEIVE_ITEMS = 'RECEIVE_ITEMS';
-export const RECEIVE_ITEM = 'RECEIVE_ITEM';
-export const SEARCH_ITEM = 'SEARCH_ITEM';
+export const RECEIVE_ITEMS = '/RECEIVE_ITEMS';
+export const RECEIVE_ITEM = '/RECEIVE_ITEM';
+export const SEARCH_ITEM = '/SEARCH_ITEM';
 
 const receiveItems = items => ({
     type: RECEIVE_ITEMS,
@@ -15,8 +15,8 @@ const receiveItem = item => ({
 })
 
 
-export const getItems = (state) => (state.items ? Object.values(state.items) : []);
-export const getItem = (itemId) => (state.items ? state.items[itemId] : null)
+export const getItem = itemId => ({ items }) => (items ? items[itemId] : null)
+export const getItems = ({ items }) => (items ? Object.values(items) : []);
 
 export const fetchItems = () => async dispatch => {
     const res = await fetch('api/items')
@@ -24,20 +24,24 @@ export const fetchItems = () => async dispatch => {
     dispatch(receiveItems(data))
 }
 
-export const fetchItem = (itemId) => async dispatch => {
-    const res = await fetch(`api/items/${itemId}`);
+export const fetchItem = (item) => async dispatch => {
+    const res = await fetch(`api/items/${item.id}`);
     const data = await res.json();
     dispatch(receiveItem(data))
 }
 
 const itemsReducer = (state={}, action) => {
+    const nextState = { ...state }
     switch (action.type) {
         case(RECEIVE_ITEMS):
-            return action.items;
+            const asd = action.items
+            return {...nextState, ...asd }
         case(RECEIVE_ITEM):
-            const item = action.item;
-            return { ...state, [item.id]: item }
+            nextState[action.item.id] = action.item
+            return nextState
         default:
             return state;
     }
 }
+
+export default itemsReducer;
