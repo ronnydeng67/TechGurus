@@ -14,5 +14,6 @@
 class Item < ApplicationRecord
     validate :name, :price, :desciption, :detail, :department
 
+    has_one_attached :photo
 
 end

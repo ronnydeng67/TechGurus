@@ -37,8 +37,8 @@ const itemsReducer = (state={}, action) => {
             const asd = action.items
             return {...nextState, ...asd }
         case(RECEIVE_ITEM):
-            nextState[action.item.id] = action.item
-            return nextState
+            return action.item
+            // return nextState
         default:
             return state;
     }
