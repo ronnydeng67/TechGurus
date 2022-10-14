@@ -103,8 +103,8 @@ const HomeHeader = ({ user }) => {
             <div className="lower-header">
                 <div className="lower-left">
                     <ul className='left-list'>
-                        <li><Link to='/' className='deal' style={{ color: 'white', fontSize: '0.9rem'}}>Top Deal</Link></li>
-                        <li><Link to='/' className='deal' style={{ color: 'white', fontSize: '0.9rem'}}>Top Deal</Link></li>
+                        <li><Link to='signup' className='deal' style={{ color: 'white', fontSize: '0.9rem'}}>Top Deal</Link></li>
+                        <li><Link to='/login' className='deal' style={{ color: 'white', fontSize: '0.9rem'}}>Top Deal</Link></li>
                         <li><Link to='/' className='deal' style={{ color: 'white', fontSize: '0.9rem'}}>Top Deal</Link></li>
                         <li><Link to='/' className='deal' style={{ color: 'white', fontSize: '0.9rem'}}>Top Deal</Link></li>
                         <li><Link to='/' className='deal' style={{ color: 'white', fontSize: '0.9rem'}}>Top Deal</Link></li>

@@ -117,7 +117,7 @@
 	/* border: 2px solid black; */
 	margin-left: 110px;
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-evenly;
 	align-items: center;
 	color: white;
 	font-size: 0.9rem;

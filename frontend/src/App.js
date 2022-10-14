@@ -8,9 +8,9 @@ import HomeHeader from './component/HomeHeader/HomeHeader';
 function App() {
   return (
     <>
+    <HomeHeader />
         <Switch>
           <Route exact path="/">
-            <HomeHeader />
           </Route>
           <Route path='/login'>
             <Header />
