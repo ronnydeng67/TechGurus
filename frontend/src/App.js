@@ -4,6 +4,7 @@ import LoginFormPage from './component/LoginFormPage/LoginFormPage';
 import Header from './component/Header/Header';
 import SignUpFormPage from './component/SignupFormPage/SignUpFormPage';
 import HomeHeader from './component/HomeHeader/HomeHeader';
+import Splash from './component/Splash/Splash';
 
 function App() {
   const signup = useRouteMatch("/signup");
@@ -14,7 +15,7 @@ function App() {
         {(!signup && !login) && <HomeHeader /> }
         <Switch>
           <Route exact path="/">
-            {/* <HomeHeader /> */}
+            <Splash />
           </Route>
           <Route path='/login'>
             <Header />

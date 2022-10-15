@@ -1,0 +1,164 @@
+@font-face {
+	font-family: 'bestbuy-medium';
+	src: url(../../../font/HumanSans-Medium.otf);
+	font-weight: bold;
+}
+
+@font-face {
+    font-family: 'bestbuy-bold';
+    src: url(../../../font/HumanSans-Black.otf);
+}
+
+.splash-main {
+    width: 100%;
+    /* height: 900px; */
+}
+
+.top-layer {
+    width: 100%;
+    height: 690px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top-deal {
+    height: 650px;
+    width: 770px;
+    border: 1px solid black;
+    background-image: url(../../../images/MMT-510776_2022TopDeals-GHPApp-LV-55adde1f-dd0b-48d7-9a08-b28bbc00187d.jpeg);
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.top-deal-text {
+    margin-top: 360px;
+    color: white;
+    font-size: 2.5rem;
+    font-family: 'bestbuy-bold';
+    margin-bottom: 10px;
+}
+.top-deal-button {
+    background-color: white;
+    width: 85px;
+    height: 30px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+
+}
+
+#shop-now {
+    color: #0346be;
+    font-size: small;
+    font-family: 'bestbuy-medium';
+    transition: 0.4s;
+    width: 100%;
+    border-radius: 5px;
+}
+
+#shop-now:hover {
+    background-color: #0346be;
+    color: white;
+    border: 1px solid white;
+}
+
+.top-right {
+    height: 650px;
+    width: 770px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 28px;
+}
+
+.today-picks-box {
+    height: 225px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.today-pick-text {
+    margin-bottom: 8px;
+    width: 730px;
+    left: 0;
+}
+
+.today-picks {
+    width: 730px;
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pick-1 {
+    width: 173px;
+    height: 150px;
+    border: 1px solid black;
+}
+
+.pick-2 {
+    width: 173px;
+    height: 150px;
+    border: 1px solid black;
+
+}
+
+.pick-3 {
+    width: 173px;
+    height: 150px;
+    border: 1px solid black;
+
+}
+
+.pick-4 {
+    width: 173px;
+    height: 150px;
+    border: 1px solid black;
+
+}
+
+.top-right-bottom {
+    height: 397px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.outlet-container {
+    height: 100%;
+    width: 371px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.outlet {
+    width: 332px;
+    height: 355px;
+    border: 1px solid black;
+}
+
+.deal-of-day-container {
+    height: 100%;
+    width: 371px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.deal-of-day {
+    width: 332px;
+    height: 355px;
+    border: 1px solid black;
+
+}
