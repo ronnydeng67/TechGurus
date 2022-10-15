@@ -92,25 +92,26 @@ const HomeHeader = ({ user }) => {
                 <div className="home-header-right">
                     <div className="store-finder">
                         <i className="fa-solid fa-shop"></i>
-                        <p>&nbsp;Union Square</p>
+                        <p style={{fontFamily: "bestbuy-medium", fontSize: "1.3rem"}}>&nbsp;Union Square</p>
                     </div>
                     <div className="cart">
                         <i className="fa-solid fa-cart-shopping"></i>
-                        <p>&nbsp;Cart</p>
+                        {/* <AiOutlineShoppingCart style={{fontSize: "2rem"}}/> */}
+                        <p style={{fontFamily: "bestbuy-medium", fontSize: "1.3rem"}}>&nbsp;Cart</p>
                     </div>
                 </div>
             </div>
             <div className="lower-header">
                 <div className="lower-left">
                     <ul className='left-list'>
-                        <li><Link to='signup' className='deal' style={{ color: 'white', fontSize: '0.9rem'}}>Top Deal</Link></li>
-                        <li><Link to='/login' className='deal' style={{ color: 'white', fontSize: '0.9rem'}}>Top Deal</Link></li>
-                        <li><Link to='/' className='deal' style={{ color: 'white', fontSize: '0.9rem'}}>Top Deal</Link></li>
-                        <li><Link to='/' className='deal' style={{ color: 'white', fontSize: '0.9rem'}}>Top Deal</Link></li>
-                        <li><Link to='/' className='deal' style={{ color: 'white', fontSize: '0.9rem'}}>Top Deal</Link></li>
-                        <li><Link to='/' className='deal' style={{ color: 'white', fontSize: '0.9rem'}}>Top Deal</Link></li>
-                        <li><Link to='/' className='deal' style={{ color: 'white', fontSize: '0.9rem'}}>Top Deal</Link></li>
-                        <li><Link to='/' className='deal' style={{ color: 'white', fontSize: '0.9rem'}}>Top Deal</Link></li>
+                        <li><Link to='signup' className='deal' style={{ color: 'white', fontSize: '0.8rem'}}>Top Deal</Link></li>
+                        <li><Link to='/login' className='deal' style={{ color: 'white', fontSize: '0.8rem'}}>Top Deal</Link></li>
+                        <li><Link to='/' className='deal' style={{ color: 'white', fontSize: '0.8rem'}}>Top Deal</Link></li>
+                        <li><Link to='/' className='deal' style={{ color: 'white', fontSize: '0.8rem'}}>Top Deal</Link></li>
+                        <li><Link to='/' className='deal' style={{ color: 'white', fontSize: '0.8rem'}}>Top Deal</Link></li>
+                        <li><Link to='/' className='deal' style={{ color: 'white', fontSize: '0.8rem'}}>Top Deal</Link></li>
+                        <li><Link to='/' className='deal' style={{ color: 'white', fontSize: '0.8rem'}}>Top Deal</Link></li>
+                        <li><Link to='/' className='deal' style={{ color: 'white', fontSize: '0.8rem'}}>Top Deal</Link></li>
                     </ul>
                 </div>
                 <div className="lower-right">
