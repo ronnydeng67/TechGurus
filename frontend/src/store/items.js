@@ -22,6 +22,7 @@ export const fetchItems = () => async dispatch => {
     const res = await fetch('api/items')
     const data = await res.json();
     dispatch(receiveItems(data))
+    return data;
 }
 
 export const fetchItem = (item) => async dispatch => {
