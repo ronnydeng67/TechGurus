@@ -12,7 +12,7 @@
 #  updated_at :datetime         not null
 #
 class Item < ApplicationRecord
-    validate :name, :price, :desciption, :detail, :department
+    validate :name, :price, :description, :details, :department
 
     has_one_attached :photo
 

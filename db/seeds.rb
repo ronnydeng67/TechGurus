@@ -43,40 +43,40 @@ ApplicationRecord.transaction do
     name: 'Macbook Air 13.3 Laptop',
     price: '999.99',
     department: 'computers',
-    desciption: 'dsklvndmsnvjsdjkavbnmsdavbkjcbavnmsbadkvjlsbdmnvbcxnmvbxnmcvbjhsbdvdsvs',
-    detail: 'sadsadsdsadsadsadsadsa'
+    description: 'dsklvndmsnvjsdjkavbnmsdavbkjcbavnmsbadkvjlsbdmnvbcxnmvbxnmcvbjhsbdvdsvs',
+    details: 'sadsadsdsadsadsadsadsa'
   )
 
   Item.create!(
     name: 'Apple iPhone 14 128GB',
     price: '799',
     department: 'phone',
-    desciption: 'dsklvndmsnvjsdjkavbnmsdavbkjcbavnsdasdasdsadasmsbadkvjlsbdmnvbcxnmvbxnmcvbjhsbdvdsvs',
-    detail: 'sadsadsdsadsadsadsadsa'
+    description: 'dsklvndmsnvjsdjkavbnmsdavbkjcbavnsdasdasdsadasmsbadkvjlsbdmnvbcxnmvbxnmcvbjhsbdvdsvs',
+    details: 'sadsadsdsadsadsadsadsa'
   )
 
   Item.create!(
     name: 'Canon - EOS Rebel T7',
     price: '479.99',
     department: 'camera',
-    desciption: 'dsklvndmsndsdasdsavjsdjkavbnmsdavbkjcbavnsdasdasdsadasmsbadkvjlsbdmnvbcxnmvbxnmcvbjhsbdvdsvs',
-    detail: 'sadsadsdsadsadsadsadsa'
+    description: 'dsklvndmsndsdasdsavjsdjkavbnmsdavbkjcbavnsdasdasdsadasmsbadkvjlsbdmnvbcxnmvbxnmcvbjhsbdvdsvs',
+    details: 'sadsadsdsadsadsadsadsa'
   )
 
   Item.create!(
     name: 'Apple - AirPods Pro',
     price: '249.99',
     department: 'audio',
-    desciption: 'dsklvndmsnvjsdjdsadasdsaskavbnmsdavbkjcbavnsdasdasdsadasmsbadkvjlsbdmnvbcxnmvbxnmcvbjhsbdvdsvs',
-    detail: 'sadsadsdsadsadsadsadsa'
+    description: 'dsklvndmsnvjsdjdsadasdsaskavbnmsdavbkjcbavnsdasdasdsadasmsbadkvjlsbdmnvbcxnmvbxnmcvbjhsbdvdsvs',
+    details: 'sadsadsdsadsadsadsadsa'
   )
 
   Item.create!(
     name: 'PlayStation 5 Console',
     price: '549.99',
     department: 'game',
-    desciption: 'dsklvndmsnvdasdasjsdjdsadasdsaskavbnmsdavbkjcbavnsdasdasdsadasmsbadkvjlsbdmnvbcxnmvbxnmcvbjhsbdvdsvs',
-    detail: 'sadsadsdsadsadsadsadsa'
+    description: 'dsklvndmsnvdasdasjsdjdsadasdsaskavbnmsdavbkjcbavnsdasdasdsadasmsbadkvjlsbdmnvbcxnmvbxnmcvbjhsbdvdsvs',
+    details: 'sadsadsdsadsadsadsadsa'
   )
 
 

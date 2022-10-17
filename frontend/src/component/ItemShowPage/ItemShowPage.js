@@ -32,10 +32,10 @@ const ItemShowPage = () => {
     } else {
         return (
             <div className="item-container">
-                {item.name}
-                {item.price}
-                {item.desciption}
-                {item.detail}
+                <div className="item-name">{item.name}</div>
+                <div className="item-price">{item.price}</div>
+                <div className="item-desription">{item.description}</div>
+                <div className="item-details">{item.details}</div>
             </div>
         );
     }
