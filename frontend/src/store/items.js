@@ -19,16 +19,17 @@ export const getItem = itemId => ({ items }) => (items ? items[itemId] : null)
 export const getItems = ({ items }) => (items ? Object.values(items) : []);
 
 export const fetchItems = () => async dispatch => {
-    const res = await fetch('api/items')
+    const res = await fetch('/api/items')
     const data = await res.json();
     dispatch(receiveItems(data))
     return data;
 }
 
-export const fetchItem = (item) => async dispatch => {
-    const res = await fetch(`api/items/${item.id}`);
+export const fetchItem = (itemId) => async dispatch => {
+    const res = await fetch(`/api/items/${itemId}`);
     const data = await res.json();
     dispatch(receiveItem(data))
+    return data;
 }
 
 const itemsReducer = (state={}, action) => {

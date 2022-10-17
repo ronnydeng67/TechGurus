@@ -5,6 +5,7 @@ import Header from './component/Header/Header';
 import SignUpFormPage from './component/SignupFormPage/SignUpFormPage';
 import HomeHeader from './component/HomeHeader/HomeHeader';
 import Splash from './component/Splash/Splash';
+import ItemShowPage from './component/ItemShowPage/ItemShowPage';
 
 function App() {
   const signup = useRouteMatch("/signup");
@@ -20,6 +21,9 @@ function App() {
           <Route path='/login'>
             <Header />
             <LoginFormPage />
+          </Route>
+          <Route path='/items/:itemId'>
+            <ItemShowPage />
           </Route>
           <Route path='/signup'>
             <Header />

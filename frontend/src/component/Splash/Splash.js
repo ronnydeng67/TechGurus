@@ -11,7 +11,7 @@ const Splash = () => {
     const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
-        dispatch(fetchItems()).then((res)=> {
+        dispatch(fetchItems()).then((res) => {
             setItems(Object.values(res))
         }).then(()=> {
             setIsLoading(false)
