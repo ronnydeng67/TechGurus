@@ -68,6 +68,9 @@
     width: 485px;
     height: 191px;
     border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .total-tech {
@@ -110,3 +113,18 @@
     height: 400px;
     border: 1px solid black;
 }
+
+.price-text {
+    height: 100px;
+    width: 490px;
+    border: 1px solid black;
+}
+
+.return-box {
+    height: 58px;
+    width: 490px;
+    border: 1px solid black;
+}
+
+
+

@@ -42,7 +42,16 @@ const ItemShowPage = () => {
                         </div>
                     </div>
                     <div className="item-right">
-                        <div className="item-price">{item.price}</div>
+                        <div className="item-price">
+                            <div className="price-text">
+                                <div className="price">
+                                    ${item.price}
+                                </div>
+                            </div>
+                            <div className="return-box">
+                                15-DAY FREE & EASY RETURNS
+                            </div>
+                        </div>
                         <div className="total-tech">
                             Total Tech
                         </div>
