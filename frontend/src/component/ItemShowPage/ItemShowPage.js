@@ -31,11 +31,30 @@ const ItemShowPage = () => {
         return <div>Loading...</div>
     } else {
         return (
-            <div className="item-container">
-                <div className="item-name">{item.name}</div>
-                <div className="item-price">{item.price}</div>
-                <div className="item-desription">{item.description}</div>
-                <div className="item-details">{item.details}</div>
+            <div className="page-container">
+                <div className="item-container">
+                    <div className="item-left">
+                        <div className="item-name">{item.name}</div>
+                        <div className="item-pic"></div>
+                    </div>
+                    <div className="item-right">
+                        <div className="item-price">{item.price}</div>
+                        <div className="total-tech">
+                            Total Tech
+                        </div>
+                        <div className="add-cart-container">
+                            <div className="add-cart-button">
+                                <button id='add-cart'> Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <div className="overview-container">
+                        <div className="overview">
+                            <div className="item-desription">{item.description}</div>
+                            <div className="item-details">{item.details}</div>
+                        </div>
+                    </div>
             </div>
         );
     }
