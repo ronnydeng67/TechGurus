@@ -24,8 +24,10 @@ const ItemShowPage = () => {
     //     dispatch(fetchItem(itemId))
     // },[])
 
+    console.log(item.photoUrl)
 
-    console.log(item)
+    // console.log(item.details)
+        // const test = item.details.split(/\r?\n/)
 
     if(isLoading) {
         return <div>Loading...</div>
@@ -35,7 +37,9 @@ const ItemShowPage = () => {
                 <div className="item-container">
                     <div className="item-left">
                         <div className="item-name">{item.name}</div>
-                        <div className="item-pic"></div>
+                        <div className="item-pic" style={{textAlign: 'center'}}>
+                            <img width='auto' height='400' style={{margin: '150px'}} src={item.photoUrl} alt="" />
+                        </div>
                     </div>
                     <div className="item-right">
                         <div className="item-price">{item.price}</div>
@@ -52,7 +56,11 @@ const ItemShowPage = () => {
                     <div className="overview-container">
                         <div className="overview">
                             <div className="item-desription">{item.description}</div>
-                            <div className="item-details">{item.details}</div>
+                            <div className="item-details">
+                                <ul>
+                                    {item.details.split(/\r?\n/).map(detail => <li>{detail}</li>)}
+                                </ul>
+                            </div>
                         </div>
                     </div>
             </div>
