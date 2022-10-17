@@ -199,7 +199,7 @@ input:checked + .toggle:after{
     border-radius: 5px;
     height: 100%;
     cursor: pointer;
-    border: 1px solid #84a4df;
+    border: 1px solid #0046be;
     background-color: white;
     color: #0346be;
 }
@@ -232,7 +232,7 @@ input:checked + .toggle:after{
     height: 100%;
     cursor: pointer;
     background-color: white;
-    border: 1px solid #84a4df;
+    border: 1px solid #0046be;
     color: #0346be;
 }
 

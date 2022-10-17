@@ -14,7 +14,7 @@ const removeCurrentUser = () => ({
 
 export const loginUser = (user) => async dispatch => {
     const { email, password } = user;
-    const res = await csrfFetch('api/session', {
+    const res = await csrfFetch('/api/session', {
         method: 'post',
         body: JSON.stringify({
             email,
@@ -31,6 +31,7 @@ export const logoutUser = () => async dispatch => {
     const res = await csrfFetch('/api/session', {
         method: 'delete'
     })
+    console.log(res)
     storeCurrentUser(null);
     dispatch(removeCurrentUser());
     return res

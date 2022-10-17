@@ -238,8 +238,8 @@ const SignUpFormPage = () => {
                         </div>
                     </div>
                 <div className="bus-acc-container">
-                    <div className="business-acc">Shopping for your business? 
-                        <Link to="/" id="business-acc" >&nbsp;Create a business account.</Link>
+                    <div className="business-acc">Shopping for your business?&nbsp;
+                        <Link to="/" id="business-acc" >Create a business account.</Link>
                     </div>
                 </div>
                 <div className="form-container">

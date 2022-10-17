@@ -1,8 +1,8 @@
 #modal {
-    /* position:relative; */
-    top: 200px;
+    position:absolute;
+    top: 117px;
     right: 0;
-    left: 700px;
+    left: -100px;
     bottom: 0;
     display: flex;
     padding-left: 1180px;

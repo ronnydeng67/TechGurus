@@ -23,21 +23,15 @@ const style = {
     p: 4
 };
 
-const HomeHeader = ({ user }) => {
+const HomeHeader = () => {
     const sessionUser = useSelector(state => state.session.user);
     const dispatch = useDispatch();
     const history = useHistory();
     const [showAccount, setShowAccount] = useState(false);
-    const [showMenu, setShowMenu] = useState(false);
-    const [recentOpen, setRecentOpen] = useState(false);
     const [search, setSearch] = useState("");
 
     const handleClick = () => {
-        if(sessionUser) {
             dispatch(sessionActions.logoutUser());
-        } else {
-            history.push('/login');
-        }
     }
     // console.log("showAccount: ", showAccount)
     const handleAccOpen = () => {

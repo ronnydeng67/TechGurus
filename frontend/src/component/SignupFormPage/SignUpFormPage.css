@@ -7,6 +7,23 @@
 	vertical-align: baseline;
 }
 
+@font-face {
+	font-family: 'bestbuy';
+	src: url(../../../font/HumanSans-Regular.otf);
+}
+
+@font-face {
+	font-family: 'bestbuy-medium';
+	src: url(../../../font/HumanSans-Medium.otf);
+	font-weight: bold;
+}
+
+@font-face {
+	font-family: 'bestbuy-light';
+	src: url(../../../font/HumanSans-Light.otf);
+	font-weight: light;
+}
+
 .signup-page {
     width: 100%;
     height: 900px;
@@ -29,15 +46,15 @@
 }
 
 .title-box {
-    width: 50%;
+    width: 70%;
     margin-top: 20px;
     display: flex;
     justify-content: center;
-    /* border: 1px solid black; */
 }
 
 .title {
-    font-size: x-large;
+    font-family: 'bestbuy-medium';
+    font-size: 1.3rem;
 }
 
 .bus-acc-container {
@@ -48,6 +65,12 @@
 .business-acc {
     padding-top: 10px;
     text-decoration: none;
+    font-family: 'bestbuy';
+    font-size: small;
+}
+
+#business-acc {
+    text-decoration: underline;
 }
 
 #business-acc:hover {
