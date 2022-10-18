@@ -1,17 +1,17 @@
 @font-face {
 	font-family: 'bestbuy';
-	src: url(../../../font/HumanSans-Regular.otf);
+	src: url('../../../font/HumanSans-Regular.otf');
 }
 
 @font-face {
 	font-family: 'bestbuy-medium';
-	src: url(../../../font/HumanSans-Medium.otf);
+	src: url('../../../font/HumanSans-Medium.otf');
 	font-weight: bold;
 }
 
 @font-face {
 	font-family: 'bestbuy-light';
-	src: url(../../../font/HumanSans-Light.otf);
+	src: url('../../../font/HumanSans-Light.otf');
 	font-weight: light;
 }
 
