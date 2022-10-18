@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { fetchItem } from '../../store/items';
 import './ItemShowPage.css';
 
@@ -20,14 +20,18 @@ const ItemShowPage = () => {
         })
     },[itemId])
 
-    // useEffect(() => {
-    //     dispatch(fetchItem(itemId))
-    // },[])
 
-    console.log(item.photoUrl)
+    let paymentPlans;
+    let month = 4;
+    if((item.price > 300 && item.price < 500)) {
+        month = 12;
+    } else if (item.price > 500 && item.price < 800) {
+        month = 24;
+    } else {
+        month = 36;
+    }
 
-    // console.log(item.details)
-        // const test = item.details.split(/\r?\n/)
+    console.log(month)
 
     if(isLoading) {
         return <div>Loading...</div>
@@ -46,6 +50,23 @@ const ItemShowPage = () => {
                             <div className="price-text">
                                 <div className="price">
                                     ${item.price}
+                                </div>
+                                <div className='price-divider'>
+                                    <div className='hi'></div>
+                                </div>
+                                <div className="payment">
+                                    <div className="monthly">
+                                        ${((item.price) / month).toFixed(2)}/mo.*
+                                    </div>
+                                    <div className="four-payment">
+                                        suggested payments with
+                                    </div>
+                                    <div className="payment-terms">
+                                        {month}-Month financing
+                                    </div>
+                                    <div className="show-more">
+                                        <Link>Show me how </Link>
+                                    </div>
                                 </div>
                             </div>
                             <div className="return-box">
