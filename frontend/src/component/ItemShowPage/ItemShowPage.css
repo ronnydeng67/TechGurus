@@ -2,18 +2,18 @@
 
 @font-face {
 	font-family: 'bestbuy-medium';
-	src: url(../../../font/HumanSans-Medium.otf);
+	src: url('../../font/HumanSans-Medium.otf');
 	font-weight: bold;
 }
 
 @font-face {
     font-family: 'bestbuy-bold';
-    src: url('../../../font/HumanSans-Black.otf');
+    src: url('../../font/HumanSans-Black.otf');
 }
 
 @font-face {
     font-family: 'bestbuy';
-    src: url('../../../font/HumanSans-Regular.otf');
+    src: url('../../font/HumanSans-Regular.otf');
 }
 
 .page-container {
