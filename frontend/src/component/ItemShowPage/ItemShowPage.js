@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 import { fetchItem } from '../../store/items';
+import { FaExchangeAlt } from 'react-icons/fa';
 import './ItemShowPage.css';
 
 const ItemShowPage = () => {
@@ -31,7 +32,8 @@ const ItemShowPage = () => {
         month = 36;
     }
 
-    console.log(month)
+    const date = new Date();
+    console.log(date)
 
     if(isLoading) {
         return <div>Loading...</div>
@@ -69,8 +71,19 @@ const ItemShowPage = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="return-box">
-                                15-DAY FREE & EASY RETURNS
+                            <div className="return-box-container">
+                                <div className="return-box">
+                                    <div className="return-icon">
+                                        <FaExchangeAlt style={{paddingTop: '20px'}}/>
+                                    </div>
+
+                                    <div className="days-text">
+                                        15-DAY FREE & EASY RETURNS
+                                        <div className="return-details">
+                                            If received today, the last day to return this item would be Nov 1.
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div className="total-tech">
