@@ -2,7 +2,7 @@ class CartsController < ApplicationController
     # before_action :require_logged_in
 
     def index
-        @cart = current_user.carts
+        @carts = current_user.carts
         render "api/items/index"
     end
 

@@ -23,7 +23,7 @@ const Splash = () => {
 
     }
 
-    console.log(items)
+    // console.log(items)
 
     if(isLoading){
         return <div>Loading....</div> 
