@@ -37,7 +37,7 @@ ApplicationRecord.transaction do
 
   ApplicationRecord.connection.reset_pk_sequence!('items')
   
-  puts "Creating itmes..."
+  puts "Creating items..."
 
   item1 = Item.create(
     name: 'MacBook Air 13.3" Laptop - Apple M1 chip - 8GB Memory - 256GB SSD - Space Gray',
