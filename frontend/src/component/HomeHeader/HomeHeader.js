@@ -49,7 +49,7 @@ const HomeHeader = () => {
     let sessionLinks;
     if (sessionUser) {
         sessionLinks = (
-        <button onClick={handleClick}>Logout</button>
+        <button onClick={handleClick} id="acc">Logout</button>
         );
     } else {
         sessionLinks = (
