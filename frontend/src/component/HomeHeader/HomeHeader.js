@@ -3,6 +3,7 @@ import {  useHistory, NavLink, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import logo from './logo1.png';
+import { HiMagnifyingGlass } from "react-icons/hi2";
 import './HomeHeader.css';
 import LoginForm from './TheModal';
 import ShowAccForm from './ShowAccModal';
@@ -80,7 +81,7 @@ const HomeHeader = () => {
                             onChange={e => setSearch(e.target.value)}
                             value={search}
                         />
-                        <button id="magnify"><i className="fa-solid fa-magnifying-glass"></i></button>
+                        <button id="magnify"><HiMagnifyingGlass style={{color: "black", fontSize: "x-large"}}/></button>
                     </div>
                 </div>
                 <div className="home-header-right">
@@ -113,13 +114,13 @@ const HomeHeader = () => {
                         {sessionLinks}
                     </div>
                     <div className="recent-view">
-                        <button>Recently Views</button>
+                        <button id="recently-button">Recently Views</button>
                     </div>
                     <div className="order-status">
                         <Link to='/' id='order-status' style={{ color: 'white', fontSize: '0.9rem'}}>Order Status</Link>
                     </div>
                     <div className="Saved-items">
-                        <button>Saved Items</button>
+                        <button id="save-button">Saved Items</button>
                     </div>
                 </div>
             </div>

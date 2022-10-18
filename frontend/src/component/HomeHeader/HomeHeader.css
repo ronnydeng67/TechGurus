@@ -1,6 +1,7 @@
 @font-face {
 	font-family: 'bestbuy';
 	src: url('../../font/HumanSans-Regular.otf');
+	font-weight: normal;
 }
 
 @font-face {
@@ -165,4 +166,10 @@ button {
 
 #cart-link {
 	color: white;
+}
+
+#recently-button,
+#order-status,
+#save-button {
+	font-family: 'bestbuy';
 }
