@@ -141,11 +141,16 @@
 
 .price-divider {
     width: 35px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.hr {
-    
+.or {
+    /* border: 1px solid black; */
+    height: 20px;
+    width: 20px;
 }
 
 .payment {

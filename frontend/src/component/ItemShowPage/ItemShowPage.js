@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 import { fetchItem } from '../../store/items';
 import { FaExchangeAlt } from 'react-icons/fa';
+import moment from 'moment';
 import './ItemShowPage.css';
 
 const ItemShowPage = () => {
@@ -33,7 +34,8 @@ const ItemShowPage = () => {
     }
 
     const date = new Date();
-    console.log(date)
+    const mm = date.toLocaleString('default', {month: 'long'});
+    const dd = moment().add(15, 'days').format('MMM Do')
 
     if(isLoading) {
         return <div>Loading...</div>
@@ -54,7 +56,7 @@ const ItemShowPage = () => {
                                     ${item.price}
                                 </div>
                                 <div className='price-divider'>
-                                    <div className='hi'></div>
+                                    <div className='or'>or</div>
                                 </div>
                                 <div className="payment">
                                     <div className="monthly">
@@ -80,7 +82,7 @@ const ItemShowPage = () => {
                                     <div className="days-text">
                                         15-DAY FREE & EASY RETURNS
                                         <div className="return-details">
-                                            If received today, the last day to return this item would be Nov 1.
+                                            If received today, the last day to return this item would {dd}.
                                         </div>
                                     </div>
                                 </div>
