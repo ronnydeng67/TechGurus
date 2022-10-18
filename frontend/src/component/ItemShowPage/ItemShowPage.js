@@ -4,7 +4,12 @@ import { Link, useParams } from 'react-router-dom';
 import { fetchItem } from '../../store/items';
 import { FaExchangeAlt } from 'react-icons/fa';
 import { FiHeadphones, FiShield } from 'react-icons/fi';
-import { MdHandyman } from 'react-icons/md';
+import { MdHandyman, MdOutlineStore, MdLocalShipping, MdShoppingCart } from 'react-icons/md';
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import Typography from '@mui/material/Typography';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import moment from 'moment';
 import './ItemShowPage.css';
 
@@ -26,16 +31,20 @@ const ItemShowPage = () => {
 
 
     let paymentPlans;
-    let month = 4;
-    if((item.price > 300 && item.price < 500)) {
+    let month
+    if((item.price > 200 && item.price < 500)) {
         month = 12;
     } else if (item.price > 500 && item.price < 800) {
         month = 24;
+    } else if (item.price < 200){
+        month = 4;
     } else {
         month = 36;
     }
 
     const returnDate = moment().add(15, 'days').format('MMM Do')
+    const pickup = moment().add(2, 'days').format('dddd, MMM Do')
+    const ship = moment().add(3, 'days').format('dddd, MMM Do')
 
     if(isLoading) {
         return <div>Loading...</div>
@@ -46,7 +55,7 @@ const ItemShowPage = () => {
                     <div className="item-left">
                         <div className="item-name">{item.name}</div>
                         <div className="item-pic" style={{textAlign: 'center'}}>
-                            <img width='auto' height='400' style={{margin: '150px'}} src={item.photoUrl} alt="" />
+                            <img width='auto' height='350' style={{margin: '150px'}} src={item.photoUrl} alt="" />
                         </div>
                     </div>
                     <div className="item-right">
@@ -56,7 +65,9 @@ const ItemShowPage = () => {
                                     ${item.price}
                                 </div>
                                 <div className='price-divider'>
-                                    <div className='or'>or</div>
+                                    <div style={{flex: '1 0 40%', borderLeft: '1px', border: '1px solid black', height: '8px'}}></div>
+                                    <div className='item-or'>or</div>
+                                    <div style={{flex: '1 0 40%', borderLeft: '1px', border: '1px solid black', height: '8px'}}></div>
                                 </div>
                                 <div className="payment">
                                     <div className="monthly">
@@ -103,7 +114,8 @@ const ItemShowPage = () => {
                                 </div>
                                 <div className="tech-3">
                                     <FiShield style={{color: "green", marginRight: "10px"}}/>
-                                    Up to 24 months of product protection on most Best Buy purchases, with active membership
+                                    Up to 24 months of product protection on most 
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TechGurus purchases, with active membership
                                 </div>
                                 <div className="tech-4">
                                     <MdHandyman style={{color: "green", marginRight: "10px"}}/>
@@ -112,27 +124,60 @@ const ItemShowPage = () => {
                                 <div className="tech-price">
                                     $199.99 per year
                                 </div>
-                                <div className="learn-abot">
-                                    <button>Purchase Totaltech</button>
+                                <div className="learn-about">
+                                    <button id='total-tech'>Purchase Totaltech</button>
                                 </div>
+                            </div>
+                        </div>
+                        <div className="get-it-container">
+                            <div className="get-it-title" style={{color: "green", fontFamily: "bestbuy-medium", fontSize: ""}}>
+                                Get it in 3 days
+                            </div>
+                            <div className="pick-up" style={{fontSize: "0.8rem"}}>
+                                <MdOutlineStore style={{fontSize: "large"}}/>
+                                <p>Pickup:</p>&nbsp;Order now for pickup on {pickup} at Union Square
+                            </div>
+                            <div className="free-shipping" style={{fontSize: "0.8rem"}}>
+                                <MdLocalShipping style={{fontSize: "large"}} />
+                                <p>Free Shipping:</p>&nbsp;Get it by {ship}.
                             </div>
                         </div>
                         <div className="add-cart-container">
                             <div className="add-cart-button">
-                                <button id='add-cart'> Add to cart</button>
+                                <button id='add-cart'>
+                                    <MdShoppingCart  style={{marginRight: "10px"}}/>
+                                     Add to cart
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
                     <div className="overview-container">
-                        <div className="overview">
-                            <div className="item-desription">{item.description}</div>
-                            <div className="item-details">
-                                <ul>
-                                    {item.details.split(/\r?\n/).map(detail => <li>{detail}</li>)}
-                                </ul>
-                            </div>
-                        </div>
+                                <Accordion style={{height: "100px"}}>
+                                    <AccordionSummary
+                                    expandIcon={<ExpandMoreIcon />}
+                                    aria-controls="panel1a-content"
+                                    id="panel1a-header"
+                                    >
+                                    <Typography style={{fontSize: "1.8rem", paddingTop: "15px"}}>Overview</Typography>
+                                    </AccordionSummary>
+                                    <AccordionDetails>
+                                    <Typography>
+                                    <div className="overview">
+                                        <div className="item-description">
+                                            <div className="description-title">Description</div>
+                                            <div className="description-text">{item.description}</div>
+                                        </div>
+                                        <div className="item-details">
+                                            <div className="details-title">Details</div>
+                                            <ul>
+                                                {item.details.split(/\r?\n/).map(detail => <li>{detail}</li>)}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    </Typography>
+                                    </AccordionDetails>
+                                </Accordion>
                     </div>
             </div>
         );
