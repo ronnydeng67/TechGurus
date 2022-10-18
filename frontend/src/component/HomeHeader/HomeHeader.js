@@ -91,7 +91,7 @@ const HomeHeader = () => {
                     <div className="cart">
                         <i className="fa-solid fa-cart-shopping"></i>
                         {/* <AiOutlineShoppingCart style={{fontSize: "2rem"}}/> */}
-                        <p style={{fontFamily: "bestbuy-medium", fontSize: "1.3rem"}}>&nbsp;Cart</p>
+                        <p style={{fontFamily: "bestbuy-medium", fontSize: "1.3rem"}}>&nbsp;<Link id="cart-link">Cart</Link></p>
                     </div>
                 </div>
             </div>
@@ -116,7 +116,7 @@ const HomeHeader = () => {
                         <button>Recently Views</button>
                     </div>
                     <div className="order-status">
-                        <li><Link to='/' id='order-status' style={{ color: 'white', fontSize: '0.9rem'}}>Order Status</Link></li>
+                        <Link to='/' id='order-status' style={{ color: 'white', fontSize: '0.9rem'}}>Order Status</Link>
                     </div>
                     <div className="Saved-items">
                         <button>Saved Items</button>

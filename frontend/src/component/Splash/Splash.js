@@ -23,6 +23,8 @@ const Splash = () => {
 
     }
 
+    console.log(items)
+
     if(isLoading){
         return <div>Loading....</div> 
     } else {
@@ -44,16 +46,28 @@ const Splash = () => {
                             </div>
                             <div className="today-picks">
                                 <div className="pick-1">
-                                    <Link>{items[0].name}</Link>
+                                    <Link id="pick-1-link" to='/items/1'>
+                                        <img src={items[0].photoUrl} id='pick-1' />
+                                        <p id='pick-name'>{items[0].name.length > 60 ? items[0].name.slice(0, 60) + '...' : items[0].name}</p>
+                                    </Link>
                                 </div>
                                 <div className="pick-2">
-                                    <Link>{items[1].name}</Link>
+                                    <Link id="pick-1-link" to='/items/2'>
+                                        <img src={items[1].photoUrl} id='pick-2' />
+                                        <p id='pick-name'>{items[1].name.length > 60 ? items[1].name.slice(0, 60) + '...' : items[1].name}</p>
+                                    </Link>
                                 </div>
                                 <div className="pick-3">
-                                    <Link>{items[2].name}</Link>
+                                    <Link id="pick-1-link" to='/items/3'>
+                                        <img src={items[2].photoUrl} id='pick-3' />
+                                        <p id='pick-name'>{items[2].name.length > 60 ? items[2].name.slice(0, 60) + '...' : items[2].name}</p>
+                                    </Link>
                                 </div>
                                 <div className="pick-4">
-                                    <Link>{items[3].name}</Link>
+                                    <Link id="pick-1-link" to='/items/4'>
+                                        <img src={items[3].photoUrl} id='pick-4' />
+                                        <p id='pick-name'>{items[3].name.length > 60 ? items[3].name.slice(0, 60) + '...' : items[3].name}</p>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -88,7 +102,13 @@ const Splash = () => {
                                         </div>
                                     </div>
                                     <div className="deal-item">
-                                        {items[4].name}
+                                        <Link id="deal-link" to='/items/5'>
+                                            <img src={items[4].photoUrl} id="deal-pic" />
+                                            <p id="deal-name">{items[4].name.length > 60 ? items[4].name.slice(0, 60) + '...' : items[4].name}</p> 
+                                        </Link>
+                                            <div className="deal-price" style={{color: "black", fontFamily: "inter", fontSize: "0.9rem"}}>
+                                                ${items[4].price}
+                                            </div>
                                     </div>
                                     <div className="bonus-deals">
                                         <Link style={{color: "#0346be", fontSize: 'medium'}}>See bonus deals</Link>
