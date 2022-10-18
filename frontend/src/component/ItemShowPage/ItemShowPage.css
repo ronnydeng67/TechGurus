@@ -74,12 +74,6 @@
     justify-content: space-between;
 }
 
-.total-tech {
-    width: 485px;
-    height: 295px;
-    border: 1px solid black;
-}
-
 .add-cart-container {
     width: 485px;
     height: 85px;
@@ -210,4 +204,56 @@
 
 .return-details {
     font-size: small;
+}
+
+.total-tech-container {
+    width: 485px;
+    height: 295px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.total-tech-box {
+    width: 485px;
+    height: 270px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f1f8ff;
+    justify-content: space-around;
+}
+
+.tech-1 {
+    width: 440px;
+    height: 45px;
+    display: flex;
+    font-family: 'bestbuy-medium';
+}
+
+.inside-tech-1 {
+    width: 335px;
+    height: 41px;
+}
+
+.tech-2 {
+    width: 440px;
+    height: 23px;
+}
+
+.tech-3 {
+    width: 440px;
+    height: 32px;
+}
+
+.tech-4 {
+    width: 440px;
+    height: 23px;
+}
+
+.tech-price {
+    width: 440px;
+    height: 19px;
 }

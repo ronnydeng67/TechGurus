@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 import { fetchItem } from '../../store/items';
 import { FaExchangeAlt } from 'react-icons/fa';
+import { FiHeadphones, FiShield } from 'react-icons/fi';
+import { MdHandyman } from 'react-icons/md';
 import moment from 'moment';
 import './ItemShowPage.css';
 
@@ -33,9 +35,7 @@ const ItemShowPage = () => {
         month = 36;
     }
 
-    const date = new Date();
-    const mm = date.toLocaleString('default', {month: 'long'});
-    const dd = moment().add(15, 'days').format('MMM Do')
+    const returnDate = moment().add(15, 'days').format('MMM Do')
 
     if(isLoading) {
         return <div>Loading...</div>
@@ -82,14 +82,40 @@ const ItemShowPage = () => {
                                     <div className="days-text">
                                         15-DAY FREE & EASY RETURNS
                                         <div className="return-details">
-                                            If received today, the last day to return this item would {dd}.
+                                            If received today, the last day to return this item would {returnDate}.
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div className="total-tech">
-                            Total Tech
+                        <div className="total-tech-container">
+                            <div className="total-tech-box">
+                                <div className="tech-1">
+                                    TechGurus
+                                    TotalTech
+                                    <div className="inside-tech-1">
+                                        The membership you and your tech deserve.
+                                    </div>
+                                </div>
+                                <div className="tech-2">
+                                    <FiHeadphones style={{color: "green", marginRight: "10px"}}/>
+                                    Free TechSquad tech supoort available 24/7/365
+                                </div>
+                                <div className="tech-3">
+                                    <FiShield style={{color: "green", marginRight: "10px"}}/>
+                                    Up to 24 months of product protection on most Best Buy purchases, with active membership
+                                </div>
+                                <div className="tech-4">
+                                    <MdHandyman style={{color: "green", marginRight: "10px"}}/>
+                                    Free delivery and standard installation
+                                </div>
+                                <div className="tech-price">
+                                    $199.99 per year
+                                </div>
+                                <div className="learn-abot">
+                                    <button>Purchase Totaltech</button>
+                                </div>
+                            </div>
                         </div>
                         <div className="add-cart-container">
                             <div className="add-cart-button">
