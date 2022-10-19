@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { Link, useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, Redirect, useParams } from 'react-router-dom';
 import { fetchItem } from '../../store/items';
 import { FaExchangeAlt } from 'react-icons/fa';
 import { FiHeadphones, FiShield } from 'react-icons/fi';
 import { MdHandyman, MdOutlineStore, MdLocalShipping, MdShoppingCart } from 'react-icons/md';
+
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
@@ -12,14 +13,19 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import moment from 'moment';
 import './ItemShowPage.css';
+import { addToCart, editCart } from '../../store/carts';
+import { useHistory } from 'react-router-dom';
+
 
 const ItemShowPage = () => {
-
+    const history = useHistory();
     const { itemId } = useParams();
-    // const item = useSelector(state => state.items[itemId])
     const dispatch = useDispatch();
     const [item, setItem] = useState({})
     const [isLoading, setIsLoading] = useState(true)
+    const sessionUser = useSelector(state => state.session.user);
+    const state = useSelector(state => state);
+
 
     useEffect(() => {
         dispatch(fetchItem(itemId)).then((res) => {
@@ -29,6 +35,36 @@ const ItemShowPage = () => {
         })
     },[itemId, dispatch])
 
+    // console.log(itemId, Object.values(state.carts)[0].itemId)
+
+    const addItem = e => {
+        // e.preventDefault();
+        if (state.session.user) {
+            dispatch(addToCart({itemId: itemId, userId: sessionUser.id, quantity: 1}))
+            
+            // if (Object.values(state.carts).every(cart => {
+            //     if(cart.itemId === parseInt(itemId)) {
+            //         console.log(cart)
+            //         dispatch(editCart(
+            //             {
+            //                 id: cart.id,
+            //                 itemId: itemId,
+            //                 userId: sessionUser.id, 
+            //                 quantity: cart.quantity + 1
+            //             }
+            //             ))
+            //             return false;
+            //     } else {
+            //         return true;
+            //     }
+            // })
+            // ) {
+            //     dispatch(addToCart({itemId: itemId, userId: sessionUser.id, quantity: 1}))
+            // }
+        } else {
+            history.push('/login')
+        }
+    }
 
     let month
     if((item.price > 200 && item.price < 500)) {
@@ -79,7 +115,7 @@ const ItemShowPage = () => {
                                         {month}-Month financing
                                     </div>
                                     <div className="show-more">
-                                        <Link>Show me how </Link>
+                                        <Link to="/">Show me how </Link>
                                     </div>
                                 </div>
                             </div>
@@ -143,7 +179,7 @@ const ItemShowPage = () => {
                         </div>
                         <div className="add-cart-container">
                             <div className="add-cart-button">
-                                <button id='add-cart'>
+                                <button id='add-cart' onClick={addItem}>
                                     <MdShoppingCart  style={{marginRight: "10px"}}/>
                                      Add to cart
                                 </button>

@@ -58,7 +58,6 @@ export const restoreSession = () => async dispatch => {
     storeCSRFToken(response);
     const data = await response.json();
     storeCurrentUser(data.user);
-    debugger
     dispatch(setCurrentUser(data.user));
     return response;
 }

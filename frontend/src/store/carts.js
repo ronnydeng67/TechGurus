@@ -1,14 +1,19 @@
+import csrfFetch from "./csrfFetch";
 import { SET_CURRENT_USER } from "./session";
 export const ADD_CART = '/ADD_CART'
+export const RECEIVE_CART = '/RECEIVE_CART';
 export const RECEIVE_CARTS = '/RECEIVE_CARTS';
 export const REMOVE_CART = '/REMOVE_CART';
-// export const REMOVE_ITEMS = '/REMOVE_ITEMS';
 
 const receiveCarts = (carts) => ({
     type: RECEIVE_CARTS,
     carts
 })
 
+const receiveCart = (cart) => ({
+    type: RECEIVE_CART,
+    cart
+})
 
 const addCart = (cart) => ({
     type: ADD_CART,
@@ -21,30 +26,39 @@ const removeCart = (cartId) => ({
 })
 
 export const fetchCarts = () => async dispatch => {
-    const res = await fetch('/api/carts')
+    const res = await csrfFetch('/api/carts')
     const data = await res.json();
     dispatch(receiveCarts(data));
-    return data;
 }
 
-export const addToCart = (cart) => async disptch => {
+export const editCart = (cart) => async dispatch => {
+    const res = await csrfFetch(`/api/carts/${cart.id}`, {
+        method: "PATCH",
+        body: JSON.stringify(cart),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    const data = await res.json();
+    dispatch(receiveCart(data));
+}
+
+export const addToCart = (cart) => async dispatch => {
     const { userId, itemId, quantity } = cart;
-    const res = await fetch(`api/carts/`, {
+    const res = await csrfFetch(`/api/carts/`, {
         method: 'post',
         body: JSON.stringify(cart)
     })
     const data = await res.json();
-    disptch(addCart(data))
-    return data;
+    dispatch(addCart(data))
 }
 
 
-export const deleteItem = (cartId) => async disptch => {
-    const res = await fetch(`/api/carts/${cartId}`, {
+export const deleteItem = (cartId) => async dispatch => {
+    const res = await csrfFetch(`/api/carts/${cartId}`, {
         method: 'DELETE'
     })
-    disptch(removeCart(cartId))
-    return res;
+    dispatch(removeCart(cartId))
 }
 
 const cartReducer = (state = {}, action) => {
@@ -54,13 +68,15 @@ const cartReducer = (state = {}, action) => {
             if(!action.payload) return state;
             return { ...state, ...action.payload.carts}
         case ADD_CART:
-            nextState[action.cart.itemId] = action.itemId
+            nextState[action.cart.id] = action.cart
             return nextState;
         case REMOVE_CART:
             delete nextState[action.cartId]
             return nextState;
         case RECEIVE_CARTS:
             return action.carts;
+        case RECEIVE_CART:
+            nextState[action.cart.id] = action.cart;
         default:
             return state;
     }
@@ -120,15 +136,7 @@ export default cartReducer;
 //     return res
 // }
 
-// export const editCart = (item) => async dispatch => {
-//     const res = await fetch(`/api/carts/${item.id}`, {
-//         method: "patch",
-//         body: JSON.stringify(item)
-//     })
-//     const data = await res.json();
-//     dispatch(updateCart(data));
-//     return data;
-// }
+
 
 // const cartReducer = (state = {}, action) => {
 //     const nextState = {...state}

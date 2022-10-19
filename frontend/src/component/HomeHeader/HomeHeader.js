@@ -94,7 +94,7 @@ const HomeHeader = () => {
                     <div className="cart">
                         <i className="fa-solid fa-cart-shopping"></i>
                         {/* <AiOutlineShoppingCart style={{fontSize: "2rem"}}/> */}
-                        <p style={{fontFamily: "bestbuy-medium", fontSize: "1.3rem"}}>&nbsp;<Link to={`carts/${userId}`} id="cart-link">Cart</Link></p>
+                        <p style={{fontFamily: "bestbuy-medium", fontSize: "1.3rem"}}>&nbsp;<Link to={`/carts/${userId}`} id="cart-link">Cart</Link></p>
                     </div>
                 </div>
             </div>

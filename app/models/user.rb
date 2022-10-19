@@ -21,6 +21,10 @@ class User < ApplicationRecord
 
     has_many :carts
 
+    has_many :items,
+        through: :carts,
+        source: :item
+
     def self.find_by_credentials(email, password)
        user = User.find_by(email: email)
        user&.authenticate(password)

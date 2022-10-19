@@ -39,7 +39,7 @@ function App() {
             <Header />
             <SignUpFormPage/>
           </Route>
-          <Route path='/carts/:cartId'>
+          <Route exact path='/carts/:cartId'>
             <Cart />
           </Route>
         </Switch>

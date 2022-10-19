@@ -7,7 +7,7 @@ const Cart = () => {
     const disptach = useDispatch();
     const cart = useSelector(state => state)
 
-    console.log(cart)
+    // console.log(cart)
 
     useEffect(() => {
         setIsLoading(false)

@@ -1,5 +1,7 @@
 class Api::CartsController < ApplicationController
     # before_action :require_logged_in
+    wrap_parameters include: Cart.attribute_names + ["userId", "itemId"]
+
 
     def index
         @carts = current_user.carts
@@ -7,7 +9,14 @@ class Api::CartsController < ApplicationController
     end
 
     def create
-        @cart = Cart.new(car_params)
+        @cart = Cart.find_by(item_id: params[:item_id], user_id: params[:user_id])
+        
+        if @cart
+            @cart.quantity += 1
+        else
+            @cart = Cart.new(cart_params)
+        end
+        
         if @cart.save
             render :show
         else
@@ -15,14 +24,14 @@ class Api::CartsController < ApplicationController
         end
     end
 
-    # def update
-    #     @cart = Cart.find(params[:cart][:item_id])
-    #     if @cart.update(cart_params) && @cart
-    #         render :show
-    #     else
-    #         render json: {errors: @cart.errors.full_messages}, status: 422
-    #     end
-    # end
+    def update
+        @cart = Cart.find(params[:id])
+        if @cart.update(cart_params) && @cart
+            render :show
+        else
+            render json: {errors: @cart.errors.full_messages}, status: 422
+        end
+    end
 
     def show
         @cart = Cart.find(params[:id])
