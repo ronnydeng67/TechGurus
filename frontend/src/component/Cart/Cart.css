@@ -1,0 +1,58 @@
+@font-face {
+	font-family: 'bestbuy';
+	src: url('../../font/HumanSans-Regular.otf');
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: 'bestbuy-medium';
+	src: url('../../font/HumanSans-Medium.otf');
+	font-weight: bold;
+}
+
+@font-face {
+	font-family: 'bestbuy-light';
+	src: url('../../font/HumanSans-Light.otf');
+	font-weight: light;
+}
+
+* {
+    margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	list-style: none;
+	font-family: 'bestbuy', sans-serif;
+}
+
+.cart-page {
+    width: 100%;
+    display: flex;
+}
+
+.cart-item-list {
+    width: 1000px;
+    height: 700px;
+    border: 1px solid black;
+    margin-right: 40px;
+    margin-left: 167px;
+}
+
+.right-bar {
+    width: 475px;
+    border: 1px solid black;
+    position: fixed;
+    top: 117px;
+    right: 130px;
+    height: 700px;
+
+}
+
+.cart-title {
+    margin-top: 30px;
+    height: 32px;
+    font-size: x-large;
+    font-family: 'bestbuy-medium';
+    border: 1px solid black;
+}

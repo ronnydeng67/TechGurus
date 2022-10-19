@@ -1,9 +1,9 @@
-class CartsController < ApplicationController
+class Api::CartsController < ApplicationController
     # before_action :require_logged_in
 
     def index
         @carts = current_user.carts
-        render "api/items/index"
+        render :index
     end
 
     def create
@@ -15,14 +15,14 @@ class CartsController < ApplicationController
         end
     end
 
-    def update
-        @cart = Cart.find(params[:cart][:item_id])
-        if @cart.update(cart_params) && @cart
-            render :show
-        else
-            render json: {errors: @cart.errors.full_messages}, status: 422
-        end
-    end
+    # def update
+    #     @cart = Cart.find(params[:cart][:item_id])
+    #     if @cart.update(cart_params) && @cart
+    #         render :show
+    #     else
+    #         render json: {errors: @cart.errors.full_messages}, status: 422
+    #     end
+    # end
 
     def show
         @cart = Cart.find(params[:id])

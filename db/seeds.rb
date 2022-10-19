@@ -228,20 +228,20 @@ MagSafe Charging Case with speaker and lanyard loop'
 
 
     Cart.create!(
-      userId: 1,
-      itemId: 2,
+      user_id: 1,
+      item_id: 2,
       quantity: 2
     )
 
     Cart.create!(
-      userId: 1,
-      itemId: 3,
+      user_id: 1,
+      item_id: 3,
       quantity: 1
     )
 
     Cart.create!(
-      userId: 2,
-      itemId: 4,
+      user_id: 2,
+      item_id: 4,
       quantity: 1
     )
     

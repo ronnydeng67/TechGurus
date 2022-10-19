@@ -46,8 +46,10 @@ const HomeHeader = () => {
         setShowAccount(false)
     }
 
+    let userId = null;
     let sessionLinks;
     if (sessionUser) {
+        userId = sessionUser.id;
         sessionLinks = (
         <button onClick={handleClick} id="acc">Logout</button>
         );
@@ -59,7 +61,7 @@ const HomeHeader = () => {
         </>
         );
     }
-    
+
 
     return (
         <div className="home-header">
@@ -92,7 +94,7 @@ const HomeHeader = () => {
                     <div className="cart">
                         <i className="fa-solid fa-cart-shopping"></i>
                         {/* <AiOutlineShoppingCart style={{fontSize: "2rem"}}/> */}
-                        <p style={{fontFamily: "bestbuy-medium", fontSize: "1.3rem"}}>&nbsp;<Link id="cart-link">Cart</Link></p>
+                        <p style={{fontFamily: "bestbuy-medium", fontSize: "1.3rem"}}>&nbsp;<Link to={`carts/${userId}`} id="cart-link">Cart</Link></p>
                     </div>
                 </div>
             </div>

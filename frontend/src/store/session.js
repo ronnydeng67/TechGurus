@@ -1,11 +1,11 @@
 import csrfFetch from "./csrfFetch";
 
-const SET_CURRENT_USER = 'session/SET_CURRENT_USER';
+export const SET_CURRENT_USER = 'session/SET_CURRENT_USER';
 const REMOVE_CURRENT_USER = 'session/REMOVE_CURRENT_USER';
 
-const setCurrentUser = (user) => ({
+const setCurrentUser = (payload) => ({
     type: SET_CURRENT_USER,
-    user
+    payload
 })
 
 const removeCurrentUser = () => ({
@@ -23,7 +23,8 @@ export const loginUser = (user) => async dispatch => {
     })
     const data = await res.json();
     storeCurrentUser(data.user);
-    dispatch(setCurrentUser(data.user))
+
+    dispatch(setCurrentUser(data))
     return res
 }
 
@@ -57,6 +58,7 @@ export const restoreSession = () => async dispatch => {
     storeCSRFToken(response);
     const data = await response.json();
     storeCurrentUser(data.user);
+    debugger
     dispatch(setCurrentUser(data.user));
     return response;
 }
@@ -79,7 +81,8 @@ const sessionReducer = (state = initState, action) => {
     const nextState = {...state}
     switch(action.type) {
         case SET_CURRENT_USER: 
-            return {...nextState, user: action.user}
+            if(!action.payload) return state;
+            return {...nextState, user: action.payload.user}
         case REMOVE_CURRENT_USER:
             return {...nextState, user: null}
         default:

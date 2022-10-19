@@ -10,7 +10,7 @@
 #  updated_at :datetime         not null
 #
 class Cart < ApplicationRecord
-    validate :user_id, :item_id, :quantity, presence: true
+    validates :user_id, :item_id, :quantity, presence: true
 
     belongs_to :user
     belongs_to :item

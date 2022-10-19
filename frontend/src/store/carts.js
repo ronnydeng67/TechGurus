@@ -1,7 +1,7 @@
-
-export const RECEIVE_CARTS = '/RECEIVE_CARTS'
-export const RECEIVE_CART = '/RECEIVE_CART';
-export const REMOVE_CART = '/RECMOVE_CART';
+import { SET_CURRENT_USER } from "./session";
+export const ADD_CART = '/ADD_CART'
+export const RECEIVE_CARTS = '/RECEIVE_CARTS';
+export const REMOVE_CART = '/REMOVE_CART';
 // export const REMOVE_ITEMS = '/REMOVE_ITEMS';
 
 const receiveCarts = (carts) => ({
@@ -10,8 +10,8 @@ const receiveCarts = (carts) => ({
 })
 
 
-const receiveCart = (cart) => ({
-    type: RECEIVE_CART,
+const addCart = (cart) => ({
+    type: ADD_CART,
     cart
 })
 
@@ -20,35 +20,21 @@ const removeCart = (cartId) => ({
     cartId
 })
 
-
-
-export const fetchCarts = (carts) => async disptch => {
-    const res = await fetch(`/api/carts`)
+export const fetchCarts = () => async dispatch => {
+    const res = await fetch('/api/carts')
     const data = await res.json();
-    disptch(receiveCarts(data))
+    dispatch(receiveCarts(data));
     return data;
 }
 
-
-export const editItem = (cart) => async disptch => {
-    const { userId, itemId, quantity } = cart
-    const res = await fetch(`/api/carts/${cart}`, {
-        method: "PATCH",
-        body: JSON.stringify({
-            userId, 
-            itemId,
-            quantity
-        })
+export const addToCart = (cart) => async disptch => {
+    const { userId, itemId, quantity } = cart;
+    const res = await fetch(`api/carts/`, {
+        method: 'post',
+        body: JSON.stringify(cart)
     })
     const data = await res.json();
-    disptch(receiveCart(data))
-    return res
-}
-
-export const fetchCart = (cartId) => async disptch => {
-    const res = await fetch(`api/carts/${cartId}`)
-    const data = await res.json();
-    disptch(receiveCart(data))
+    disptch(addCart(data))
     return data;
 }
 
@@ -64,13 +50,17 @@ export const deleteItem = (cartId) => async disptch => {
 const cartReducer = (state = {}, action) => {
     const nextState = {...state}
     switch(action.type) {
-        case RECEIVE_CART:
-            nextState[action.cart.id] = action.cart;
-        case RECEIVE_CARTS:
-            return {...nextState, ...action.carts};
-        case REMOVE_CART:
-            nextState[action.cartId] = null;
+        case SET_CURRENT_USER:
+            if(!action.payload) return state;
+            return { ...state, ...action.payload.carts}
+        case ADD_CART:
+            nextState[action.cart.itemId] = action.itemId
             return nextState;
+        case REMOVE_CART:
+            delete nextState[action.cartId]
+            return nextState;
+        case RECEIVE_CARTS:
+            return action.carts;
         default:
             return state;
     }
