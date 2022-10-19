@@ -212,14 +212,38 @@ MagSafe Charging Case with speaker and lanyard loop'
   file10 = File.open('app/assets/images/xbox.png')
   item10.photo.attach(io: file10, filename: 'xbox.png')
 
-  puts "Done!"
-
+  
   # item9 = Item.create(
-  #   name: '',
-  #   price: '',
-  #   department: '',
-  #   description: '',
-  #   details: ""
-  # )
+    #   name: '',
+    #   price: '',
+    #   department: '',
+    #   description: '',
+    #   details: ""
+    # )
+    
+    puts "Start cart"
+    Cart.destroy_all
+    puts "doing cart"
+    ApplicationRecord.connection.reset_pk_sequence!('carts')
 
+
+    Cart.create!(
+      userId: 1,
+      itemId: 2,
+      quantity: 2
+    )
+
+    Cart.create!(
+      userId: 1,
+      itemId: 3,
+      quantity: 1
+    )
+
+    Cart.create!(
+      userId: 2,
+      itemId: 4,
+      quantity: 1
+    )
+    
+    puts "Done!"
 end
