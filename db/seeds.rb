@@ -158,5 +158,68 @@ MagSafe Charging Case with speaker and lanyard loop'
   file7 = File.open('app/assets/images/gopro.png')
   item7.photo.attach(io: file7, filename: 'gopro.png')
 
+  item8 = Item.create(
+    name: 'Samsung - Galaxy S22 Ultra 128GB (Unlocked) - Phantom Black',
+    price: '1,199.99',
+    department: 'phone',
+    description: 'The power of our fastest chip ever, long lasting battery, and sophisticated AI enables revolutionary night-time video that’s as clear-as-day. And, for the first time, S Pen with its increased super-powers has been embedded in Galaxy S22 Ultra’s beautifully sleek design. Today, Galaxy S22 Ultra sets an epic standard of smartphone experience.',
+    details: "Shoot videos that rival how epic your life is with stunning 8K recording.
+    Video you capture is effortlessly smooth, thanks to Auto Focus Video Stabilization on Galaxy S22 Ultra.
+    Capture the night with crystal-clear, bright pics and videos, no matter the lighting with Night Mode.
+    Put all your favorite details on display. Portrait Mode auto- detects and adjusts to what you want front and center, making all your photos worthy of a frame.
+    Capture premium detail with 108MP resolution — the highest available on a smartphone.
+    Your favorite content will look even more epic on our brightest display ever with Vision Booster.
+    Power every scroll, click, tap and stream all day long and then some with an intelligent, long-lasting battery."
+  )
+
+  file8 = File.open('app/assets/images/samsung.png')
+  item8.photo.attach(io: file8, filename: 'samsung.png')
+
+  item9 = Item.create(
+    name: 'Bose - QuietComfort Earbuds II True Wireless Noise Cancelling In-Ear Headphones - Triple Black',
+    price: '1,199.99',
+    department: 'audio',
+    description: 'Experience customized audio and acclaimed noise cancellation with Bose QuietComfort Earbuds II True Wireless Noise Cancelling In-Ear Headphones, featuring pioneering CustomTune sound calibration technology that intelligently personalizes the noise cancellation and sound performance to your ears. ',
+    details: "Bose QuietComfort Earbuds II Active Noise Cancelling Headphones contain powerful microphones that detect environmental noise and generate an opposing signal to cancel it, allowing you to tune out distractions and focus on crushing your goals.
+    With high-performance drivers, amps and electronics that are engineered to fit a small package.
+    Capture the night with crystal-clear, bright pics and videos, no matter the lighting with Night Mode.
+    Stay absorbed in the music you love for up to 6 hours on a single charge.
+    You’re in control of your sound. Easily switch between Quiet Mode for maximum noise cancellation and Aware Mode with ActiveSense technology.
+    Take your earphones with you wherever you go. Bose QuietComfort Earbuds II Bluetooth Wireless Earbuds have an IPX4 environmental rating for sweat and water resistance.
+    Each earbud contains two noise-rejecting microphones that focus on the sound of your voice and filter out ambient noise and wind."
+  )
+
+  file9 = File.open('app/assets/images/bose.png')
+  item9.photo.attach(io: file9, filename: 'bose.png')
+
+  file9 = File.open('app/assets/images/samsung.png')
+  item9.photo.attach(io: file9, filename: 'samsung.png')
+
+  item10 = Item.create(
+    name: 'Microsoft - Xbox Series S 512 GB All-Digital Console (Disc-Free Gaming) - White',
+    price: '299.99',
+    department: 'game',
+    description: 'Go all-digital with Xbox Series S and enjoy next-gen performance in the smallest Xbox ever, at a great price. Make the most of every gaming minute with Quick Resume, lightning-fast load times, and gameplay of up to 120 FPS—all powered by Xbox Velocity Architecture.',
+    details: "Go all digital with Xbox Series S and enjoy next-gen gaming at a great price.
+    Make the most of every gaming minute with Quick Resume, lightning-fast load times, and gameplay of up to 120 FPS—all powered by Xbox Velocity Architecture.
+    Stream 4K video on Disney+, Netflix, Amazon, Hulu, Microsoft Movies & TV, and more.
+    Enjoy digital games from four generations of Xbox, with hundreds of optimized titles that look and play better than ever.
+    With Xbox Game Pass Ultimate, enjoy new games on day one like Forza Horizon 5 from Xbox Game Studios, as well as iconic franchises like DOOM from Bethesda Softworks, indie games, and blockbusters.
+    Use most of your Xbox One accessories—including controllers, headsets, and more—on Xbox Series S.
+    Experience the modernized Xbox Wireless Controller, designed for enhanced comfort during gameplay. Stay on target with textured grip and seamlessly capture and share content."
+  )
+
+  file10 = File.open('app/assets/images/xbox.png')
+  item10.photo.attach(io: file10, filename: 'xbox.png')
+
   puts "Done!"
+
+  # item9 = Item.create(
+  #   name: '',
+  #   price: '',
+  #   department: '',
+  #   description: '',
+  #   details: ""
+  # )
+
 end
