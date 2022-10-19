@@ -99,11 +99,11 @@ const HomeHeader = () => {
             <div className="lower-header">
                 <div className="lower-left">
                     <ul className='left-list'>
-                        <li><Link to='signup' className='deal' style={{ color: 'white', fontSize: '0.8rem'}}>Top Deal</Link></li>
-                        <li><Link to='/login' className='deal' style={{ color: 'white', fontSize: '0.8rem'}}>Top Deal</Link></li>
-                        <li><Link to='/' className='deal' style={{ color: 'white', fontSize: '0.8rem'}}>Top Deal</Link></li>
-                        <li><Link to='/' className='deal' style={{ color: 'white', fontSize: '0.8rem'}}>Top Deal</Link></li>
-                        <li><Link to='/' className='deal' style={{ color: 'white', fontSize: '0.8rem'}}>Top Deal</Link></li>
+                        <li><Link to='signup' className='deal' style={{ color: 'white', fontSize: '0.8rem'}}>Computers</Link></li>
+                        <li><Link to='/login' className='deal' style={{ color: 'white', fontSize: '0.8rem'}}>Cameras</Link></li>
+                        <li><Link to='/' className='deal' style={{ color: 'white', fontSize: '0.8rem'}}>Cell Phones</Link></li>
+                        <li><Link to='/' className='deal' style={{ color: 'white', fontSize: '0.8rem'}}>Audio</Link></li>
+                        <li><Link to='/' className='deal' style={{ color: 'white', fontSize: '0.8rem'}}>Video Games</Link></li>
                         <li><Link to='/' className='deal' style={{ color: 'white', fontSize: '0.8rem'}}>Top Deal</Link></li>
                         <li><Link to='/' className='deal' style={{ color: 'white', fontSize: '0.8rem'}}>Top Deal</Link></li>
                         <li><Link to='/' className='deal' style={{ color: 'white', fontSize: '0.8rem'}}>Top Deal</Link></li>

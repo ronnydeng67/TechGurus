@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 import { fetchItem } from '../../store/items';
 import { FaExchangeAlt } from 'react-icons/fa';
@@ -27,10 +27,9 @@ const ItemShowPage = () => {
         }).then(() => {
             setIsLoading(false)
         })
-    },[itemId])
+    },[itemId, dispatch])
 
 
-    let paymentPlans;
     let month
     if((item.price > 200 && item.price < 500)) {
         month = 12;
@@ -162,7 +161,7 @@ const ItemShowPage = () => {
                                     <Typography style={{fontSize: "1.8rem", paddingTop: "15px"}}>Overview</Typography>
                                     </AccordionSummary>
                                     <AccordionDetails>
-                                    <Typography>
+                                    <Typography component={'div'}>
                                     <div className="overview">
                                         <div className="item-description">
                                             <div className="description-title">Description</div>
@@ -171,7 +170,7 @@ const ItemShowPage = () => {
                                         <div className="item-details">
                                             <div className="details-title">Details</div>
                                             <ul>
-                                                {item.details.split(/\r?\n/).map(detail => <li>{detail}</li>)}
+                                                {item.details.split(/\r?\n/).map(detail => <li key={detail}>{detail}</li>)}
                                             </ul>
                                         </div>
                                     </div>
