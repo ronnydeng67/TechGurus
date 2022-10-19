@@ -124,5 +124,39 @@ MagSafe Charging Case with speaker and lanyard loop'
   file5 = File.open('app/assets/images/ps5.png')
   item5.photo.attach(io: file5, filename: 'ps5.png')
 
+  item6 = Item.create(
+    name: 'Alienware - x15 R2 15.6" FHD Gaming Laptop - 12th Gen Intel Core i7 - 16GB Memory - NVIDIA GeForce RTX 3070 Ti - 1TB SSD - Lunar Light',
+    price: '2699.99',
+    department: 'computer',
+    description: 'Introducing the new Alienware x15 R2 - our thinnest 15" laptop redefines how a gaming PC should look and feel, with new NVIDIA GeForce RTX graphics, Alienware Cryo-tech, Dolby Atmos and Dolby Vision.',
+    details: "Windows 11 has all the power and security of Windows 10 with a redesigned and refreshed look. It also comes with new tools, sounds, and apps. Every detail has been considered.
+    1920 x 1080 resolution with native 1080p support to showcase your games and HD movies with impressive color and clarity. Energy-efficient LED backlight.
+    Powerful twelve-core, twenty-way processing performance. Intel Turbo Boost Technology delivers dynamic extra power when you need it, while increasing energy efficiency when you don't.
+    Reams of high-bandwidth DDR4 RAM to smoothly run your graphics-heavy PC games and video-editing applications, as well as numerous programs and browser tabs all at once.
+    While offering less storage space than a hard drive, a flash-based SSD has no moving parts, resulting in faster start-up times and data access, no noise, and reduced heat production and power draw on the battery.
+    Backed by 8GB GDDR6 dedicated video memory for a fast, advanced GPU to fuel your games.
+    An industry-first design uses four intelligently controlled and programmable fans to dissipate heat."
+  )
+
+  file6 = File.open('app/assets/images/alien.png')
+  item6.photo.attach(io: file6, filename: 'alien.png')
+
+  item7 = Item.create(
+    name: 'GoPro - HERO9 Black 5K and 20 MP Streaming Action Camera - Black',
+    price: '349.99',
+    department: 'camera',
+    description: 'Record captivating vlogs and take brilliant photos with this black GoPro HERO9 camera. The high-quality CMOS sensor captures 5K video and up to 20.0MP images for stunning clarity, and support for a microSD card offers customizable storage space. This water-resistant GoPro HERO9 camera allows for use at the beach or pool.',
+    details: "Shoot stunning video with up to 5K resolution, perfect for maintaining serious detail even when zooming in. Packing a new 23.6MP sensor that’s an absolute powerhouse, HERO9 Black brings lifelike image sharpness, fluid motion and in-camera horizon leveling that always impresses.
+    Capture crisp, pro-quality photos with 20MP clarity. And with SuperPhoto, HERO9 Black can automatically pick all the best image processing for you, so it’s super easy to nail the shot.
+    No more carrying a separate frame. Just flip out the folding fingers, attach your camera to any mount and go.
+    A new, larger rear touch screen with touch zoom on HERO9 Black should feel instantly familiar and a dazzling new front display makes for easy framing and intuitive camera control.
+    While offering less storage space than a hard drive, a flash-based SSD has no moving parts, resulting in faster start-up times and data access, no noise, and reduced heat production and power draw on the battery.
+    Experience ultimate smoothness with our most advanced video stabilization ever. HyperSmooth 3.0 enables in-camera horizon leveling and boost in all settings.
+    In-camera horizon leveling (up to 45% tilt) is now possible with the new Linear + Horizon Leveling digital lens-helping your footage stay stable and straight."
+  )
+
+  file7 = File.open('app/assets/images/gopro.png')
+  item7.photo.attach(io: file7, filename: 'gopro.png')
+
   puts "Done!"
 end
