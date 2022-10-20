@@ -175,3 +175,10 @@ button {
 #acc {
 	font-family: 'bestbuy';
 }
+
+#cart-num {
+	position: absolute;
+	right: 10%;
+	top: 15%;
+	color: red;
+}

@@ -8,6 +8,7 @@ import './HomeHeader.css';
 import LoginForm from './TheModal';
 import ShowAccForm from './ShowAccModal';
 import { getCarts } from '../../store/carts';
+import Badge from '@mui/material/Badge';
 
 const style = {
     '& .MuiModal-root': {
@@ -105,9 +106,9 @@ const HomeHeader = () => {
                     </div>
                     <div className="cart">
                         <i className="fa-solid fa-cart-shopping"></i>
+                        {carts && <span id='cart-num'>{cartQuan}</span>}
                         {/* <AiOutlineShoppingCart style={{fontSize: "2rem"}}/> */}
                         <p style={{fontFamily: "bestbuy-medium", fontSize: "1.3rem"}}>&nbsp;<Link to={`/carts`} id="cart-link">Cart</Link></p>
-                        {carts && <span>{cartQuan}</span>}
                     </div>
                 </div>
             </div>
