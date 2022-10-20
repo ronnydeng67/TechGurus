@@ -106,7 +106,7 @@ const HomeHeader = () => {
                     </div>
                     <div className="cart">
                         <i className="fa-solid fa-cart-shopping"></i>
-                        {carts && <span id='cart-num'>{cartQuan}</span>}
+                        {carts && <span id='cart-num'>&nbsp;{cartQuan}</span>}
                         {/* <AiOutlineShoppingCart style={{fontSize: "2rem"}}/> */}
                         <p style={{fontFamily: "bestbuy-medium", fontSize: "1.3rem"}}>&nbsp;<Link to={`/carts`} id="cart-link">Cart</Link></p>
                     </div>

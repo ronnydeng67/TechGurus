@@ -25,7 +25,8 @@ const Cart = () => {
     // console.log('okokokokok')
     if (Object.values(cart).length > 0) {
         itemList = Object.values(cart).map(item => {
-            totalPrice += (parseInt(item.price) * item.quantity);
+            totalPrice += (item.price * item.quantity);
+            console.log(parseInt(item.price))
             return <CartItem key={item.id} item={item} />
         })
     } else {
@@ -42,7 +43,6 @@ const Cart = () => {
         e.preventDefault();
     }
 
-    // console.log(totalPrice)
 
     if (cart) {
         return (
@@ -80,7 +80,7 @@ const Cart = () => {
                         <hr className='cart-hr'/>
                         <div className="order-total">
                             <div className="total-text">Total</div>
-                            <div className="total-num">{totalPrice}</div>
+                            <div className="total-num">${parseFloat(totalPrice * 1.0875).toFixed(2)}</div>
                         </div>
                         <div className="checkout-container">
                             <button id="checkout" onClick={handleCheckout}>Checkout</button>

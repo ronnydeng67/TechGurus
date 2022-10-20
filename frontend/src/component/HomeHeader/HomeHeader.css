@@ -119,6 +119,7 @@
 	font-size: x-large;
 	padding-top: 25px;
 	color: white;
+	position: relative;
 }
 
 .lower-header {
@@ -177,8 +178,14 @@ button {
 }
 
 #cart-num {
+	border-radius: 50%;
+	width: 19px;
+	height: 19px;
+	background: yellow;
 	position: absolute;
-	right: 10%;
-	top: 15%;
-	color: red;
+	right: 40px;
+	top: 20%;
+	color: black;
+	font-size: medium;
+	margin-left: 5px;
 }
