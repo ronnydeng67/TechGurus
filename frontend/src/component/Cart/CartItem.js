@@ -18,15 +18,18 @@ const CartItem = ({item}) => {
     }, [dispatch, itemId])
 
     const updateQuantity = e => {
-        console.log(typeof(parseInt(e.target.value)))
-        dispatch(editCart({id: cartId, itemId: itemId, userId: sessionUser.id, quantity: parseInt(e.target.value)}))
-        setNewQuantity(e.target.value)
+        console.log(typeof e.target.value)
+        setNewQuantity(parseInt(e.target.value))
     }
 
     const handleRemove = e => {
         e.preventDefault();
         dispatch(deleteItem(cartId))
     }
+
+    useEffect(() => {
+        dispatch(editCart({id: cartId, itemId: itemId, userId: sessionUser.id, quantity: newQuantity}))
+    },[newQuantity])
 
 
     if (cartItem) {

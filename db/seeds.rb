@@ -160,7 +160,7 @@ MagSafe Charging Case with speaker and lanyard loop'
 
   item8 = Item.create(
     name: 'Samsung - Galaxy S22 Ultra 128GB (Unlocked) - Phantom Black',
-    price: '1,199.99',
+    price: '1199.99',
     department: 'phone',
     description: 'The power of our fastest chip ever, long lasting battery, and sophisticated AI enables revolutionary night-time video that’s as clear-as-day. And, for the first time, S Pen with its increased super-powers has been embedded in Galaxy S22 Ultra’s beautifully sleek design. Today, Galaxy S22 Ultra sets an epic standard of smartphone experience.',
     details: "Shoot videos that rival how epic your life is with stunning 8K recording.
@@ -177,7 +177,7 @@ MagSafe Charging Case with speaker and lanyard loop'
 
   item9 = Item.create(
     name: 'Bose - QuietComfort Earbuds II True Wireless Noise Cancelling In-Ear Headphones - Triple Black',
-    price: '1,199.99',
+    price: '299.99',
     department: 'audio',
     description: 'Experience customized audio and acclaimed noise cancellation with Bose QuietComfort Earbuds II True Wireless Noise Cancelling In-Ear Headphones, featuring pioneering CustomTune sound calibration technology that intelligently personalizes the noise cancellation and sound performance to your ears. ',
     details: "Bose QuietComfort Earbuds II Active Noise Cancelling Headphones contain powerful microphones that detect environmental noise and generate an opposing signal to cancel it, allowing you to tune out distractions and focus on crushing your goals.
@@ -192,8 +192,6 @@ MagSafe Charging Case with speaker and lanyard loop'
   file9 = File.open('app/assets/images/bose.png')
   item9.photo.attach(io: file9, filename: 'bose.png')
 
-  file9 = File.open('app/assets/images/samsung.png')
-  item9.photo.attach(io: file9, filename: 'samsung.png')
 
   item10 = Item.create(
     name: 'Microsoft - Xbox Series S 512 GB All-Digital Console (Disc-Free Gaming) - White',

@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchItems, getItems } from '../../store/items';
 import './Splash.css';
+import SplashItem from './SplashItem';
 
 const Splash = () => {
     const dispatch = useDispatch();
@@ -19,13 +20,23 @@ const Splash = () => {
         })
     }, [])
 
+    const jumpToDeal = e => {
+        e.preventDefault()
+        return <a href="#deal-section"></a>
+    }
+
     const handleClearance = (e) => {
         e.preventDefault();
 
     }
 
-    // console.log(items)
+    function shuffle(arr) {
+        return arr.sort(() => Math.random() - 0.5)
+    }
 
+    let splashItems = []
+    // splashItems = shuffle(items).map(item => <SplashItem key={item.id} item={item}/>)
+    splashItems = items.map(item => <SplashItem key={item.id} item={item}/>)
     if(isLoading){
         return <div>Loading....</div> 
     } else {
@@ -37,7 +48,8 @@ const Splash = () => {
                             Deal Mode Activated
                         </div>
                         <div className="top-deal-button">
-                            <button id="shop-now">Shop Now</button>
+                            <button id="shop-now"><a href="#deal-section" id="link-shop-now">Shop now</a></button>
+                            {/* <a href="#deal-section" id="shop-now">Shop now</a> */}
                         </div>
                     </div>
                     <div className="top-right">
@@ -117,6 +129,14 @@ const Splash = () => {
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div id="deal-section"className="deal-center">
+                    <div className="splash-divider">
+                        Top Deal
+                    </div>
+                    <div className="deal-container">
+                        {splashItems}
                     </div>
                 </div>
             </div>

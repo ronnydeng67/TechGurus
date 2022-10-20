@@ -20,12 +20,14 @@ const Cart = () => {
     if (!sessionUser) return history.push('/login');
     let itemList = [];
 
+
     let totalPrice = 0;
     if (Object.values(cart).length > 0) {
-        itemList = Object.values(cart).map(item => (
-            // totalPrice += (item.price)
-        <CartItem key={item.id} item={item} />)
-    )} else {
+        itemList = Object.values(cart).map(item => {
+            totalPrice += (item.price);
+            return <CartItem key={item.id} item={item} />
+        })
+    } else {
         itemList = (
         <div className='empty-cart-container'>
             Your Cart is Currently empty
@@ -39,7 +41,6 @@ const Cart = () => {
         e.preventDefault();
     }
 
-    console.log(Object.values(cart).length)
 
     if (cart) {
         return (

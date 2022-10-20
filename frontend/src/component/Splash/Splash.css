@@ -275,3 +275,71 @@
     width: 100%;
     padding-left: 2px;
 }
+
+.deal-center {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.deal-container {
+    width: 1600px;
+    height: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.splash-item-container {
+    width: 395px;
+    height: 485px;
+    border: 1px solid #e0e6ef;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+}
+
+.splash-item-wrap {
+    width: 300px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+#splash-item-pic {
+    width: 200px;
+    height: auto;
+}
+
+.splash-item-price {
+    font-family: 'inter', sans-serif;
+}
+
+.splash-item-text {
+    text-align: center;
+}
+
+.splash-divider {
+    width: 1580px;
+    height: auto;
+    font-size: xx-large;
+    font-family: 'bestbuy-medium';
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+
+#link-shop-now:hover {
+    text-decoration: none;
+    color: white;
+}
+
+#link-shop-now {
+    font-family: 'bestbuy-medium';
+}
