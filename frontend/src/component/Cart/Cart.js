@@ -22,9 +22,10 @@ const Cart = () => {
 
 
     let totalPrice = 0;
+    // console.log('okokokokok')
     if (Object.values(cart).length > 0) {
         itemList = Object.values(cart).map(item => {
-            totalPrice += (item.price);
+            totalPrice += (parseInt(item.price) * item.quantity);
             return <CartItem key={item.id} item={item} />
         })
     } else {
@@ -41,6 +42,7 @@ const Cart = () => {
         e.preventDefault();
     }
 
+    // console.log(totalPrice)
 
     if (cart) {
         return (
@@ -69,10 +71,10 @@ const Cart = () => {
                                 Estimated Saled Tax <br />
                             </div>
                             <div className="order-price">
-                                $2133 <br />
+                                ${totalPrice}<br />
                                 Free <br />
                                 Free <br />
-                                $32 <br />
+                                ${parseFloat((totalPrice * 0.0875)).toFixed(2)} <br />
                             </div>
                         </div>
                         <hr className='cart-hr'/>

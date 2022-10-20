@@ -25,6 +25,8 @@ const removeCart = (cartId) => ({
     cartId
 })
 
+export const getCarts = ({carts}) => ( carts ? Object.values(carts) : [] ) 
+
 export const fetchCarts = () => async dispatch => {
     const res = await csrfFetch('/api/carts')
     const data = await res.json();
@@ -74,9 +76,11 @@ const cartReducer = (state = {}, action) => {
             delete nextState[action.cartId]
             return nextState;
         case RECEIVE_CARTS:
+            if (!action.carts) return state;
             return action.carts;
         case RECEIVE_CART:
             nextState[action.cart.id] = action.cart;
+            return nextState;
         default:
             return state;
     }

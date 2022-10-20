@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const SplashItem = (item) => {
 
-    console.log(item)
+    // console.log(item)
     return (
         <div className="splash-item-container">
             <div className="splash-item-wrap">

@@ -18,7 +18,6 @@ const CartItem = ({item}) => {
     }, [dispatch, itemId])
 
     const updateQuantity = e => {
-        console.log(typeof e.target.value)
         setNewQuantity(parseInt(e.target.value))
     }
 
@@ -28,8 +27,8 @@ const CartItem = ({item}) => {
     }
 
     useEffect(() => {
-        dispatch(editCart({id: cartId, itemId: itemId, userId: sessionUser.id, quantity: newQuantity}))
-    },[newQuantity])
+        dispatch(editCart({...item, quantity: newQuantity}));
+    },[dispatch, newQuantity])
 
 
     if (cartItem) {
@@ -48,7 +47,7 @@ const CartItem = ({item}) => {
 
                     <div className="quantity-list">
                         <div className="select">
-                            <select id="select" value={newQuantity} onChange={updateQuantity}> {/*need on change*/}
+                            <select id="select" defaultValue={item.quantity} onChange={updateQuantity}> {/*need on change*/}
                                 <option value={1} selected>1</option>
                                 <option value={2}>2</option>
                                 <option value={3}>3</option>

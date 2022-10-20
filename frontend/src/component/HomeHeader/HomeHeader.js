@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {  useHistory, NavLink, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
@@ -7,6 +7,7 @@ import { HiMagnifyingGlass } from "react-icons/hi2";
 import './HomeHeader.css';
 import LoginForm from './TheModal';
 import ShowAccForm from './ShowAccModal';
+import { getCarts } from '../../store/carts';
 
 const style = {
     '& .MuiModal-root': {
@@ -30,21 +31,26 @@ const HomeHeader = () => {
     const history = useHistory();
     const [showAccount, setShowAccount] = useState(false);
     const [search, setSearch] = useState("");
-
+    const carts = useSelector(getCarts);
+    // const[itemCount, setItemCount] = useState(Object.values(carts).length);
+    // console.log(itemCount);
     const handleClick = () => {
             dispatch(sessionActions.logoutUser());
     }
-    // console.log("showAccount: ", showAccount)
     const handleAccOpen = () => {
         console.log('open run')
         setShowAccount(true)
     }
 
-    const handleAccClose = () => {
-        // console.log('open close')
+    // let itemCount = 0;
+    // Object.values(carts).map(cart => {
+    //     itemCount += cart.quantity
+    //     return itemCount
+    // })
 
-        setShowAccount(false)
-    }
+        
+    useEffect(()=>{
+    }, [carts])
 
     let userId = null;
     let sessionLinks;
@@ -62,6 +68,12 @@ const HomeHeader = () => {
         );
     }
 
+    let cartQuan = 0
+    if (carts.length > 0) {
+        carts.forEach(cart => {
+            cartQuan += cart.quantity
+        })
+    }
 
     return (
         <div className="home-header">
@@ -95,6 +107,7 @@ const HomeHeader = () => {
                         <i className="fa-solid fa-cart-shopping"></i>
                         {/* <AiOutlineShoppingCart style={{fontSize: "2rem"}}/> */}
                         <p style={{fontFamily: "bestbuy-medium", fontSize: "1.3rem"}}>&nbsp;<Link to={`/carts`} id="cart-link">Cart</Link></p>
+                        {carts && <span>{cartQuan}</span>}
                     </div>
                 </div>
             </div>
