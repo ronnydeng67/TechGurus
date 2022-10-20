@@ -29,24 +29,25 @@
 .cart-page {
     width: 100%;
     display: flex;
+    justify-content: center;
+    background-color: #f0f2f4;
 }
 
 .cart-item-list {
-    width: 1000px;
-    height: 700px;
-    border: 1px solid black;
+    width: 1072px;
+    height: 1000px;
+    /* border: 1px solid black; */
     margin-right: 40px;
-    margin-left: 167px;
+    display: flex;
+    flex-direction: column;
 }
 
 .right-bar {
     width: 475px;
     border: 1px solid black;
-    position: fixed;
-    top: 117px;
-    right: 130px;
-    height: 700px;
-
+    position: sticky;
+    top: 0;
+    overflow: hidden;
 }
 
 .cart-title {
@@ -54,5 +55,89 @@
     height: 32px;
     font-size: x-large;
     font-family: 'bestbuy-medium';
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    margin-bottom: 30px;
+}
+
+#item-pic {
+    width: 100px;
+    height: auto;
+    margin: 20px;
+}
+
+.inner {
+    width: 100%;
+    height: auto;
+    /* border: 1px solid black; */
+}
+
+.cart-item-name {
+    margin-top: 20px;
+    width: 220px;
+    height: auto;
+    /* border: 1px solid black; */
+    font-family: 'bestbuy';
+    color: #4280d6;
+    font-size: 0.9rem;
+    margin-right: 500px;
+}
+
+.cart-item-container {
+    padding: 40px 0 40px 0;
+    width: 100%;
+    height: auto;
+    border: 1px solid #e0e6ef ;
+    background-color: white;
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* .item-left {
+    height: 100%;
+    width: 500px;
+    display: flex;
+    border: 1px solod black;
+}
+
+.item-right {
+    height: 100%;
+    width: 500px;
+    display: flex;
+} */
+
+.cart-price {
+    margin-top: 20px;
+    margin-right: 20px;
+    width: 130px;
+    height: auto;
+    font-size: large;
+    display: flex;
+    justify-content: end;
+    /* border: 1px solid black; */
+}
+
+.quantity-list {
+    width: 150px;
+    height: auto;
+    /* border: 1px solid black; */
+}
+
+
+#select {
+    width: 100px;
+    height: 45px;
+    border: 1px solid #90959e;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+#remove-button {
+    font-size: 0.8rem;
+    color: #4280d6;
+}
+
+#remove-button:hover {
+    text-decoration: underline;
 }

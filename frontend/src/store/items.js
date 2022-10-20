@@ -22,14 +22,14 @@ export const fetchItems = () => async dispatch => {
     const res = await fetch('/api/items')
     const data = await res.json();
     dispatch(receiveItems(data))
-    return data;
+    // return data;
 }
 
 export const fetchItem = (itemId) => async dispatch => {
     const res = await fetch(`/api/items/${itemId}`);
     const data = await res.json();
     dispatch(receiveItem(data))
-    return data;
+    // return data;
 }
 
 const itemsReducer = (state={}, action) => {
@@ -39,8 +39,8 @@ const itemsReducer = (state={}, action) => {
             const asd = action.items
             return {...nextState, ...asd }
         case(RECEIVE_ITEM):
-            return action.item
-            // return nextState
+            nextState[action.item.id] = action.item
+            return nextState
         default:
             return state;
     }

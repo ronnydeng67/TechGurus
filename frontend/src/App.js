@@ -10,6 +10,7 @@ import Cart from './component/Cart/Cart';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCarts } from './store/carts';
 
+
 function App() {
 
   const signup = useRouteMatch("/signup");
@@ -39,7 +40,7 @@ function App() {
             <Header />
             <SignUpFormPage/>
           </Route>
-          <Route exact path='/carts/:cartId'>
+          <Route exact path='/carts'>
             <Cart />
           </Route>
         </Switch>

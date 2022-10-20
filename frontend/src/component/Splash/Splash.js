@@ -1,18 +1,19 @@
 import { fontSize } from '@mui/system';
 import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { fetchItems } from '../../store/items';
+import { fetchItems, getItems } from '../../store/items';
 import './Splash.css';
 
 const Splash = () => {
     const dispatch = useDispatch();
-    const [items, setItems] = useState([])
+    // const [items, setItems] = useState([])
     const [isLoading, setIsLoading] = useState(true)
+    const items = useSelector(getItems)
 
     useEffect(() => {
         dispatch(fetchItems()).then((res) => {
-            setItems(Object.values(res))
+            // setItems(Object.values(res))
         }).then(()=> {
             setIsLoading(false)
         })
@@ -87,7 +88,7 @@ const Splash = () => {
                                         </div>
                                     </div>
                                         <div className="outlet-details">
-                                            <Link style={{color: "#0346be", fontSize: "medium"}}>View Outlet deals</Link>
+                                            <Link to="/" style={{color: "#0346be", fontSize: "medium"}}>View Outlet deals</Link>
                                         </div>
                                 </div>
                             </div>
@@ -111,7 +112,7 @@ const Splash = () => {
                                             </div>
                                     </div>
                                     <div className="bonus-deals">
-                                        <Link style={{color: "#0346be", fontSize: 'medium'}}>See bonus deals</Link>
+                                        <Link to="/" style={{color: "#0346be", fontSize: 'medium'}}>See bonus deals</Link>
                                     </div>
                                 </div>
                             </div>

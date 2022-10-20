@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, Redirect, useParams } from 'react-router-dom';
-import { fetchItem } from '../../store/items';
+import { fetchItem, getItem } from '../../store/items';
 import { FaExchangeAlt } from 'react-icons/fa';
 import { FiHeadphones, FiShield } from 'react-icons/fi';
 import { MdHandyman, MdOutlineStore, MdLocalShipping, MdShoppingCart } from 'react-icons/md';
@@ -26,6 +26,7 @@ const ItemShowPage = () => {
     const sessionUser = useSelector(state => state.session.user);
     const state = useSelector(state => state);
 
+    const lol = useSelector(getItem(itemId))
 
     useEffect(() => {
         dispatch(fetchItem(itemId)).then((res) => {
@@ -35,7 +36,6 @@ const ItemShowPage = () => {
         })
     },[itemId, dispatch])
 
-    // console.log(itemId, Object.values(state.carts)[0].itemId)
 
     const addItem = e => {
         // e.preventDefault();
@@ -67,14 +67,16 @@ const ItemShowPage = () => {
     }
 
     let month
-    if((item.price > 200 && item.price < 500)) {
-        month = 12;
-    } else if (item.price > 500 && item.price < 800) {
-        month = 24;
-    } else if (item.price < 200){
-        month = 4;
-    } else {
-        month = 36;
+    if(lol) {
+        if((lol.price > 200 && lol.price < 500)) {
+            month = 12;
+        } else if (lol.price > 500 && lol.price < 800) {
+            month = 24;
+        } else if (lol.price < 200){
+            month = 4;
+        } else {
+            month = 36;
+        }
     }
 
     const returnDate = moment().add(15, 'days').format('MMM Do')
@@ -88,16 +90,16 @@ const ItemShowPage = () => {
             <div className="page-container">
                 <div className="item-container">
                     <div className="item-left">
-                        <div className="item-name">{item.name}</div>
+                        <div className="item-name">{lol.name}</div>
                         <div className="item-pic" style={{textAlign: 'center'}}>
-                            <img width='auto' height='350' style={{margin: '150px'}} src={item.photoUrl} alt="" />
+                            <img width='auto' height='350' style={{margin: '150px'}} src={lol.photoUrl} alt="" />
                         </div>
                     </div>
                     <div className="item-right">
                         <div className="item-price">
                             <div className="price-text">
                                 <div className="price">
-                                    ${item.price}
+                                    ${lol.price}
                                 </div>
                                 <div className='price-divider'>
                                     <div style={{flex: '1 0 40%', borderLeft: '1px', border: '1px solid black', height: '8px'}}></div>
@@ -106,7 +108,7 @@ const ItemShowPage = () => {
                                 </div>
                                 <div className="payment">
                                     <div className="monthly">
-                                        ${((item.price) / month).toFixed(2)}/mo.*
+                                        ${((lol.price) / month).toFixed(2)}/mo.*
                                     </div>
                                     <div className="four-payment">
                                         suggested payments with
@@ -188,7 +190,7 @@ const ItemShowPage = () => {
                     </div>
                 </div>
                     <div className="overview-container">
-                                <Accordion style={{height: "100px"}}>
+                                <Accordion sx={{zIndex: 0}} style={{height: "100px"}}>
                                     <AccordionSummary
                                     expandIcon={<ExpandMoreIcon />}
                                     aria-controls="panel1a-content"
@@ -201,12 +203,12 @@ const ItemShowPage = () => {
                                     <div className="overview">
                                         <div className="item-description">
                                             <div className="description-title">Description</div>
-                                            <div className="description-text">{item.description}</div>
+                                            <div className="description-text">{lol.description}</div>
                                         </div>
                                         <div className="item-details">
                                             <div className="details-title">Details</div>
                                             <ul>
-                                                {item.details.split(/\r?\n/).map(detail => <li key={detail}>{detail}</li>)}
+                                                {lol.details.split(/\r?\n/).map(detail => <li key={detail}>{detail}</li>)}
                                             </ul>
                                         </div>
                                     </div>

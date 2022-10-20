@@ -46,6 +46,7 @@
 	position: fixed;
 	top: 0;
 	background-color: #0346be;
+	z-index: 1;
 }
 
 .home-header-left {
