@@ -41,26 +41,6 @@ const ItemShowPage = () => {
         // e.preventDefault();
         if (state.session.user) {
             dispatch(addToCart({itemId: itemId, userId: sessionUser.id, quantity: 1}))
-            
-            // if (Object.values(state.carts).every(cart => {
-            //     if(cart.itemId === parseInt(itemId)) {
-            //         console.log(cart)
-            //         dispatch(editCart(
-            //             {
-            //                 id: cart.id,
-            //                 itemId: itemId,
-            //                 userId: sessionUser.id, 
-            //                 quantity: cart.quantity + 1
-            //             }
-            //             ))
-            //             return false;
-            //     } else {
-            //         return true;
-            //     }
-            // })
-            // ) {
-            //     dispatch(addToCart({itemId: itemId, userId: sessionUser.id, quantity: 1}))
-            // }
         } else {
             history.push('/login')
         }

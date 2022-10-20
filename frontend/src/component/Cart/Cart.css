@@ -44,10 +44,13 @@
 
 .right-bar {
     width: 475px;
-    border: 1px solid black;
     position: sticky;
     top: 0;
     overflow: hidden;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    margin-top: 90px;
 }
 
 .cart-title {
@@ -55,7 +58,6 @@
     height: 32px;
     font-size: x-large;
     font-family: 'bestbuy-medium';
-    /* border: 1px solid black; */
     margin-bottom: 30px;
 }
 
@@ -68,14 +70,12 @@
 .inner {
     width: 100%;
     height: auto;
-    /* border: 1px solid black; */
 }
 
 .cart-item-name {
     margin-top: 20px;
     width: 220px;
     height: auto;
-    /* border: 1px solid black; */
     font-family: 'bestbuy';
     color: #4280d6;
     font-size: 0.9rem;
@@ -91,6 +91,26 @@
     margin-bottom: 24px;
     display: flex;
     justify-content: space-between;
+}
+
+.empty-cart-container {
+    padding: 40px 0 40px 0;
+    width: 100%;
+    height: auto;
+    border: 1px solid #e0e6ef ;
+    background-color: white;
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+    font-family: 'bestbuy-medium';
+}
+
+.recommended {
+    margin-top: 30px;
+    font-size: medium;
 }
 
 
@@ -115,13 +135,12 @@
     font-size: large;
     display: flex;
     justify-content: end;
-    /* border: 1px solid black; */
+    font-family: 'inter';
 }
 
 .quantity-list {
     width: 150px;
     height: auto;
-    /* border: 1px solid black; */
 }
 
 
@@ -141,3 +160,83 @@
 #remove-button:hover {
     text-decoration: underline;
 }
+
+.order-summary {
+    width: 395px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.summary-text {
+    width: 100%;
+    height: 26px;
+    font-family: 'bestbuy-medium';
+    font-size: x-large;
+    text-align: center;
+}
+
+.cart-hr {
+    color: #e0e6ef;
+}
+
+.order-details {
+    width: 100%;
+    height: 85px;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #e0e6ef;
+    border-bottom: 1px solid #e0e6ef;
+    padding-top: 7px;
+}
+
+.order-text {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: auto;
+}
+
+.order-price {
+    height: 100%;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.order-total {
+    width: 100%;
+    height: 25px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.checkout-container {
+    height: 48px;
+    width: 100%;
+}
+
+.checkout-container {
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+#checkout {
+    color: black;
+    background-color: #ffe000;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.total-text,
+.total-num {
+    font-family: 'bestbuy-medium';
+    font-size: large;
+    margin-top: 7px;
+}
+
