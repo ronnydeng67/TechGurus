@@ -229,13 +229,16 @@ const LoginFormPage = () => {
                             <hr className='hr'/>
                         </div>
                         <div className="webAuthnContainer">
-                            <button id="webAuthnButton" type="submit"><img src={webAuth} id="figurePrint" /> Sign In with WebAuthn</button>
+                            {/* <button id="webAuthnButton" type="submit"><img src={webAuth} id="figurePrint" /> Sign In with WebAuthn</button> */}
+                            <button id="webAuthnButton" type="submit">Github</button>
                         </div>
                         <div className="appleContainer">
-                            <button id="appleButton" type="submit"><img src={apple} id="apple" /> Sign In with Apple</button>
+                            {/* <button id="appleButton" type="submit"><img src={apple} id="apple" /> Sign In with Apple</button> */}
+                            <button id="appleButton" type="submit">Linkedin</button>
                         </div>
                         <div className="googleContainer">
-                            <button id="googleButton" type="submit"><img src={google} id="google" /> Sign In with Google</button>
+                            {/* <button id="googleButton" type="submit"><img src={google} id="google" /> Sign In with Google</button> */}
+                            <button id="googleButton" type="submit">Contact Info</button>
                         </div>
                         {/* </div> */}
                     <div className="agreement">
