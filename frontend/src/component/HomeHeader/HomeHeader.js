@@ -60,10 +60,7 @@ const HomeHeader = () => {
         );
     } else {
         sessionLinks = (
-        <>
             <ShowAccForm />
-            {/* <NavLink to="/signup" className="button">Sign Up</NavLink> */}
-        </>
         );
     }
 

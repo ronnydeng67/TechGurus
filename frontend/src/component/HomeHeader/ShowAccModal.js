@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Modal } from '../AccModal/AccModal';
 import './HomeHeader.css';
 import LoginForm from './TheModal';
@@ -6,12 +6,24 @@ import LoginForm from './TheModal';
 
 const ShowAccForm = () => {
   const [showModal, setShowModal] = useState(false);
+  const handleModal = e => {
+    e.preventDefault();
+    setShowModal(true)
+    document.body.style.overflow = 'hidden';
+  }
+
+  const handleModalClose = e => {
+    e.preventDefault();
+    setShowModal(false)
+    document.body.style.overflow = 'visible'
+  }
+
 
   return (
     <>
-      <button onClick={() => setShowModal(true)} id="acc">Account</button>
+      <button onClick={handleModal} id="acc">Account</button>
       {showModal && (
-        <Modal onClose={() => setShowModal(false)}>
+        <Modal onClose={handleModalClose}>
           <LoginForm />
         </Modal>
       )}
