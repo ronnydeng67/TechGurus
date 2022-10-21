@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import {  useHistory, NavLink, Link } from 'react-router-dom';
+import {  useHistory, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import logo from './logo1.png';
 import { HiMagnifyingGlass } from "react-icons/hi2";
 import './HomeHeader.css';
-import LoginForm from './TheModal';
 import ShowAccForm from './ShowAccModal';
 import { getCarts } from '../../store/carts';
-import Badge from '@mui/material/Badge';
 
 const style = {
     '& .MuiModal-root': {
@@ -86,8 +84,9 @@ const HomeHeader = () => {
                         </Link>
                     </div>
                     <div className="dropdown-menu">
-                        <i className="fa-solid fa-bars"></i>
-                        <p>&nbsp;Menu</p>
+                        {/* <i className="fa-solid fa-bars"></i> */}
+                        {/* <p>&nbsp;Menu</p> */}
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;</p>
                     </div>
                     <div className="search-bar">
                         <input type="text"
@@ -115,14 +114,14 @@ const HomeHeader = () => {
             <div className="lower-header">
                 <div className="lower-left">
                     <ul className='left-list'>
-                        <li><Link to='/items/computer' className='deal' style={{ color: 'white', fontSize: '0.8rem'}}>Computers</Link></li>
-                        <li><Link to='/items/camera' className='deal' style={{ color: 'white', fontSize: '0.8rem'}}>Cameras</Link></li>
-                        <li><Link to='/items/phone' className='deal' style={{ color: 'white', fontSize: '0.8rem'}}>Cell Phones</Link></li>
-                        <li><Link to='/items/audio' className='deal' style={{ color: 'white', fontSize: '0.8rem'}}>Audio</Link></li>
-                        <li><Link to='/items/game' className='deal' style={{ color: 'white', fontSize: '0.8rem'}}>Video Games</Link></li>
-                        <li><Link to='/' className='deal' style={{ color: 'white', fontSize: '0.8rem'}}>Top Deal</Link></li>
-                        <li><Link to='/' className='deal' style={{ color: 'white', fontSize: '0.8rem'}}>Top Deal</Link></li>
-                        <li><Link to='/' className='deal' style={{ color: 'white', fontSize: '0.8rem'}}>Top Deal</Link></li>
+                        <li><Link to='/computer' className='deal' style={{ color: 'white', fontSize: '0.8rem'}}>Computers</Link></li>
+                        <li><Link to='/camera' className='deal' style={{ color: 'white', fontSize: '0.8rem'}}>Cameras</Link></li>
+                        <li><Link to='/phone' className='deal' style={{ color: 'white', fontSize: '0.8rem'}}>Cell Phones</Link></li>
+                        <li><Link to='/audio' className='deal' style={{ color: 'white', fontSize: '0.8rem'}}>Audio</Link></li>
+                        <li><Link to='/game' className='deal' style={{ color: 'white', fontSize: '0.8rem'}}>Video Games</Link></li>
+                        <li><Link to='/' className='deal' style={{ color: 'white', fontSize: '0.8rem'}}></Link></li>
+                        <li><Link to='/' className='deal' style={{ color: 'white', fontSize: '0.8rem'}}></Link></li>
+                        <li><Link to='/' className='deal' style={{ color: 'white', fontSize: '0.8rem'}}></Link></li>
                     </ul>
                 </div>
                 <div className="lower-right">
@@ -130,13 +129,16 @@ const HomeHeader = () => {
                         {sessionLinks}
                     </div>
                     <div className="recent-view">
-                        <button id="recently-button">Recently Views</button>
+                        {/* <button id="recently-button">Recently Views</button> */}
+                        <button id="recently-button">Linkedin</button>
                     </div>
                     <div className="order-status">
-                        <Link to='/' id='order-status' style={{ color: 'white', fontSize: '0.9rem'}}>Order Status</Link>
+                        {/* <Link to='/' id='order-status' style={{ color: 'white', fontSize: '0.9rem'}}>Order Status</Link> */}
+                        <Link to='/' id='order-status' style={{ color: 'white', fontSize: '0.9rem'}}>Contact Info</Link>
                     </div>
                     <div className="Saved-items">
-                        <button id="save-button">Saved Items</button>
+                        {/* <button id="save-button">Saved Items</button> */}
+                        <button id="save-button">Github</button>
                     </div>
                 </div>
             </div>

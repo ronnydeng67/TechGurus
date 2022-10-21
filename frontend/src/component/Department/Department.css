@@ -1,0 +1,71 @@
+@font-face {
+	font-family: 'bestbuy-medium';
+	src: url(../../font/HumanSans-Medium.otf);
+	font-weight: bold;
+}
+
+@font-face {
+    font-family: 'bestbuy-bold';
+    src: url(../../font/HumanSans-Black.otf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.department-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.department-page {
+    width: 1600px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.filter-item-container {
+    width: 395px;
+    height: 485px;
+    border: 1px solid #e0e6ef;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+}
+
+.filter-item-wrap {
+    width: 300px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#filter-item-pic {
+    width: 200px;
+    height: auto;
+}
+
+.filter-item-price {
+    font-family: 'inter', sans-serif;
+}
+
+
+.filter-item-text {
+    text-align: center;
+    color: #0346be;
+    font-family: 'bestbuy-medium';
+}
+
+.department-title {
+    font-size: 3rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

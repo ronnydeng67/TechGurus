@@ -1,3 +1,4 @@
+import { fontFamily } from "@mui/system";
 import { Link } from "react-router-dom";
 
 const SplashItem = (item) => {
@@ -12,7 +13,7 @@ const SplashItem = (item) => {
                     </Link>
                 </div>
                 <div className="splash-item-text">
-                    <Link to={`/items/${item.item.id}`}>{item.item.name}</Link>
+                    <Link to={`/items/${item.item.id}`} style={{color: "#0346be", fontFamily: "bestbuy-medium"}}>{item.item.name}</Link>
                 </div>
                 <div className="splash-item-price">
                     ${item.item.price}

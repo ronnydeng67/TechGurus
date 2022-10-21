@@ -177,6 +177,14 @@ button {
 	font-family: 'bestbuy';
 }
 
+#acc {
+	border-radius: 5px;
+	background-color:cornflowerblue;
+	color: white;
+	width: 80px;
+	height: 30px;
+}
+
 #cart-num {
 	border-radius: 50%;
 	width: 19px;

@@ -100,7 +100,7 @@ const Splash = () => {
                                         </div>
                                     </div>
                                         <div className="outlet-details">
-                                            <Link to="/" style={{color: "#0346be", fontSize: "medium"}}>View Outlet deals</Link>
+                                             <a href="#deal-section"style={{color: "#0346be", fontSize: "medium"}}>View Outlet deals</a>
                                         </div>
                                 </div>
                             </div>
@@ -124,7 +124,7 @@ const Splash = () => {
                                             </div>
                                     </div>
                                     <div className="bonus-deals">
-                                        <Link to="/" style={{color: "#0346be", fontSize: 'medium'}}>See bonus deals</Link>
+                                        <a href='#deal-section' style={{color: "#0346be", fontSize: 'medium'}}>See bonus deals</a>
                                     </div>
                                 </div>
                             </div>
