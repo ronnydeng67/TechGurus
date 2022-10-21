@@ -5,10 +5,11 @@
     left: -100px;
     bottom: 0;
     display: flex;
-    padding-left: 1180px;
-    padding-right: 50px;
+    padding-left: 1280px;
+    padding-right: 20px;
     justify-content: center;
     /* align-items: center; */
+
 }
   
 #modal-background {
