@@ -1,24 +1,29 @@
-# README
+# TechGurus
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Please Refresh multiple times!!!! For some reason it won't show any content when access it the first time.
+[TechGurus](https://tech-gurus.herokuapp.com/)
 
-Things you may want to cover:
+### TechGurus, a BestBuy clone, is a electronic online retails store. Users are able to create their own accounts and add their items to cart to checkout.
 
-* Ruby version
+## Technologies/Libraries
 
-* System dependencies
+- Javascript
+- React
+- Redux
+- Ruby
+- Rails
+- CSS
+- JSX
+- Webpack
+- Heroku
+- PostgreSQL
+- Moment.js
+- MUI
 
-* Configuration
 
-* Database creation
+## Functionlities
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- User able to create account
+- User able to sign in/sing out account
+- User able to add items to cart
+- User able to edit item quantity and remove items from cart
