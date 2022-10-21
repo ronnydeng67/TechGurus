@@ -145,7 +145,6 @@ const SignUpFormPage = () => {
                 else return setErrors([res.statusText]);
             })
         } else {
-            // setErrors(['make sure something'])
             if ((password !== confirmPassword) || (confirmPassword.length === 0)) {
                 setConPassError(true);
                 confirmRef.current.focus();

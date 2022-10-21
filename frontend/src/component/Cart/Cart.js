@@ -41,6 +41,7 @@ const Cart = () => {
 
     const handleCheckout = e => {
         e.preventDefault();
+        dispatch()
     }
 
 
