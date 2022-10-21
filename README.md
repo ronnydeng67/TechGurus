@@ -31,11 +31,11 @@
 
 Modal is implemented for users to choose if they want to sign up accounts or sign in with their existing accounts. BestBuy is actually using this same modal to prompt users for their account management
 
-![] (frontend/images/modal.png)
+![](frontend/images/modal.png)
 
 The sign up field require actual email and password with the right format. Password need to be minimum 6 characters, and the password in the confirm password field need to match the password you've entered. Option to show the passwords. Errors will pop underneath the input fields if inputs are incorrect, the borders of the fields would turn red as alert as well.
 
-![] (frontend/images/error.png)
+![](frontend/images/error.png)
 
 The code snippet below contains the logic to handle validating the errors of signing up an new account when the users press the create account button.
 
