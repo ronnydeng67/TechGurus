@@ -31,21 +31,13 @@ const HomeHeader = () => {
     const [showAccount, setShowAccount] = useState(false);
     const [search, setSearch] = useState("");
     const carts = useSelector(getCarts);
+    
     // const[itemCount, setItemCount] = useState(Object.values(carts).length);
     // console.log(itemCount);
     const handleClick = () => {
             dispatch(sessionActions.logoutUser());
     }
-    const handleAccOpen = () => {
-        console.log('open run')
-        setShowAccount(true)
-    }
 
-    // let itemCount = 0;
-    // Object.values(carts).map(cart => {
-    //     itemCount += cart.quantity
-    //     return itemCount
-    // })
 
         
     useEffect(()=>{
@@ -127,15 +119,17 @@ const HomeHeader = () => {
                     </div>
                     <div className="recent-view">
                         {/* <button id="recently-button">Recently Views</button> */}
-                        <button id="recently-button">Linkedin</button>
+                        <a href="http://www.linkedin.com" style={{color: 'white'}}>Linkedin</a>
                     </div>
                     <div className="order-status">
                         {/* <Link to='/' id='order-status' style={{ color: 'white', fontSize: '0.9rem'}}>Order Status</Link> */}
-                        <Link to='/' id='order-status' style={{ color: 'white', fontSize: '0.9rem'}}>Contact Info</Link>
+                        {/* <Link to='/' id='order-status' style={{ color: 'white', fontSize: '0.9rem'}}>Contact Info</Link> */}
+                        <a href="https://en.wikipedia.org/wiki/Wikipedia:Contact_info" style={{color: 'white'}}>Contact Info</a>
                     </div>
                     <div className="Saved-items">
                         {/* <button id="save-button">Saved Items</button> */}
-                        <button id="save-button">Github</button>
+                        {/* <button id="save-button">Github</button> */}
+                        <a href="https://github.com/ronnydeng67" style={{color: 'white'}}>Github</a>
                     </div>
                 </div>
             </div>

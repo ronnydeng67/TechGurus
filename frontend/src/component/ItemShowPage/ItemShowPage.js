@@ -63,6 +63,10 @@ const ItemShowPage = () => {
     const pickup = moment().add(2, 'days').format('dddd, MMM Do')
     const ship = moment().add(3, 'days').format('dddd, MMM Do')
 
+    const handleTotalTech = () => {
+        alert("Sorry, Totaltech is unavailable at this moment, please check back with us later!")
+    }
+
     if(isLoading) {
         return <div>Loading...</div>
     } else {
@@ -97,7 +101,7 @@ const ItemShowPage = () => {
                                         {month}-Month financing
                                     </div>
                                     <div className="show-more">
-                                        <Link to="/">Show me how </Link>
+                                        <Link to="https://snapfinance.com/finance/electronics">Show me how </Link>
                                     </div>
                                 </div>
                             </div>
@@ -142,7 +146,7 @@ const ItemShowPage = () => {
                                     $199.99 per year
                                 </div>
                                 <div className="learn-about">
-                                    <button id='total-tech'>Purchase Totaltech</button>
+                                    <button id='total-tech' onClick={handleTotalTech}>Purchase Totaltech</button>
                                 </div>
                             </div>
                         </div>

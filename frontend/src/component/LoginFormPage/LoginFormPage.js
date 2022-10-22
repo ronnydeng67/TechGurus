@@ -230,20 +230,20 @@ const LoginFormPage = () => {
                         </div>
                         <div className="webAuthnContainer">
                             {/* <button id="webAuthnButton" type="submit"><img src={webAuth} id="figurePrint" /> Sign In with WebAuthn</button> */}
-                            <button id="webAuthnButton" type="submit">Github</button>
+                            <button id="webAuthnButton" type="submit"> <a href="https://github.com/ronnydeng67">Github</a></button>
                         </div>
                         <div className="appleContainer">
                             {/* <button id="appleButton" type="submit"><img src={apple} id="apple" /> Sign In with Apple</button> */}
-                            <button id="appleButton" type="submit">Linkedin</button>
+                            <button id="appleButton" type="submit"><a href="http://www.linkedin.com">Linkedin</a></button>
                         </div>
                         <div className="googleContainer">
                             {/* <button id="googleButton" type="submit"><img src={google} id="google" /> Sign In with Google</button> */}
-                            <button id="googleButton" type="submit">Contact Info</button>
+                            <button id="googleButton" type="submit"><a href="https://en.wikipedia.org/wiki/Wikipedia:Contact_info">Contact Info</a></button>
                         </div>
                         {/* </div> */}
                     <div className="agreement">
                         By continuing you agree to our <Link to="/">Terms and Conditions</Link>, our <Link to="/">Privacy Policy</Link>,
-                        and the <Link>My TechGurus Program Terms.</Link>
+                        and the <Link to="/">My TechGurus Program Terms.</Link>
                     </div>
 
                     <div className="buttomBreak">
