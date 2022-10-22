@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { Link, useHistory, useParams } from "react-router-dom";
 import './Cart.css'
 import RightBar from './RightBar';
-import { deleteItem, fetchCarts } from '../../store/carts';
+import { deleteItem, emptyAll, fetchCarts } from '../../store/carts';
 import CartItem from './CartItem';
 
 const Cart = () => {
@@ -41,7 +41,7 @@ const Cart = () => {
 
     const handleCheckout = e => {
         e.preventDefault();
-        dispatch()
+        dispatch(emptyAll(sessionUser.id))
     }
 
 

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resource :session, only: [:show, :create, :destroy]
     resources :items, only: [:index, :show]
     resources :carts, only: [:index, :show, :update, :destroy, :create]
+    delete :destroy_cart, controller: "carts"
   end
 
   get '*path', to: "static_pages#frontend_index"

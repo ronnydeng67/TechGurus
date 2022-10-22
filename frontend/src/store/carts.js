@@ -4,6 +4,7 @@ export const ADD_CART = '/ADD_CART'
 export const RECEIVE_CART = '/RECEIVE_CART';
 export const RECEIVE_CARTS = '/RECEIVE_CARTS';
 export const REMOVE_CART = '/REMOVE_CART';
+export const EMPTY_CART = '/EMPTY_CART';
 
 const receiveCarts = (carts) => ({
     type: RECEIVE_CARTS,
@@ -23,6 +24,10 @@ const addCart = (cart) => ({
 const removeCart = (cartId) => ({
     type: REMOVE_CART,
     cartId
+})
+
+const emptyCart = () => ({
+    type: EMPTY_CART,
 })
 
 export const getCarts = ({carts}) => ( carts ? Object.values(carts) : [] ) 
@@ -63,6 +68,17 @@ export const deleteItem = (cartId) => async dispatch => {
     dispatch(removeCart(cartId))
 }
 
+export const emptyAll = (userId) => async dispatch => {
+    const res = await csrfFetch('/api/destroy_cart', {
+        method: 'DELETE',
+        body: JSON.stringify({userId}),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    dispatch(emptyCart());
+}
+
 const cartReducer = (state = {}, action) => {
     const nextState = {...state}
     switch(action.type) {
@@ -81,6 +97,8 @@ const cartReducer = (state = {}, action) => {
         case RECEIVE_CART:
             nextState[action.cart.id] = action.cart;
             return nextState;
+        case EMPTY_CART:
+            return {};
         default:
             return state;
     }

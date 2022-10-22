@@ -44,6 +44,12 @@ class Api::CartsController < ApplicationController
         render :show
     end
 
+    def destroy_cart
+        @cart = Cart.where(user_id: params[:user_id]).destroy_all
+        # debugger
+        render :show
+    end
+
     private
     
     def cart_params
