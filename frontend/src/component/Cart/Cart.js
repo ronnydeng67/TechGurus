@@ -42,6 +42,7 @@ const Cart = () => {
     const handleCheckout = e => {
         e.preventDefault();
         dispatch(emptyAll(sessionUser.id))
+        alert('Order Placed!!')
     }
 
 
