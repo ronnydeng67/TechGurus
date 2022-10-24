@@ -1,6 +1,6 @@
 # TechGurus
 
-### Please Refresh multiple times!!!! For some reason it won't show any content when access it the first time.
+#### _Please Refresh multiple times!!!! For some reason it won't show any content when access it the first time. Even after the content is loaded up, try refresh for at least twice for the font and pictures to load up!! Thank you!!_
 [TechGurus](https://tech-gurus.herokuapp.com/)
 
 ### TechGurus, a BestBuy clone, is a electronic online retails store. Users are able to create their own accounts and add their items to cart to checkout.
@@ -39,10 +39,13 @@ The sign up field require actual email and password with the right format. Passw
 
 The code snippet below contains the logic to handle validating the errors of signing up an new account when the users press the create account button.
 
-```
+```Javascript
     const handleSubmit = e => {
         e.preventDefault();
-        if ((password === confirmPassword) && (isValidName(name)) && (isValidEmail(email)) && (password.length > 5)) {
+        if ((password === confirmPassword) 
+            && (isValidName(name)) 
+            && (isValidEmail(email)) 
+            && (password.length > 5)) {
             setErrors([]);
             return dispatch(sessionActions.signup({name, email, password}))
             .catch(async (res) => {
