@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Modal } from '../AccModal/AccModal';
 import './HomeHeader.css';
 import LoginForm from './TheModal';
@@ -9,13 +9,17 @@ const ShowAccForm = () => {
   const handleModal = e => {
     e.preventDefault();
     setShowModal(true)
-    document.body.style.overflow = 'hidden';
+    // document.body.style.overflow = 'hidden';
+    document.body.style.position = 'fixed';
+    document.body.style.overflowY = 'scroll';
   }
 
   const handleModalClose = e => {
     e.preventDefault();
     setShowModal(false)
-    document.body.style.overflow = 'visible'
+    // document.body.style.overflow = 'visible'
+    document.body.style.position = 'static';
+    document.body.style.overflowY = 'auto';
   }
 
 

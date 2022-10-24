@@ -1,11 +1,11 @@
 import React, { useState, useRef } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, Redirect } from 'react-router-dom';
+import { Link, Redirect, useHistory } from 'react-router-dom';
 import './LoginForm.css';
-import webAuth from './icons8-fingerprint-50.png';
-import google from './icons8-google-48.png';
-import apple from './Apple_logo_black.svg';
+// import webAuth from './icons8-fingerprint-50.png';
+// import google from './icons8-google-48.png';
+// import apple from './Apple_logo_black.svg';
 import TextField from '@mui/material/TextField';
 import { styled } from '@mui/material/styles';
 import ReportGmailerrorredIcon from '@mui/icons-material/ReportGmailerrorred';
@@ -69,6 +69,7 @@ const LoginFormPage = () => {
     const [passwordError, setPasswordError] = useState(false);
     const emailRef = useRef(null);
     const passwordRef = useRef(null);
+    const history = useHistory();
 
     if (sessionUser) return <Redirect to="/" />;
 
@@ -136,18 +137,20 @@ const LoginFormPage = () => {
 
     const renderDemo = (e) => {
         e.preventDefault();
-        return dispatch(sessionActions.loginUser({email: "demo@user.com", password: "password"}))
-                .catch(async(res) => {
-                    let data;
-                    try {
-                        data = await res.clone().json();
-                    } catch {
-                        data = await res.text();
-                    }
-                    if (data?.errors) setErrors(data.errors);
-                    else if (data) setErrors([data]);
-                    else setErrors([res.statusText]);
-                })
+        dispatch(sessionActions.loginUser({email: "demo@user.com", password: "password"}))
+            .catch(async(res) => {
+                let data;
+                try {
+                    data = await res.clone().json();
+                } catch {
+                    data = await res.text();
+                }
+                if (data?.errors) setErrors(data.errors);
+                else if (data) setErrors([data]);
+                else setErrors([res.statusText]);
+            })
+        history.goBack();
+
     }
 
     const errorIcon = <ReportGmailerrorredIcon fontSize='large'/>;

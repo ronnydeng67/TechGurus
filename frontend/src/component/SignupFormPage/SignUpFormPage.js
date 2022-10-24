@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect, Link } from 'react-router-dom';
+import { Redirect, Link, useHistory } from 'react-router-dom';
 import * as sessionActions from "../../store/session";
 import './SignUpFormPage.css';
 import TextField from '@mui/material/TextField';
@@ -120,6 +120,7 @@ const SignUpFormPage = () => {
     const emailRef = useRef(null);
     const passwordRef = useRef(null);
     const confirmRef = useRef(null);
+    const history = useHistory();
 
     if (sessionUser) return <Redirect to="/"/>
 
@@ -131,19 +132,20 @@ const SignUpFormPage = () => {
         e.preventDefault();
         if ((password === confirmPassword) && (isValidName(name)) && (isValidEmail(email)) && (password.length > 5)) {
             setErrors([]);
-            return dispatch(sessionActions.signup({name, email, password}))
-            .catch(async (res) => {
-                let data;
-                try {
-                    data = await res.clone().json();
-                } catch {
-                    data = await res.text();
-                }
+            dispatch(sessionActions.signup({name, email, password}))
+                .catch(async (res) => {
+                    let data;
+                    try {
+                        data = await res.clone().json();
+                    } catch {
+                        data = await res.text();
+                    }
 
-                if (data?.errors) setErrors(data.errors);
-                else if (data) setErrors([data]);
-                else return setErrors([res.statusText]);
-            })
+                    if (data?.errors) setErrors(data.errors);
+                    else if (data) setErrors([data]);
+                    else return setErrors([res.statusText]);
+                })
+            history.goBack();
         } else {
             if ((password !== confirmPassword) || (confirmPassword.length === 0)) {
                 setConPassError(true);

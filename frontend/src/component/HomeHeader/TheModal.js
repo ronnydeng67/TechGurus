@@ -5,10 +5,14 @@ function LoginForm() {
     const history = useHistory()
 
     const handleSignIn = () => {
+        document.body.style.position = 'static';
+        document.body.style.overflowY = 'auto';
         history.push('/login');
     }
 
     const handleCreate = () => {
+        document.body.style.position = 'static';
+        document.body.style.overflowY = 'auto';
         history.push('/signup')
     }
 
