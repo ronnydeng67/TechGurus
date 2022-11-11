@@ -20,6 +20,7 @@ class User < ApplicationRecord
     before_validation :ensure_session_token
 
     has_many :carts
+    has_many :reviews, dependent: :destroy
 
     has_many :items,
         through: :carts,
