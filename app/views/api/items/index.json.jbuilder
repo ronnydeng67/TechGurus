@@ -11,3 +11,4 @@
         json.photo_url url_for(item.photo)
     end
 end
+
