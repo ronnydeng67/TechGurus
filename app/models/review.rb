@@ -12,4 +12,8 @@
 #  updated_at  :datetime         not null
 #
 class Review < ApplicationRecord
+    validates :reviewer_id, :item_id, :title, :body, :rating, presence: true
+
+    belongs_to :reviewer
+    belongs_to :item
 end
