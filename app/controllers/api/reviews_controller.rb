@@ -37,6 +37,8 @@ class Api::ItemsController < ApplicationController
         render :show
     end
 
+    private
+
     def review_params
         params.require(:review).permit(:title, :body, :rating, :reviewer_id, :item_id)
     end
