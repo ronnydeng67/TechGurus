@@ -2,7 +2,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { Link, useHistory, useParams } from "react-router-dom";
 import './Cart.css'
-import RightBar from './RightBar';
 import { deleteItem, emptyAll, fetchCarts } from '../../store/carts';
 import CartItem from './CartItem';
 
@@ -45,6 +44,11 @@ const Cart = () => {
         alert('Order Placed!!')
     }
 
+    const handleShopping = e => {
+        e.preventDefault();
+        history.push('/');
+    }
+
 
     if (cart) {
         return (
@@ -85,7 +89,10 @@ const Cart = () => {
                             <div className="total-num">${parseFloat(totalPrice * 1.0875).toFixed(2)}</div>
                         </div>
                         <div className="checkout-container">
-                            <button id="checkout" onClick={handleCheckout}>Checkout</button>
+                            {Object.values(cart).length ? 
+                            <button id="checkout" onClick={handleCheckout}>Checkout</button> :
+                            <button id="checkout" onClick={handleShopping}>Continue Shopping</button>
+                            }
                         </div>
                     </div>
                 </div>
@@ -94,10 +101,6 @@ const Cart = () => {
     } else {
         <div className='list'>Your cart is empty</div>
     }
-    // if(isLoading) {
-    //     return <div>Your cart is empty right now.</div>
-    // } else {
-    // }
         
     }
     
