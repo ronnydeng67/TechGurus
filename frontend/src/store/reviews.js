@@ -24,8 +24,14 @@ const removeReview = reviewId => ({
 export const getReview = reviewId => ({ reviews }) => (reviews ? reviews[reviewId] : null);
 export const getReviews = ({ reviews }) => (reviews ? Object.values(reviews): []);
 
-export const fetchReviews = () => async dispatch => {
-    const res = await csrfFetch('/api/reviews');
+export const fetchReviews = (itemId) => async dispatch => {
+    const res = await csrfFetch(`/api/items/${itemId}/reviews`);
     const data = await res.json();
     dispatch(receiveReviews(data));
+}
+
+export const fetchReview = (itemId, reviewId) => async dispatch => {
+    const res = await csrfFetch(`/api/items/${itemId}/reviews/${reviewId}`);
+    const data = await res.json();
+    dispatch(receiveReview(data));
 }
