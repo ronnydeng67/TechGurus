@@ -17,13 +17,13 @@ ApplicationRecord.transaction do
 
   puts "Creating users..."
   # Create one user with an easy to remember username, email, and password:
-  User.create!(
+  r = User.create!(
     name: 'ronny', 
     email: 'ronny@gmail.com', 
     password: 'password'
   )
 
-  User.create!(
+  d = User.create!(
     name: 'Demo',
     email: 'demo@user.com',
     password: 'password'
@@ -466,6 +466,44 @@ All-day battery life and up to 29 hours of video playback"
     )
     file26 = File.open('app/assets/images/2k.png')
     item26.photo.attach(io: file26, filename: '2k.png')
+
+    puts "Destroying reviews tables..."
+
+    Review.destroy_all
+
+    puts "Restting keys"
+
+    ApplicationRecord.connection.reset_pk_sequence!('reviews')
+    
+    puts "Creating reviews..."
+
+    Review.create!(
+      reviewer_id: r.id,
+      item_id: item1.id,
+      parent_review_id: nil,
+      title: "Good product!",
+      body: "This is a very good product, would buy this again!",
+      rating: 5
+    )
+
+    Review.create!(
+      reviewer_id: r.id,
+      item_id: item2.id,
+      parent_review_id: nil,
+      title: "Nice iPhone 14!",
+      body: "I threw away my iPhone 13 right away once I got my new iPhone 14!",
+      rating: 4
+    )
+
+    Review.create!(
+      reviewer_id: d.id,
+      item_id: item3.id,
+      parent_review_id: nil,
+      title: "Suck!!",
+      body: "This camera sucks, only taken black and white photo!",
+      rating: 1
+    )
+
 
     puts "Done!"
   end

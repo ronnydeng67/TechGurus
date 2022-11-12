@@ -65,7 +65,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_11_030346) do
   create_table "reviews", force: :cascade do |t|
     t.bigint "reviewer_id", null: false
     t.bigint "item_id", null: false
-    t.bigint "parent_review_id", null: false
+    t.bigint "parent_review_id"
     t.string "title", null: false
     t.text "body", null: false
     t.float "rating", null: false
