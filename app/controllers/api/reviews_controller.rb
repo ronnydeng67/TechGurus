@@ -1,8 +1,9 @@
-class Api::ItemsController < ApplicationController
+class Api::ReviewsController < ApplicationController
+    wrap_parameters include: Review.attribute_names + ["reviewerId", "itemId"]
+
 
     def index
-        item = Review.find_by(id: params[:item_id])
-        @reviews = item.reviews
+        @reviews = Review.all
         render :index
     end
 
@@ -12,6 +13,7 @@ class Api::ItemsController < ApplicationController
             render :show
         else
             render json: {errors: @review.errors.full_messages}, status: 422
+        end
     end
 
     def destroy
@@ -26,7 +28,7 @@ class Api::ItemsController < ApplicationController
     def update 
         @review = Review.find_by(id: params[:id])
         if @review.update(review_params)
-            render: show
+            render :show
         else
             render json: @review.errors.full_messages, status: 422
         end
