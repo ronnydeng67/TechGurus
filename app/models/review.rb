@@ -17,8 +17,11 @@ class Review < ApplicationRecord
     validates :body, length: { in: 0..255 }
     validates :rating, inclusion: { in: 1..5 }, presence: true
 
-    belongs_to :user, optional: true
     belongs_to :item
+    belongs_to :reviewer,
+        foreign_key: :reviewer_id,
+        class_name: :User
+        
     belongs_to :parent_review,
         foreign_key: :parent_review_id,
         class_name: :Review,
