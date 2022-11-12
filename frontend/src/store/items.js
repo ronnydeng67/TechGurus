@@ -1,5 +1,4 @@
 
-
 export const RECEIVE_ITEMS = '/RECEIVE_ITEMS';
 export const RECEIVE_ITEM = '/RECEIVE_ITEM';
 export const SEARCH_ITEM = '/SEARCH_ITEM';

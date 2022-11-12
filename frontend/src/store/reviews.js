@@ -1,0 +1,5 @@
+export const RECEIVE_REVIEW = '/RECEVIE_REVIEW';
+export const RECEIVE_REVIEWS = '/RECEVIE_REVIEWS';
+export const CREATE_REVIEW = '/CREATE_REVIEW';
+export const UPDATE_REVIEW = '/UPDATE_REVIEW';
+export const DELETE_REVIEW = '/DELETE_REVIEW';
