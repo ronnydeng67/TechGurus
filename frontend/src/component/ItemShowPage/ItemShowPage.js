@@ -170,7 +170,7 @@ const ItemShowPage = () => {
                     </div>
                 </div>
                     <div className="overview-container">
-                                <Accordion sx={{zIndex: 0}} style={{height: "100px"}}>
+                                <Accordion style={{height: "100px"}}>
                                     <AccordionSummary
                                     expandIcon={<ExpandMoreIcon />}
                                     aria-controls="panel1a-content"
@@ -194,7 +194,7 @@ const ItemShowPage = () => {
                                     </div>
                                     </Typography>
                                     </AccordionDetails>
-                                </Accordion>
+                                </Accordion>                
                     </div>
             </div>
         );
