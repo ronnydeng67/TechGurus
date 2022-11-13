@@ -16,6 +16,11 @@ const receiveReview = review => ({
     review
 })
 
+const addReview = review => ({
+    type: CREATE_REVIEW,
+    review
+})
+
 const removeReview = reviewId => ({
     type: REMOVE_REVIEW,
     reviewId
@@ -34,4 +39,49 @@ export const fetchReview = (itemId, reviewId) => async dispatch => {
     const res = await csrfFetch(`/api/items/${itemId}/reviews/${reviewId}`);
     const data = await res.json();
     dispatch(receiveReview(data));
+}
+
+export const createReview = (review) => async dispatch => {
+    const res = await csrfFetch(`/api/items/${review.itemId}/reviews`, {
+        method: 'post',
+        body: JSON.stringify(review)
+    });
+    const data = await res.json();
+    dispatch(receiveReview(data))
+}
+
+export const updateReview = (review) => async dispatch => {
+    const res = await csrfFetch(`/api/items/${review.itemId}/reviews/${review.id}`, {
+        method: 'patch',
+        body: JSON.stringify(review)
+    });
+    const data = await res.json();
+    dispatch(receiveReview(data))
+}
+
+export const deleteReview = (review) => async dispatch => {
+    const res = await csrfFetch(`/api/items${review.itemId}/reviews/${review.id}`, {
+        method: 'delete'
+    })
+    dispatch(removeReview(review.id))
+}
+
+
+const reviewsReducer = (state = {}, action) => {
+    const nextState = {...state}
+    switch (action.type) {
+        case RECEIVE_REVIEWS: 
+            return { ...nextState, ...action.payload};
+        case RECEIVE_REVIEW:
+            nextState[action.payload.id] = action.payload;
+            return nextState
+        // case CREATE_REVIEW:
+        //     nextState[action.payload.id] = action.payload;
+        //     return nextState
+        case REMOVE_REVIEW:
+            delete nextState[action.payload]
+            return nextState
+        default:
+            return state
+    }
 }
