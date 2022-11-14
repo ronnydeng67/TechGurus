@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchUser, getUser } from "../../store/users";
 import Rating from '@mui/material/Rating';
+import moment from "moment";
 
 const Review = ({ review }) => {
     const dispatch = useDispatch();
@@ -31,7 +32,7 @@ const Review = ({ review }) => {
                         </div>
                     </div>
                     <div className="post-date">
-                        {review.createdAt}
+                        {moment(review.createdAt).startOf("day").fromNow()}
                     </div>
                     <div className="review-body">
                         {review.body}
