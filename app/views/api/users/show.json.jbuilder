@@ -1,6 +1,5 @@
-json.user do
-    json.extract! @user, :id, :name, :email, :created_at, :updated_at
-end
+json.extract! @user, :id, :name, :email, :created_at, :updated_at
+
 
 json.carts do
     @user.carts.each do |cart|
