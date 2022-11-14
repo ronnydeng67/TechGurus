@@ -15,6 +15,7 @@ import moment from 'moment';
 import './ItemShowPage.css';
 import { addToCart, editCart } from '../../store/carts';
 import { useHistory } from 'react-router-dom';
+import { fetchReviews } from '../../store/reviews';
 
 
 const ItemShowPage = () => {
@@ -25,10 +26,12 @@ const ItemShowPage = () => {
     const [isLoading, setIsLoading] = useState(true)
     const sessionUser = useSelector(state => state.session.user);
     const state = useSelector(state => state);
+    const reviews = useSelector(state => state.reviews);
 
     const lol = useSelector(getItem(itemId))
 
     useEffect(() => {
+        dispatch(fetchReviews(itemId))
         dispatch(fetchItem(itemId)).then((res) => {
             setItem(res)
         }).then(() => {
@@ -176,7 +179,7 @@ const ItemShowPage = () => {
                             aria-controls="panel1a-content"
                             id="panel1a-header"
                             >
-                            <Typography>Accordion 1</Typography>
+                            <Typography>Overview</Typography>
                             </AccordionSummary>
                             <AccordionDetails>
                             <Typography>
@@ -191,7 +194,7 @@ const ItemShowPage = () => {
                             aria-controls="panel2a-content"
                             id="panel2a-header"
                             >
-                            <Typography>Accordion 2</Typography>
+                            <Typography>Reviews</Typography>
                             </AccordionSummary>
                             <AccordionDetails>
                             <Typography>
