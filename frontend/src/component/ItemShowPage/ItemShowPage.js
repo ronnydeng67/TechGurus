@@ -17,6 +17,7 @@ import { addToCart, editCart } from '../../store/carts';
 import { useHistory } from 'react-router-dom';
 import { fetchReviews, getReviews } from '../../store/reviews';
 import Review from './Reivew';
+import { Rating } from '@mui/material';
 
 
 const ItemShowPage = () => {
@@ -207,12 +208,44 @@ const ItemShowPage = () => {
                             </AccordionSummary>
                             <AccordionDetails>
                             <Typography>
-                                <div className="write-review">
+                                {/* <div className="write-review">
                                     <button id="review-button">Write a Review</button>
-                                </div>
+                                </div> */}
                                 {reviews.map(review => (
                                     <Review key={review.id} review={review}/>
                                 ))}
+                                <div className="write-review-container">
+                                        <div className="leave-review-text">
+                                            Leave a review
+                                        </div>
+                                        <div className="leave-review">
+                                            <div className="write-review-left"></div>
+                                            <div className="write-review-right">
+                                                <div className="write-review-rating">
+                                                    <div className="rating-text">
+                                                        Rating:
+                                                    </div>
+                                                    <div className="write-rating">
+                                                        <Rating
+                                                            name="simple-controlled"
+                                                            value={null}
+                                                        />
+                                                    </div>
+                                                </div>
+                                                <div className="write-review-title">
+                                                    <div className="title-text">Title: </div>
+                                                    <input type="text" id='title-input'/>
+                                                </div>
+                                                <div className="write-review-body">
+                                                    <div className="body-text">Your review: </div>
+                                                    <textarea name="" id="body-input" cols="40" rows="5"></textarea>
+                                                </div>
+                                                <div className="submit-review-container">
+                                                    <button id="submit-review-button">Submit Review</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
                             </Typography>
                             </AccordionDetails>
                         </Accordion>   
