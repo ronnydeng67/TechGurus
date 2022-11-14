@@ -207,6 +207,9 @@ const ItemShowPage = () => {
                             </AccordionSummary>
                             <AccordionDetails>
                             <Typography>
+                                <div className="write-review">
+                                    <button id="review-button">Write a Review</button>
+                                </div>
                                 {reviews.map(review => (
                                     <Review key={review.id} review={review}/>
                                 ))}

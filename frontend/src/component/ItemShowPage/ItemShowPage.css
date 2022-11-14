@@ -429,4 +429,7 @@ li {
     font-family: 'bestbuy-medium';
 }
 
-
+#review-button {
+    background-color: #1545be;
+    color: white;
+}
