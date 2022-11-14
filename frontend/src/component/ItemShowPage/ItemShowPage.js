@@ -15,7 +15,8 @@ import moment from 'moment';
 import './ItemShowPage.css';
 import { addToCart, editCart } from '../../store/carts';
 import { useHistory } from 'react-router-dom';
-import { fetchReviews } from '../../store/reviews';
+import { fetchReviews, getReviews } from '../../store/reviews';
+import Review from './Reivew';
 
 
 const ItemShowPage = () => {
@@ -26,7 +27,7 @@ const ItemShowPage = () => {
     const [isLoading, setIsLoading] = useState(true)
     const sessionUser = useSelector(state => state.session.user);
     const state = useSelector(state => state);
-    const reviews = useSelector(state => state.reviews);
+    const reviews = useSelector(getReviews);
 
     const lol = useSelector(getItem(itemId))
 
@@ -39,6 +40,7 @@ const ItemShowPage = () => {
         })
     },[itemId, dispatch])
 
+    console.log(reviews)
 
     const addItem = e => {
         // e.preventDefault();
@@ -172,19 +174,27 @@ const ItemShowPage = () => {
                         </div>
                     </div>
                 </div>
-                    <div className="overview-container">
+                    <div className="more-container">
                         <Accordion>
                             <AccordionSummary
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls="panel1a-content"
                             id="panel1a-header"
                             >
-                            <Typography>Overview</Typography>
+                            <Typography id="overview-title">Overview</Typography>
                             </AccordionSummary>
                             <AccordionDetails>
                             <Typography>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                malesuada lacus ex, sit amet blandit leo lobortis eget.
+                                <div className="overview-container">
+                                    <div className="description">
+                                        <div className="description-left">Descroption</div>
+                                        <div className="description-right">{lol.description}</div>
+                                    </div>
+                                    <div className="feature">
+                                        <div className="feature-left">Features</div>
+                                        <div className="feature-right">{lol.details.split(/\r?\n/).map(detail => <li key={detail}>{detail}</li>)}</div>
+                                    </div>
+                                </div>
                             </Typography>
                             </AccordionDetails>
                         </Accordion>
@@ -198,20 +208,10 @@ const ItemShowPage = () => {
                             </AccordionSummary>
                             <AccordionDetails>
                             <Typography>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                malesuada lacus ex, sit amet blandit leo lobortis eget.
+                                <Review />
                             </Typography>
                             </AccordionDetails>
-                        </Accordion>
-                        <Accordion disabled>
-                            <AccordionSummary
-                            expandIcon={<ExpandMoreIcon />}
-                            aria-controls="panel3a-content"
-                            id="panel3a-header"
-                            >
-                            <Typography>Disabled Accordion</Typography>
-                            </AccordionSummary>
-                        </Accordion>       
+                        </Accordion>   
                     </div>
             </div>
         );
