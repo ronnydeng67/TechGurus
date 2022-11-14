@@ -17,7 +17,12 @@ const Review = ({ review }) => {
             <div className="review-container">
                 <div className="review-left">{reviewer.name}</div>
                 <div className="review-right">
-                    
+                    <div className="review-title">
+                        {review.title}
+                    </div>
+                    <div className="review-body">
+                        {review.body}
+                    </div>
                 </div>
             </div>
         );
