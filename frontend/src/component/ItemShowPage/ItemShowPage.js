@@ -170,31 +170,7 @@ const ItemShowPage = () => {
                     </div>
                 </div>
                     <div className="overview-container">
-                                <Accordion style={{height: "100px"}}>
-                                    <AccordionSummary
-                                    expandIcon={<ExpandMoreIcon />}
-                                    aria-controls="panel1a-content"
-                                    id="panel1a-header"
-                                    >
-                                    <Typography style={{fontSize: "1.8rem", paddingTop: "15px"}}>Overview</Typography>
-                                    </AccordionSummary>
-                                    <AccordionDetails>
-                                    <Typography component={'div'}>
-                                    <div className="overview">
-                                        <div className="item-description">
-                                            <div className="description-title">Description</div>
-                                            <div className="description-text">{lol.description}</div>
-                                        </div>
-                                        <div className="item-details">
-                                            <div className="details-title">Details</div>
-                                            <ul>
-                                                {lol.details.split(/\r?\n/).map(detail => <li key={detail}>{detail}</li>)}
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    </Typography>
-                                    </AccordionDetails>
-                                </Accordion>                
+                                           
                     </div>
             </div>
         );
