@@ -203,7 +203,7 @@ const ItemShowPage = () => {
                             aria-controls="panel2a-content"
                             id="panel2a-header"
                             >
-                            <Typography>Reviews</Typography>
+                            <Typography id="review-title">Reviews</Typography>
                             </AccordionSummary>
                             <AccordionDetails>
                             <Typography>
