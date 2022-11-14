@@ -40,7 +40,6 @@ const ItemShowPage = () => {
         })
     },[itemId, dispatch])
 
-    console.log(reviews)
 
     const addItem = e => {
         // e.preventDefault();
@@ -187,7 +186,7 @@ const ItemShowPage = () => {
                             <Typography>
                                 <div className="overview-container">
                                     <div className="description">
-                                        <div className="description-left">Descroption</div>
+                                        <div className="description-left">Description</div>
                                         <div className="description-right">{lol.description}</div>
                                     </div>
                                     <div className="feature">
@@ -208,7 +207,9 @@ const ItemShowPage = () => {
                             </AccordionSummary>
                             <AccordionDetails>
                             <Typography>
-                                <Review />
+                                {reviews.map(review => (
+                                    <Review key={review.id} review={review}/>
+                                ))}
                             </Typography>
                             </AccordionDetails>
                         </Accordion>   
