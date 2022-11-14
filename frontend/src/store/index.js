@@ -4,12 +4,14 @@ import sessionReducer from './session';
 import itemsReducer from './items';
 import cartReducer from './carts';
 import reviewsReducer from './reviews';
+import userReducer from './users';
 
 const rootReducer = combineReducers({
     session: sessionReducer,
     items: itemsReducer,
     carts: cartReducer,
-    reviews: reviewsReducer
+    reviews: reviewsReducer,
+    users: userReducer
 })
 
 
