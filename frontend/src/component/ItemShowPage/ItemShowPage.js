@@ -34,6 +34,7 @@ const ItemShowPage = () => {
     const [body, setBody] = useState("");
     const [reviewError, setReviewError] = useState(false)
     const lol = useSelector(getItem(itemId))
+    const carts = useSelector(state => state.carts)
 
     const handleRating = e => {
         setRating(e.target.value)
