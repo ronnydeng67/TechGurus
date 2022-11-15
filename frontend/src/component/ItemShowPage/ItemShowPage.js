@@ -15,20 +15,61 @@ import moment from 'moment';
 import './ItemShowPage.css';
 import { addToCart, editCart } from '../../store/carts';
 import { useHistory } from 'react-router-dom';
+import { createReview, fetchReviews, getReviews } from '../../store/reviews';
+import Review from './Reivew';
+import { Rating } from '@mui/material';
+import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 
 
 const ItemShowPage = () => {
     const history = useHistory();
     const { itemId } = useParams();
     const dispatch = useDispatch();
-    const [item, setItem] = useState({})
+    const [item, setItem] = useState({});
     const [isLoading, setIsLoading] = useState(true)
     const sessionUser = useSelector(state => state.session.user);
     const state = useSelector(state => state);
-
+    const reviews = useSelector(getReviews);
+    const [rating, setRating] = useState(0);
+    const [title, setTitle] = useState("");
+    const [body, setBody] = useState("");
+    const [reviewError, setReviewError] = useState(false)
     const lol = useSelector(getItem(itemId))
 
+    const handleRating = e => {
+        setRating(e.target.value)
+    }
+
+    const handleTitle = e => {
+        setTitle(e.target.value)
+    }
+
+    const handleBody = e => {
+        setBody(e.target.value)
+    }
+
+    const handleSubmit = e => {
+        e.preventDefault();
+        if (sessionUser) {
+            if (title.length && body.length && rating !== 0) {
+                dispatch(createReview({
+                    title: title,
+                    body: body,
+                    rating: rating,
+                    reviewerId: sessionUser.id,
+                    itemId: itemId
+                }))
+                window.location.reload(false);
+            } else {
+                setReviewError(true)
+            }
+        } else {
+            history.push('/login')
+        }
+    }
+
     useEffect(() => {
+        dispatch(fetchReviews(itemId))
         dispatch(fetchItem(itemId)).then((res) => {
             setItem(res)
         }).then(() => {
@@ -173,32 +214,92 @@ const ItemShowPage = () => {
                         </div>
                     </div>
                 </div>
-                    <div className="overview-container">
-                                <Accordion sx={{zIndex: 0}} style={{height: "100px"}}>
-                                    <AccordionSummary
-                                    expandIcon={<ExpandMoreIcon />}
-                                    aria-controls="panel1a-content"
-                                    id="panel1a-header"
-                                    >
-                                    <Typography style={{fontSize: "1.8rem", paddingTop: "15px"}}>Overview</Typography>
-                                    </AccordionSummary>
-                                    <AccordionDetails>
-                                    <Typography component={'div'}>
-                                    <div className="overview">
-                                        <div className="item-description">
-                                            <div className="description-title">Description</div>
-                                            <div className="description-text">{lol.description}</div>
-                                        </div>
-                                        <div className="item-details">
-                                            <div className="details-title">Details</div>
-                                            <ul>
-                                                {lol.details.split(/\r?\n/).map(detail => <li key={detail}>{detail}</li>)}
-                                            </ul>
-                                        </div>
+                    <div className="more-container">
+                        <Accordion>
+                            <AccordionSummary
+                            expandIcon={<ExpandMoreIcon />}
+                            aria-controls="panel1a-content"
+                            id="panel1a-header"
+                            >
+                            <Typography id="overview-title">Overview</Typography>
+                            </AccordionSummary>
+                            <AccordionDetails>
+                            <Typography>
+                                <div className="overview-container">
+                                    <div className="description">
+                                        <div className="description-left">Description</div>
+                                        <div className="description-right">{lol.description}</div>
                                     </div>
-                                    </Typography>
-                                    </AccordionDetails>
-                                </Accordion>
+                                    <div className="feature">
+                                        <div className="feature-left">Features</div>
+                                        <div className="feature-right">{lol.details.split(/\r?\n/).map(detail => <li key={detail}>{detail}</li>)}</div>
+                                    </div>
+                                </div>
+                            </Typography>
+                            </AccordionDetails>
+                        </Accordion>
+                        <Accordion>
+                            <AccordionSummary
+                            expandIcon={<ExpandMoreIcon />}
+                            aria-controls="panel2a-content"
+                            id="panel2a-header"
+                            >
+                            <Typography id="review-title">Reviews</Typography>
+                            </AccordionSummary>
+                            <AccordionDetails>
+                            <Typography>
+                                
+                                {reviews.map(review => (
+                                    <Review key={review.id} sessionUser={sessionUser} review={review}/>
+                                ))}
+                                <div className="write-review-container">
+                                        <div className="leave-review-text">
+                                            Leave a review
+                                        </div>
+                                        <div className="leave-review">
+                                            <div className="write-review-left">
+                                                {reviewError ? 
+                                                    <div className="review-error">
+                                                        Please fill out all the fields on the right, thank you!!
+                                                        <br />
+                                                        <ErrorOutlineIcon id="error-icon"/>
+                                                    </div>
+                                                        :
+                                                        ""
+                                                    }
+                                                
+                                            </div>
+                                            <div className="write-review-right">
+                                                <div className="write-review-rating">
+                                                    <div className="rating-text">
+                                                        Rating*
+                                                    </div>
+                                                    <div className="write-rating">
+                                                        <Rating
+                                                            name="simple-controlled"
+                                                            value={rating}
+                                                            onChange={handleRating}
+                                                            precision={0.5}
+                                                        />
+                                                    </div>
+                                                </div>
+                                                <div className="write-review-title">
+                                                    <div className="title-text">Title* </div>
+                                                    <input type="text" id='title-input' onChange={handleTitle} required/>
+                                                </div>
+                                                <div className="write-review-body">
+                                                    <div className="body-text">Your review* </div>
+                                                    <textarea name="" id="body-input" cols="40" rows="5" onChange={handleBody} required></textarea>
+                                                </div>
+                                                <div className="submit-review-container">
+                                                    <button id="submit-review-button" onClick={handleSubmit}>Submit Review</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                            </Typography>
+                            </AccordionDetails>
+                        </Accordion>   
                     </div>
             </div>
         );
