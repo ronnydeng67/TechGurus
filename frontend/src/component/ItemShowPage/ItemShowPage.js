@@ -18,6 +18,7 @@ import { useHistory } from 'react-router-dom';
 import { createReview, fetchReviews, getReviews } from '../../store/reviews';
 import Review from './Reivew';
 import { Rating } from '@mui/material';
+import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 
 
 const ItemShowPage = () => {
@@ -32,6 +33,7 @@ const ItemShowPage = () => {
     const [rating, setRating] = useState(0);
     const [title, setTitle] = useState("");
     const [body, setBody] = useState("");
+    const [reviewError, setReviewError] = useState(false)
     const lol = useSelector(getItem(itemId))
 
     const handleRating = e => {
@@ -47,16 +49,20 @@ const ItemShowPage = () => {
     }
 
     const handleSubmit = e => {
+        e.preventDefault();
         if (sessionUser) {
-            e.preventDefault();
-            dispatch(createReview({
-                title: title,
-                body: body,
-                rating: rating,
-                reviewerId: sessionUser.id,
-                itemId: itemId
-            }))
-            window.location.reload(false);
+            if (title.length && body.length && rating !== 0) {
+                dispatch(createReview({
+                    title: title,
+                    body: body,
+                    rating: rating,
+                    reviewerId: sessionUser.id,
+                    itemId: itemId
+                }))
+                window.location.reload(false);
+            } else {
+                setReviewError(true)
+            }
         } else {
             history.push('/login')
         }
@@ -247,7 +253,18 @@ const ItemShowPage = () => {
                                             Leave a review
                                         </div>
                                         <div className="leave-review">
-                                            <div className="write-review-left"></div>
+                                            <div className="write-review-left">
+                                                {reviewError ? 
+                                                    <div className="review-error">
+                                                        Please fill out all the fields on the right, thank you!!
+                                                        <br />
+                                                        <ErrorOutlineIcon id="error-icon"/>
+                                                    </div>
+                                                        :
+                                                        ""
+                                                    }
+                                                
+                                            </div>
                                             <div className="write-review-right">
                                                 <div className="write-review-rating">
                                                     <div className="rating-text">

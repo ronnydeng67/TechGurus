@@ -457,6 +457,9 @@ li {
     font-size: 1rem;
     font-family: 'bestbuy-medium';
     color: #195bc8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .write-review-right {
@@ -534,4 +537,15 @@ li {
 
 #delete-review-button:hover {
     text-decoration: underline;
+}
+
+.review-error {
+    width: 250px;
+    height: 200px;
+    color: red;
+    text-align: center;
+}
+
+#error-icon {
+    font-size: 3rem;
 }
