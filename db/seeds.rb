@@ -467,6 +467,22 @@ All-day battery life and up to 29 hours of video playback"
     file26 = File.open('app/assets/images/2k.png')
     item26.photo.attach(io: file26, filename: '2k.png')
 
+    item00 = Item.create(
+      name: 'TechGurus TotalTech Yearly Membership',
+      price: '199.99',
+      department: 'special',
+      description: 'TechGurus Totaltech is the membership you and your tech deserve: around-the-clock tech support, up to 24 months of product protection with active membership, free delivery and standard installation, plus so much more. A plan you need to protect the tech you love.',
+      details: "Get unlimited tech support on all the technology in your home, no matter where you bought it. We’re always ready to help you in store, over the phone and 24/7 online.
+      From TV mounting to installing a smart video doorbell, there’s a huge list of in-home installations that we’ll do for free when you purchase your product from Best Buy. You’ll also get free delivery on your TechGurus purchases.
+      Get expert advice, product recommendations, appointment support and much more. Connect with us through a dedicated Totaltech support line, available 24/7/365.
+      Enjoy member-only prices on select products and services.
+      You’ll also get free same-day delivery whenever available. No minimum purchase required.
+      Enjoy an extended 60-day return and exchange window on most products.
+      Save 20% on labor for repairs and advanced services, and 10% on labor for custom installations."
+    )
+    file00 = File.open('app/assets/images/totaltech.png')
+    item00.photo.attach(io: file00, filename: 'totaltech.png')
+
     puts "Destroying reviews tables..."
 
     Review.destroy_all

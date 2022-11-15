@@ -28,21 +28,6 @@ const Review = ({ review, sessionUser }) => {
         dispatch(deleteReview(review))
         window.location.reload(false)
     }
-    
-    // const handleEditRating = e => {
-    //     e.preventDefault();
-
-    // }
-
-    // const handleEditTitle = e => {
-    //     e.preventDefault();
-    //     setNewTitle(e.target.value)
-    // }
-
-    // const handleEditBody = e => {
-    //     e.preventDefault();
-    //     setNewBody(e.target.value)
-    // }
 
     const update = field => {
         let setState
@@ -97,7 +82,6 @@ const Review = ({ review, sessionUser }) => {
                         </div>
                     </div>
                     <div className="post-date">
-                        {/* {moment(review.createdAt).format()} */}
                         {moment(moment(review.createdAt).format()).startOf("minute").fromNow()}
                     </div>
                     <div className="review-body">
@@ -106,7 +90,7 @@ const Review = ({ review, sessionUser }) => {
                     <div className="delete-review">
                         {sessionUser?.id === reviewer.id ? 
                             <div className="edit-delete">
-                                <button id="edit-review-button" onClick={handleOpen}>edit</button>
+                                <button id="edit-review-button" onClick={handleOpen}>Edit</button>
                                     <Modal
                                         open={open}
                                         onClose={handleClose}
@@ -145,7 +129,7 @@ const Review = ({ review, sessionUser }) => {
                                             </div>
                                         </div>
                                     </Modal>
-                                <button id="delete-review-button" onClick={handleDelete}>delete</button>
+                                <button id="delete-review-button" onClick={handleDelete}>Delete</button>
                             </div> :
                             ""
                         }
