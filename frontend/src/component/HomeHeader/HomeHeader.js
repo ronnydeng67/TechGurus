@@ -38,6 +38,9 @@ const HomeHeader = () => {
             dispatch(sessionActions.logoutUser());
     }
 
+    const handleSearch = e => {
+        
+    }
 
         
     useEffect(()=>{
@@ -84,7 +87,7 @@ const HomeHeader = () => {
                             onChange={e => setSearch(e.target.value)}
                             value={search}
                         />
-                        <button id="magnify"><HiMagnifyingGlass style={{color: "black", fontSize: "x-large"}}/></button>
+                        <button id="magnify" onClick={handleSearch}><HiMagnifyingGlass style={{color: "black", fontSize: "x-large"}}/></button>
                     </div>
                 </div>
                 <div className="home-header-right">
