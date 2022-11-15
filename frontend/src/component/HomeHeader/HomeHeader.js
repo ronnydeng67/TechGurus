@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import logo from './logo1.png';
 import { HiMagnifyingGlass } from "react-icons/hi2";
+import SearchIcon from '@mui/icons-material/Search';
 import './HomeHeader.css';
 import ShowAccForm from './ShowAccModal';
 import { getCarts } from '../../store/carts';
@@ -39,7 +40,7 @@ const HomeHeader = () => {
     }
 
     const handleSearch = e => {
-        
+
     }
 
         
@@ -87,7 +88,7 @@ const HomeHeader = () => {
                             onChange={e => setSearch(e.target.value)}
                             value={search}
                         />
-                        <button id="magnify" onClick={handleSearch}><HiMagnifyingGlass style={{color: "black", fontSize: "x-large"}}/></button>
+                        <button id="magnify" onClick={handleSearch}><SearchIcon style={{color: "black", fontSize: "x-large"}}/></button>
                     </div>
                 </div>
                 <div className="home-header-right">
