@@ -250,7 +250,10 @@ const ItemShowPage = () => {
                             <Typography>
                                 
                                 {reviews.length ? reviews.map(review => (
-                                    <Review key={review.id} sessionUser={sessionUser} review={review}/>
+                                    <Review key={review.id} 
+                                    sessionUser={sessionUser} 
+                                    review={review}
+                                    />
                                 ))
                                     :
                                     <div className="empty-review" style={{fontSize: "large"}}>
@@ -290,11 +293,11 @@ const ItemShowPage = () => {
                                                 </div>
                                                 <div className="write-review-title">
                                                     <div className="title-text">Title* </div>
-                                                    <input type="text" id='title-input' onChange={handleTitle} required/>
+                                                    <input type="text" id='title-input' onChange={handleTitle} value={title}required/>
                                                 </div>
                                                 <div className="write-review-body">
                                                     <div className="body-text">Your review* </div>
-                                                    <textarea name="" id="body-input" cols="40" rows="5" onChange={handleBody} required></textarea>
+                                                    <textarea name="" id="body-input" cols="40" rows="5" onChange={handleBody} value={body} required></textarea>
                                                 </div>
                                                 <div className="submit-review-container">
                                                     <button id="submit-review-button" onClick={handleSubmit}>Submit Review</button>

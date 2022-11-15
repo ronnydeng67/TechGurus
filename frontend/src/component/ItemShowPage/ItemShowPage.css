@@ -476,10 +476,12 @@ li {
 
 #title-input {
     border: 1px solid gray;
+    padding-left: 3px;
 }
 
 #body-input {
     border: 1px solid gray;
+    padding-left: 3px;
 }
 
 .leave-review {
@@ -530,12 +532,27 @@ li {
     font-family: 'bestbuy-medium';
 }
 
+.edit-delete {
+    display: flex;
+    width: 100px;
+    justify-content: space-between;
+}
+
 #delete-review-button {
     margin-top: 30px;
     color: #0046be;
 }
 
+#edit-review-button {
+    margin-top: 30px;
+    color: #0046be;
+}
+
 #delete-review-button:hover {
+    text-decoration: underline;
+}
+
+#edit-review-button:hover {
     text-decoration: underline;
 }
 

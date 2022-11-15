@@ -19,6 +19,10 @@ const Review = ({ review, sessionUser }) => {
         window.location.reload(false)
     }
     
+    const handleEdit = e => {
+        e.preventDefault();
+        
+    }
 
     if (reviewer) {
         return (
@@ -28,7 +32,7 @@ const Review = ({ review, sessionUser }) => {
                     <div className="review-title">
                         <div className="rating">
                             <Rating name="read-only"
-                            precision={0.25}
+                            precision={0.5}
                             value={review.rating} 
                             readOnly 
                             id="rating"/>
@@ -45,7 +49,10 @@ const Review = ({ review, sessionUser }) => {
                     </div>
                     <div className="delete-review">
                         {sessionUser?.id === reviewer.id ? 
-                            <button id="delete-review-button" onClick={handleDelete}>delete</button> :
+                            <div className="edit-delete">
+                                <button id="edit-review-button" onClick={handleEdit}>edit</button>
+                                <button id="delete-review-button" onClick={handleDelete}>delete</button>
+                            </div> :
                             ""
                         }
                     </div>
