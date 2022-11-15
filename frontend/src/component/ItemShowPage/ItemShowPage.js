@@ -249,9 +249,14 @@ const ItemShowPage = () => {
                             <AccordionDetails>
                             <Typography>
                                 
-                                {reviews.map(review => (
+                                {reviews.length ? reviews.map(review => (
                                     <Review key={review.id} sessionUser={sessionUser} review={review}/>
-                                ))}
+                                ))
+                                    :
+                                    <div className="empty-review" style={{fontSize: "large"}}>
+                                        This product has no reviews yet.
+                                    </div>
+                                }
                                 <div className="write-review-container">
                                         <div className="leave-review-text">
                                             Leave a review
