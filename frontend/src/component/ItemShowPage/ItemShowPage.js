@@ -5,7 +5,6 @@ import { fetchItem, getItem } from '../../store/items';
 import { FaExchangeAlt } from 'react-icons/fa';
 import { FiHeadphones, FiShield } from 'react-icons/fi';
 import { MdHandyman, MdOutlineStore, MdLocalShipping, MdShoppingCart } from 'react-icons/md';
-
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
@@ -288,6 +287,7 @@ const ItemShowPage = () => {
                                                             value={rating}
                                                             onChange={handleRating}
                                                             precision={0.5}
+                                                            required
                                                         />
                                                     </div>
                                                 </div>

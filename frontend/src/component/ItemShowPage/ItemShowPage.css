@@ -566,3 +566,64 @@ li {
 #error-icon {
     font-size: 3rem;
 }
+
+.edit-review-modal {
+    width: 500px;
+    height: 500px;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    border: 1px solid #0046be;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.edit-text {
+    font-family: 'bestbuy-medium';
+    font-size: x-large;
+}
+
+.edit-review-container {
+    width: 400px;
+    height: 400px;
+    /* border: 1px solid black; */
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#edit-title {
+    border: 1px solid grey;
+    width: 390px;
+    padding-left: 3px;
+    height: 30px;
+}
+
+#edit-body {
+    border: 1px solid grey;
+    width: 390px;
+    padding-left: 3px;
+}
+
+#edit-button {
+    background-color: #0046be;
+    color: white;
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    transition: 0.4s;
+}
+
+#edit-button:hover {
+    background-color: darkblue;
+}
+
+.edit-error {
+    color: red;
+}

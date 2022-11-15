@@ -37,7 +37,7 @@ class Api::ReviewsController < ApplicationController
     end
 
     def show
-        @review = Review.find_by(id: parms[:id])
+        @review = Review.find_by(id: params[:id])
         render :show
     end
 
