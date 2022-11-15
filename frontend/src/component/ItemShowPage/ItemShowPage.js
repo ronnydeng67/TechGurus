@@ -104,7 +104,12 @@ const ItemShowPage = () => {
     const ship = moment().add(3, 'days').format('dddd, MMM Do')
 
     const handleTotalTech = () => {
-        alert("Sorry, Totaltech is unavailable at this moment, please check back with us later!")
+        // alert("Sorry, Totaltech is unavailable at this moment, please check back with us later!")
+        if (state.session.user) {
+            dispatch(addToCart({itemId: 27, userId: sessionUser.id, quantity: 1}))
+        } else {
+            history.push('/login')
+        }
     }
 
     if(isLoading) {
