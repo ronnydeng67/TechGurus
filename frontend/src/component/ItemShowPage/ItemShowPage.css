@@ -397,6 +397,7 @@ li {
 
 .review-container {
     display: flex;
+    margin-top: 20px;
 }
 
 .review-left {
@@ -489,7 +490,9 @@ li {
 }
 
 .write-review-rating {
+    padding-top: 20px;
     display: flex;
+    flex-direction: column;
 }
 
 .write-review-title {
@@ -521,5 +524,14 @@ li {
 .title-text,
 .body-text {
     font-size: larger;
+    font-family: 'bestbuy-medium';
 }
 
+#delete-review-button {
+    margin-top: 30px;
+    color: #0046be;
+}
+
+#delete-review-button:hover {
+    text-decoration: underline;
+}

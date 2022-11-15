@@ -15,7 +15,7 @@ import moment from 'moment';
 import './ItemShowPage.css';
 import { addToCart, editCart } from '../../store/carts';
 import { useHistory } from 'react-router-dom';
-import { fetchReviews, getReviews } from '../../store/reviews';
+import { createReview, fetchReviews, getReviews } from '../../store/reviews';
 import Review from './Reivew';
 import { Rating } from '@mui/material';
 
@@ -24,13 +24,43 @@ const ItemShowPage = () => {
     const history = useHistory();
     const { itemId } = useParams();
     const dispatch = useDispatch();
-    const [item, setItem] = useState({})
+    const [item, setItem] = useState({});
     const [isLoading, setIsLoading] = useState(true)
     const sessionUser = useSelector(state => state.session.user);
     const state = useSelector(state => state);
     const reviews = useSelector(getReviews);
-
+    const [rating, setRating] = useState(0);
+    const [title, setTitle] = useState("");
+    const [body, setBody] = useState("");
     const lol = useSelector(getItem(itemId))
+
+    const handleRating = e => {
+        setRating(e.target.value)
+    }
+
+    const handleTitle = e => {
+        setTitle(e.target.value)
+    }
+
+    const handleBody = e => {
+        setBody(e.target.value)
+    }
+
+    const handleSubmit = e => {
+        if (sessionUser) {
+            e.preventDefault();
+            dispatch(createReview({
+                title: title,
+                body: body,
+                rating: rating,
+                reviewerId: sessionUser.id,
+                itemId: itemId
+            }))
+            window.location.reload(false);
+        } else {
+            history.push('/login')
+        }
+    }
 
     useEffect(() => {
         dispatch(fetchReviews(itemId))
@@ -208,11 +238,9 @@ const ItemShowPage = () => {
                             </AccordionSummary>
                             <AccordionDetails>
                             <Typography>
-                                {/* <div className="write-review">
-                                    <button id="review-button">Write a Review</button>
-                                </div> */}
+                                
                                 {reviews.map(review => (
-                                    <Review key={review.id} review={review}/>
+                                    <Review key={review.id} sessionUser={sessionUser} review={review}/>
                                 ))}
                                 <div className="write-review-container">
                                         <div className="leave-review-text">
@@ -223,25 +251,27 @@ const ItemShowPage = () => {
                                             <div className="write-review-right">
                                                 <div className="write-review-rating">
                                                     <div className="rating-text">
-                                                        Rating:
+                                                        Rating*
                                                     </div>
                                                     <div className="write-rating">
                                                         <Rating
                                                             name="simple-controlled"
-                                                            value={null}
+                                                            value={rating}
+                                                            onChange={handleRating}
+                                                            precision={0.5}
                                                         />
                                                     </div>
                                                 </div>
                                                 <div className="write-review-title">
-                                                    <div className="title-text">Title: </div>
-                                                    <input type="text" id='title-input'/>
+                                                    <div className="title-text">Title* </div>
+                                                    <input type="text" id='title-input' onChange={handleTitle} required/>
                                                 </div>
                                                 <div className="write-review-body">
-                                                    <div className="body-text">Your review: </div>
-                                                    <textarea name="" id="body-input" cols="40" rows="5"></textarea>
+                                                    <div className="body-text">Your review* </div>
+                                                    <textarea name="" id="body-input" cols="40" rows="5" onChange={handleBody} required></textarea>
                                                 </div>
                                                 <div className="submit-review-container">
-                                                    <button id="submit-review-button">Submit Review</button>
+                                                    <button id="submit-review-button" onClick={handleSubmit}>Submit Review</button>
                                                 </div>
                                             </div>
                                         </div>

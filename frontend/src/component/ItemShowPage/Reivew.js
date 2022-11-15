@@ -3,15 +3,21 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchUser, getUser } from "../../store/users";
 import Rating from '@mui/material/Rating';
 import moment from "moment";
+import { deleteReview } from "../../store/reviews";
 
-const Review = ({ review }) => {
+const Review = ({ review, sessionUser }) => {
     const dispatch = useDispatch();
     const reviewer = useSelector(getUser(review.reviewerId))
     
-    console.log(review.reviewerId)
     useEffect(() => {
         dispatch(fetchUser(review.reviewerId))
-    },[])
+    },[dispatch])
+
+    const handleDelete = e => {
+        e.preventDefault();
+        dispatch(deleteReview(review))
+        window.location.reload(false)
+    }
     
 
     if (reviewer) {
@@ -36,6 +42,12 @@ const Review = ({ review }) => {
                     </div>
                     <div className="review-body">
                         {review.body}
+                    </div>
+                    <div className="delete-review">
+                        {sessionUser.id === reviewer.id ? 
+                            <button id="delete-review-button" onClick={handleDelete}>delete</button> :
+                            ""
+                        }
                     </div>
                 </div>
             </div>
