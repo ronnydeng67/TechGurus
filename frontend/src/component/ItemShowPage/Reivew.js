@@ -97,7 +97,8 @@ const Review = ({ review, sessionUser }) => {
                         </div>
                     </div>
                     <div className="post-date">
-                        {moment(review.createdAt).startOf("day").fromNow()}
+                        {/* {moment(review.createdAt).format()} */}
+                        {moment(moment(review.createdAt).format()).startOf("minute").fromNow()}
                     </div>
                     <div className="review-body">
                         {review.body}
