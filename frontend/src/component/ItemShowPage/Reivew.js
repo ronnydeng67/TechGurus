@@ -44,7 +44,7 @@ const Review = ({ review, sessionUser }) => {
                         {review.body}
                     </div>
                     <div className="delete-review">
-                        {sessionUser.id === reviewer.id ? 
+                        {sessionUser?.id === reviewer.id ? 
                             <button id="delete-review-button" onClick={handleDelete}>delete</button> :
                             ""
                         }
