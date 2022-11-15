@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { fetchItems, getItems } from "../../store/items";
+import SearchResults from "./SearchResults";
 import Fuse from 'fuse.js';
 import './Search.css'
 
@@ -19,19 +20,40 @@ const Search = () => {
         })
     },[dispatch])
 
-    const filter = new Fuse(allItems, {
-        keys: ['name']
-    })
+    const options = {
+        shouldSort: true,
+        threshold: 0.4,
+        keys: ['name', 'description']
+    }
 
-    const searchResults = filter.search(keyWord);
+    const filter = new Fuse(allItems, options)
 
-    console.log(searchResults)
+    const resultItems = filter.search(keyWord);
 
-    return (
-        <div className="search-container">
-            dsadsadsadas
-        </div>
-    );
+
+    if(!loaded) {
+        return (
+            <div>Loading...</div>
+        )
+    } else {
+        return (
+            <div className="search-page">
+                <div className="search-result-text">
+                    Results for "{keyWord}".
+                </div>
+                <div className="search-container">
+                    {resultItems.length ? resultItems.map(resultItem => (
+                        <SearchResults resultItem={resultItem}/> 
+                    )) :
+                        <div className="no-results">
+                            Hmmmm, we didn't find anything for "{keyWord}".<br />
+                            Try a different search term.
+                        </div>
+                    }
+                </div>
+            </div>
+        );
+    }
 }
  
 export default Search;

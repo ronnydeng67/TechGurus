@@ -1,4 +1,60 @@
+.search-page {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .search-container {
     width: 1400px;
     height: auto;
+    border: 1px solid black;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-result-text {
+    margin-top: 30px;
+}
+
+.result-item-container {
+    height: 350px;
+    width: 1200px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+}
+
+.result-pic-container {
+    height: 285px;
+    width: 400px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+}
+
+.result-info-container {
+    height: 285px;
+    width: 450px;
+    border: 1px solid black;
+}
+
+.result-price-container {
+    height: 285px;
+    width: 350px;
+    border: 1px solid black;
+}
+
+#result-pic {
+    height: 200px;
+    width: auto;
+    margin: 30px;
+}
+
+.result-name {
+    display: flex;
+    justify-content: center;
 }
