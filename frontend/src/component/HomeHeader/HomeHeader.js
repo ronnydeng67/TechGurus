@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import logo from './logo1.png';
 import { HiMagnifyingGlass } from "react-icons/hi2";
+import SearchIcon from '@mui/icons-material/Search';
 import './HomeHeader.css';
 import ShowAccForm from './ShowAccModal';
 import { getCarts } from '../../store/carts';
@@ -38,6 +39,18 @@ const HomeHeader = () => {
             dispatch(sessionActions.logoutUser());
     }
 
+    const handleSearch = e => {
+        if (search.length) {
+            history.push(`/search/${search}`)
+        } 
+    }
+
+    const handleEnter = e => {
+        let code = e.keyCode || e.which
+        if (code === 13) {
+            handleSearch(e.target.value)
+        }
+    }
 
         
     useEffect(()=>{
@@ -82,9 +95,10 @@ const HomeHeader = () => {
                             placeholder='Search TechGurus'
                             id="search"
                             onChange={e => setSearch(e.target.value)}
+                            onKeyPress={handleEnter}
                             value={search}
                         />
-                        <button id="magnify"><HiMagnifyingGlass style={{color: "black", fontSize: "x-large"}}/></button>
+                        <button id="magnify" onClick={handleSearch}><SearchIcon style={{color: "black", fontSize: "x-large"}}/></button>
                     </div>
                 </div>
                 <div className="home-header-right">

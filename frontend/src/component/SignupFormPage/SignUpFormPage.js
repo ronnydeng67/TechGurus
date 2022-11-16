@@ -80,6 +80,9 @@ const ConField = styled(TextField)({
     '& .MuiFormHelperText-root': {
         color: 'green',
     },
+    '&.Mui-error': {
+        color:'red',
+    },
     '& label.Mui-focused': {
         color: 'black',
     },
@@ -129,12 +132,18 @@ const SignUpFormPage = () => {
         setPasswordShown(!passwordShown);
     }
 
+    const handleGoogle = e => {
+        alert("Stay tuned for this feature!")
+    }
+
+
     const handleSubmit = e => {
         e.preventDefault();
         if ((password === confirmPassword) && (isValidName(name)) && (isValidEmail(email)) && (password.length > 5)) {
             setErrors([]);
             dispatch(sessionActions.signup({name, email, password}))
                 .catch(async (res) => {
+                    debugger
                     let data;
                     try {
                         data = await res.clone().json();
@@ -200,7 +209,7 @@ const SignUpFormPage = () => {
     }
 
     const handleConPass = (e) => {
-        if (((e.target.value) === password) && (password !== 0)) {
+        if (((e.target.value) === password) && (password.length !== 0)) {
             setConPassError(false)
             setMatchMsg("Your passwords match!")
         } else {
@@ -231,10 +240,10 @@ const SignUpFormPage = () => {
                     <h3 className='title'>Create an Account</h3>
                 </div>
                     <div className={errors.length === 0 ? "" : "errors"}>
-                        <div className={(errors.length > 0) && ("error-icon")}>
+                        <div className={(errors.length > 0) ? ("error-icon") : ""}>
                             {errors.length > 0 ? errorIcon : ""}
                         </div>
-                        <div className={(errors.length > 0) && "error"}>
+                        <div className={(errors.length > 0) ? "error" : ""}>
                             {errors}
                         </div>
                     </div>
@@ -323,9 +332,9 @@ const SignUpFormPage = () => {
             
                 <div className="signup-google">
                     <div className="google-button-container">
-                        <button id="google-button">
+                        <button id="google-button" onClick={handleGoogle}>
                             <div className="inside-button">
-                                <svg aria-hidden="true" role="img" viewBox="0 0 100 100" height="22" width="22"><svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" fill="none" fill-rule="evenodd"><path d="M17.64 9.2c0-.63-.06-1.25-.16-1.84H9v3.49h4.84a4.14 4.14 0 0 1-1.8 2.71v2.26h2.92a8.78 8.78 0 0 0 2.68-6.62z" fill="#4285F4"></path><path d="M9 18a8.6 8.6 0 0 0 5.96-2.18l-2.91-2.26a5.4 5.4 0 0 1-8.09-2.85h-3v2.33A9 9 0 0 0 9 18z" fill="#34A853"></path><path d="M3.96 10.71a5.41 5.41 0 0 1 0-3.42V4.96h-3a9 9 0 0 0 0 8.08l3-2.33z" fill="#FBBC05"></path><path d="M9 3.58c1.32 0 2.5.45 3.44 1.35l2.58-2.59A9 9 0 0 0 .96 4.95l3 2.34A5.36 5.36 0 0 1 9 3.58z" fill="#EA4335"></path></svg></svg>
+                                <svg aria-hidden="true" role="img" viewBox="0 0 100 100" height="22" width="22"><svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" fill="none" fillRule="evenodd"><path d="M17.64 9.2c0-.63-.06-1.25-.16-1.84H9v3.49h4.84a4.14 4.14 0 0 1-1.8 2.71v2.26h2.92a8.78 8.78 0 0 0 2.68-6.62z" fill="#4285F4"></path><path d="M9 18a8.6 8.6 0 0 0 5.96-2.18l-2.91-2.26a5.4 5.4 0 0 1-8.09-2.85h-3v2.33A9 9 0 0 0 9 18z" fill="#34A853"></path><path d="M3.96 10.71a5.41 5.41 0 0 1 0-3.42V4.96h-3a9 9 0 0 0 0 8.08l3-2.33z" fill="#FBBC05"></path><path d="M9 3.58c1.32 0 2.5.45 3.44 1.35l2.58-2.59A9 9 0 0 0 .96 4.95l3 2.34A5.36 5.36 0 0 1 9 3.58z" fill="#EA4335"></path></svg></svg>
                                 Sign Up with Google
                             </div>
                         </button>

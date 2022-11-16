@@ -10,6 +10,7 @@ import Cart from './component/Cart/Cart';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCarts } from './store/carts';
 import Department from './component/Department/Department';
+import Search from './component/SearchResultPage/Search';
 
 
 function App() {
@@ -44,8 +45,11 @@ function App() {
           <Route exact path='/carts'>
             <Cart />
           </Route>
-          <Route path='/:department'>
+          <Route exact path='/:department'>
             <Department />
+          </Route>
+          <Route exact path='/search/:keyWord'>
+            <Search />
           </Route>
         </Switch>
     </>
