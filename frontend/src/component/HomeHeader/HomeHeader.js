@@ -40,7 +40,16 @@ const HomeHeader = () => {
     }
 
     const handleSearch = e => {
+        if (search.length) {
+            history.push(`/search/${search}`)
+        } 
+    }
 
+    const handleEnter = e => {
+        let code = e.keyCode || e.which
+        if (code === 13) {
+            handleSearch(e.target.value)
+        }
     }
 
         
@@ -86,6 +95,7 @@ const HomeHeader = () => {
                             placeholder='Search TechGurus'
                             id="search"
                             onChange={e => setSearch(e.target.value)}
+                            onKeyPress={handleEnter}
                             value={search}
                         />
                         <button id="magnify" onClick={handleSearch}><SearchIcon style={{color: "black", fontSize: "x-large"}}/></button>
