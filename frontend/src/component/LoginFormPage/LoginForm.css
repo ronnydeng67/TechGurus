@@ -5,9 +5,10 @@
     display: flex;
     /* border: 1px solid black; */
     width: 100%;
-    height: 800px;
+    height: 100vh;
     justify-content: center;
     background-color: #f0f2f4;
+    overflow-y:hidden;
 }
 
 .signInBoxContainer {
@@ -16,7 +17,7 @@
     justify-content: center;
     width: 395px;
     min-width: 395px;
-    height: 93%;
+    height: 85%;
     background-color: white;
     margin-top: 30px;
     border-radius: 3px;
