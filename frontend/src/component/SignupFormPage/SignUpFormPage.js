@@ -145,7 +145,7 @@ const SignUpFormPage = () => {
                     else if (data) setErrors([data]);
                     else return setErrors([res.statusText]);
                 })
-            history.goBack();
+            // history.goBack();
         } else {
             if ((password !== confirmPassword) || (confirmPassword.length === 0)) {
                 setConPassError(true);
