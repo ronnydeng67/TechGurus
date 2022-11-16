@@ -122,7 +122,8 @@ const SignUpFormPage = () => {
     const confirmRef = useRef(null);
     const history = useHistory();
 
-    if (sessionUser) return <Redirect to="/"/>
+    if (sessionUser) return <Redirect to="/" />
+
 
     const handleOnclick = e => {
         setPasswordShown(!passwordShown);
@@ -145,7 +146,6 @@ const SignUpFormPage = () => {
                     else if (data) setErrors([data]);
                     else return setErrors([res.statusText]);
                 })
-            // history.goBack();
         } else {
             if ((password !== confirmPassword) || (confirmPassword.length === 0)) {
                 setConPassError(true);

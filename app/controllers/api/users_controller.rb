@@ -13,12 +13,9 @@ class Api::UsersController < ApplicationController
       render json: { errors: ["Sorry, something went wrong. Please try again."] }, status: :unprocessable_entity
     else
       @user = User.new(user_params)
-      if @user.save
-        login!(@user)
-        render :show
-      else
-        render json: { errors: ["Sorry, something went wrong. Please try again."] }, status: :unprocessable_entity
-      end
+      @user.save
+      login!(@user)
+      render :show
     end
   end
 
