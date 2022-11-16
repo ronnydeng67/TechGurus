@@ -168,10 +168,10 @@ const LoginFormPage = () => {
                                 {errors.map(error => <p>{error}</p>)}
                             </ul> */}
                             <div className={errors.length === 0 ? "" : "login-errors"}>
-                                <div className={(errors.length > 0) && ("login-error-icon")}>
+                                <div className={(errors.length > 0) ? ("login-error-icon") : ""}>
                                     {errors.length > 0 ? errorIcon : ""}
                                 </div>
-                                <div className={(errors.length > 0) && "login-error"}>
+                                <div className={(errors.length > 0) ? "login-error" : ""}>
                                     {errors}
                                 </div>
                             </div>
