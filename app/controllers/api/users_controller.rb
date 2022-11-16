@@ -9,12 +9,12 @@ class Api::UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    # debugger
+    debugger
     if @user.save
-      # debugger
       login!(@user)
       render :show
     else
+      debugger
       # render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
       render json: { errors: ["Sorry, something went wrong. Please try again."] }, status: :unprocessable_entity
     end

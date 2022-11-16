@@ -78,7 +78,10 @@ const PasswordField = styled(TextField)({
 
 const ConField = styled(TextField)({
     '& .MuiFormHelperText-root': {
-        color: 'red',
+        color: 'green',
+    },
+    '&.Mui-error': {
+        color:'red',
     },
     '& label.Mui-focused': {
         color: 'black',
@@ -132,12 +135,14 @@ const SignUpFormPage = () => {
         alert("Stay tuned for this feature!")
     }
 
+
     const handleSubmit = e => {
         e.preventDefault();
         if ((password === confirmPassword) && (isValidName(name)) && (isValidEmail(email)) && (password.length > 5)) {
             setErrors([]);
             dispatch(sessionActions.signup({name, email, password}))
                 .catch(async (res) => {
+                    debugger
                     let data;
                     try {
                         data = await res.clone().json();
