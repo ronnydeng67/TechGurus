@@ -229,7 +229,7 @@ const ItemShowPage = () => {
                             <Typography id="overview-title">Overview</Typography>
                             </AccordionSummary>
                             <AccordionDetails>
-                            <Typography>
+                            <Typography component={'div'}>
                                 <div className="overview-container">
                                     <div className="description">
                                         <div className="description-left">Description</div>
@@ -252,7 +252,7 @@ const ItemShowPage = () => {
                             <Typography id="review-title">Reviews</Typography>
                             </AccordionSummary>
                             <AccordionDetails>
-                            <Typography>
+                            <Typography component={'div'}>
                                 
                                 {reviews.length ? reviews.map(review => (
                                     <Review key={review.id} 
