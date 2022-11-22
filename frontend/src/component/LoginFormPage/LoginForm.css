@@ -17,7 +17,7 @@
     justify-content: center;
     width: 395px;
     min-width: 395px;
-    height: 85%;
+    height: 600px;
     background-color: white;
     margin-top: 30px;
     border-radius: 3px;
@@ -75,7 +75,7 @@
     transition: 0.4s;
 }
 
-#signInbutton:hover {
+#signInButton:hover {
     background-color: darkblue;
 }
 
@@ -209,6 +209,12 @@ input:checked + .toggle:after{
     background-color: darkblue;
     color: white;
     transition: 0.5s;
+}
+
+
+#sign-in-a:hover {
+    color: white;
+    text-decoration: none;
 }
 
 #appleButton {

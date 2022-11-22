@@ -326,19 +326,19 @@ const SignUpFormPage = () => {
                     </form>
                 </div>
                 <div className="divide">
-                    <div className='or-box'>or</div>
+                    {/* <div className='or-box'>or</div> */}
                     <hr className="signup-hr" />
                 </div>
             
                 <div className="signup-google">
-                    <div className="google-button-container">
+                    {/* <div className="google-button-container">
                         <button id="google-button" onClick={handleGoogle}>
                             <div className="inside-button">
                                 <svg aria-hidden="true" role="img" viewBox="0 0 100 100" height="22" width="22"><svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" fill="none" fillRule="evenodd"><path d="M17.64 9.2c0-.63-.06-1.25-.16-1.84H9v3.49h4.84a4.14 4.14 0 0 1-1.8 2.71v2.26h2.92a8.78 8.78 0 0 0 2.68-6.62z" fill="#4285F4"></path><path d="M9 18a8.6 8.6 0 0 0 5.96-2.18l-2.91-2.26a5.4 5.4 0 0 1-8.09-2.85h-3v2.33A9 9 0 0 0 9 18z" fill="#34A853"></path><path d="M3.96 10.71a5.41 5.41 0 0 1 0-3.42V4.96h-3a9 9 0 0 0 0 8.08l3-2.33z" fill="#FBBC05"></path><path d="M9 3.58c1.32 0 2.5.45 3.44 1.35l2.58-2.59A9 9 0 0 0 .96 4.95l3 2.34A5.36 5.36 0 0 1 9 3.58z" fill="#EA4335"></path></svg></svg>
                                 Sign Up with Google
                             </div>
                         </button>
-                    </div>
+                    </div> */}
 
                     <div className="terms">
                         By continuing you agree to our <Link to="/">Terms and Conditions</Link>, our <Link to="/">Privacy Policy</Link>,

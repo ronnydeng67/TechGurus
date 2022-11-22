@@ -136,14 +136,14 @@
 
 .show-pass-container {
     display: flex;
-    justify-content: end;
-    width: 93%;
+    width: 90%;
+    justify-content: flex-end;
 }
 
 .show-password {
     display: flex;
     margin-top: 50px;
-    width: 145px;
+    width: 160px;
 }
 
 .divide {

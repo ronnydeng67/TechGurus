@@ -214,6 +214,7 @@ const LoginFormPage = () => {
                                 </div>
                             </div>
                             <br />
+                            <br />
                             <div className="foget-password">
                                 <Link to="/" id="forget-text">Forget your password?</Link>
                             </div>
@@ -222,26 +223,13 @@ const LoginFormPage = () => {
                             </div>
                         </form>
                     
-                        <div className="demo">
-                            <button className='demo-user' onClick={renderDemo}>Demo User</button>
+                        <div className="buttonContainer">
+                            <button id="signInButton" onClick={renderDemo}>Demo Sign In</button>
                         </div>
                         <br />
                         {/* <div className="afterOr"> */}
                         <div className="or">
-                            <div className="text">or</div>
                             <hr className='hr'/>
-                        </div>
-                        <div className="webAuthnContainer">
-                            {/* <button id="webAuthnButton" type="submit"><img src={webAuth} id="figurePrint" /> Sign In with WebAuthn</button> */}
-                            <button id="webAuthnButton" type="submit"> <a href="https://github.com/ronnydeng67">Github</a></button>
-                        </div>
-                        <div className="appleContainer">
-                            {/* <button id="appleButton" type="submit"><img src={apple} id="apple" /> Sign In with Apple</button> */}
-                            <button id="appleButton" type="submit"><a href="http://www.linkedin.com">Linkedin</a></button>
-                        </div>
-                        <div className="googleContainer">
-                            {/* <button id="googleButton" type="submit"><img src={google} id="google" /> Sign In with Google</button> */}
-                            <button id="googleButton" type="submit"><a href="https://en.wikipedia.org/wiki/Wikipedia:Contact_info">Contact Info</a></button>
                         </div>
                         {/* </div> */}
                     <div className="agreement">
