@@ -102,10 +102,10 @@ const HomeHeader = () => {
                     </div>
                 </div>
                 <div className="home-header-right">
-                    <div className="store-finder">
+                    {/* <div className="store-finder">
                         <i className="fa-solid fa-shop"></i>
                         <p style={{fontFamily: "bestbuy-medium", fontSize: "1.3rem"}}>&nbsp;Union Square</p>
-                    </div>
+                    </div> */}
                     <div className="cart">
                         <i className="fa-solid fa-cart-shopping"></i>
                         {carts && <span id='cart-num'>&nbsp;{cartQuan}</span>}
@@ -133,7 +133,7 @@ const HomeHeader = () => {
                     </div>
                     <div className="recent-view">
                         {/* <button id="recently-button">Recently Views</button> */}
-                        <a href="http://www.linkedin.com" style={{color: 'white'}}>Linkedin</a>
+                        <a href="http://www.linkedin.com" style={{color: 'white'}}>LinkedIn</a>
                     </div>
                     <div className="order-status">
                         {/* <Link to='/' id='order-status' style={{ color: 'white', fontSize: '0.9rem'}}>Order Status</Link> */}
