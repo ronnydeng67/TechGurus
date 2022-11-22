@@ -325,7 +325,7 @@
 }
 
 #splash-item-pic {
-    max-width: 350px;
+    max-width: 300px;
     /* width: 200px; */
     max-height: 250px;
     object-fit: cover;
