@@ -306,7 +306,7 @@
 }
 
 .splash-item-wrap {
-    width: 300px;
+    /* width: 300px; */
     height: auto;
     display: flex;
     flex-direction: column;
@@ -315,9 +315,22 @@
 
 }
 
+.splash-item-pic {
+    margin-top: 30px;
+    height: 300px;
+    width: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+}
+
 #splash-item-pic {
-    width: 200px;
+    max-width: 350px;
+    /* width: 200px; */
+    max-height: 250px;
+    object-fit: cover;
     height: auto;
+    /* border: 1px solid black; */
 }
 
 .splash-item-price {
@@ -326,6 +339,9 @@
 
 .splash-item-text {
     text-align: center;
+    margin: 0 20px 0 20px;
+    /* border: 1px solid black; */
+    height: 85px;
 }
 
 .splash-divider {
