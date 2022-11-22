@@ -517,6 +517,201 @@ All-day battery life and up to 29 hours of video playback"
     file28 = File.open('app/assets/images/hp-laptop.png')
     item28.photo.attach(io: file28, filename: 'hp-laptop.png')
 
+    item29 = Item.create(
+      name: 'Lenovo - IdeaCentre AIO 5i 27" Touch-Screen All-In-One - Intel Core i5 - 12GB Memory - 512GB Solid State Drive - Mineral Grey',
+      price: '949.99',
+      department: 'computer',
+      description: '
+      Inspired by the great outdoors, the eye-catching Lenovo IdeaCentre AIO 5i takes its cue from the mighty Cypress tree. Perfectly balanced and durable without sacrificing an ounce of performance with 10th generation Intel Core i5 processor, this all-in-one PC represents an appealing addition to any home.',
+      details: "Windows 11 Home
+      All-in-one design saves space and cuts clutter
+      27' Quad HD multitouch screen
+      Xxx Gen Intel® Core™ i5-10400T processor
+      12GB system memory for full-power multitasking
+      512GB solid state drive (SSD)
+      Built-in 1080P IR webcam with stereo microphone
+      Built-in media reader for simple photo transfer"
+    )
+    file29 = File.open('app/assets/images/all-in-one.png')
+    item29.photo.attach(io: file29, filename: 'all-in-one.png')
+
+    item30 = Item.create(
+      name: 'Canon - EOS M50 Mark II Mirrorless Camera with EF-M 15-45mm Lens Content Creator Kit - Black',
+      price: '899.99',
+      department: 'camera',
+      description: 'Get the clarity and convenience you need to show off all your content with the EOS M50 Mark II Content Creator Kit. The EOS M50 Mark II camera provides you with a high-performance and portable camera so you can use it practically anywhere and get the quality, high-resolution 4K or Full HD results to make you and your subjects look great.',
+      details: "EF-M 15-45mm f/3.5-6.3 IS STM zoom lens provides versatility
+      24.1 Megapixel CMOS Sensor
+      ISO up to 25600 (expandable to 51,200)
+      Never miss a shot with ultrafast 10 fps (frames per second)
+      Improved Dual Pixel CMOS AF and Eye Detection AF (Still/Movie Servo AF support)
+      4K UHD* 24p Videos
+      Built-in Wi-Fi^ Technology
+      Built-in Bluetooth®^^ Capability"
+    )
+    file31 = File.open('app/assets/images/eos-m50.png')
+    item31.photo.attach(io: file31, filename: 'eos-m50.png')
+
+    item32 = Item.create(
+      name: 'Sony - ZV-1 20.1-Megapixel Digital Camera for Content Creators and Vloggers - Black',
+      price: '749.99',
+      department: 'camera',
+      description: 'Create outstanding content for your viewers with this Sony compact 4K digital camera. The 20-megapixel sensor captures detailed pictures and videos, while Wi-Fi functionality enables easy photo sharing across networks. This Sony compact 4K digital camera features image stabilization for clear shots while walking, and automatic exposure tracks and illuminates faces for consistency in various lighting conditions.',
+      details: "1.0-type Exmor RS CMOS sensor
+      2.7x optical/44x digital zoom
+      High-resolution 4K HDR (HLG) recording
+      BIONZ X image processing engine
+      Advanced image stabilization
+      Full range of scene modes
+      Blackout-free shooting
+      Auto, custom, and preset white balance controls
+      Built-in Wi-Fi"
+    )
+    file32 = File.open('app/assets/images/zv-1.png')
+    item32.photo.attach(io: file32, filename: 'zv-1.png')
+
+    item33 = Item.create(
+      name: 'Panasonic - HC-VX870K 4K Ultra HD Flash Memory Camcorder - Black',
+      price: '929.99'
+      department: 'camera',
+      description: 'Preserve important moments with this Panasonic HC-VX870K camcorder, which features a BSI MOS sensor that captures stunning footage with up to 4K Ultra HD (3840 x 2160) resolution and clear stereo sound. Hybrid image stabilization ensures smooth videos.',
+      details: "20x optical/60x digital zoom
+      4K Ultra HD recording
+      1/2.3 BSI MOS sensor
+      4.08-81.6mm Leica Dicomar lens
+      Hybrid O.I.S. (optical image stabilization)
+      Low-light and night-vision recording
+      Digital still photo mode
+      Stereo microphone"
+    )
+    file33 = File.open('app/assets/images/870k.png')
+    item33.photo.attach(io: file33, filename: '870k.png')
+
+    item34 = Item.create(
+      name: 'Motorola - Moto G Pure 32GB Memory (Unlocked) - Deep Indigo',
+      price: '159.99',
+      department: 'phone',
+      description: 'Meet Moto G Pure and get more of what you love. An ultra-wide view of your favorite movies, games, and video chats on a 6.5" Max Vision HD+ display. Plus, a two-day battery to keep the fun going all weekend long. And there’s more. Dual camera system with Night Vision. Super-responsive processor (3GB RAM). Water-repellent design. With Moto G Pure, more comes standard.',
+      details: "MediaTek Helio G25 processor
+      Universal Unlocked
+      13MP Dual Camera System
+      6.5 inch Max Vision HD+ display
+      Two-day battery
+      Water-repellent design
+      Fingerprint reader
+      Android™ 11"
+    )
+    file34 = File.open('app/assets/images/moto-g.png')
+    item34.photo.attach(io: file34, filename: 'moto-g.png')
+
+    item35 = Item.create(
+      name: 'Samsung - Galaxy S22+ 128GB (Unlocked) - Phantom Black',
+      price: '999.99',
+      department: 'phone',
+      description: 'Galaxy S22+ is redefining the epic standard – both for what a smartphone can do with video and for what you can communicate, create, and experience with it. In other words, if you’ve got something to say, Galaxy S22+ makes it possible to say anything you want with video, at any time-even in the darkness of night.',
+      details: "Light up your life with 8K video
+      Capture the night with crystal-clear, bright pics and videos, no matter the lighting with Night Mode.
+      Put all your favorite details on display. Portrait Mode auto- detects and adjusts to what you want front and center, making all your photos worthy of a frame.
+      From elaborate landscapes to intricate creations, capture vivid detail with 50MP resolution.
+      Your favorite content will look even more epic on our brightest display ever with Vision Booster.
+      Power every scroll, click, tap and stream all day long and then some with an intelligent, long-lasting battery.²
+      Expertly engineered to outlast your day with class. Finally, a phone that meets your standards.
+      Your view just got an upgrade. 30x Space Zoom lets you get a VIP look from any seat."
+    )
+    file35 = File.open('app/assets/images/s22+.png')
+    item35.photo.attach(io: file35, filename: 's22+.png')
+
+    item36 = Item.create(
+      name: 'BLU - V81 64GB (Unlocked) - Black',
+      price: '149.99',
+      department: 'phone',
+      description: 'The V81 comes with a vivid high-definition large display that pumps out theater quality image that is sure to have you glued to the screen. Game, text or watch your fav on YouTube. Take excellent pictures with the A.I powered 13 Megapixel Dual Camera along with and 8 Megapixel front camera for selfie lovers! Packed with a massive 5000mAh battery, you will get two days of standard usage out of your V81.',
+      details: "1.6GHz Octa Core, 3GB RAM - Delivers outstanding overall performance for opening and running applications, flipping through menus, running home screens and more.
+      Compatible with AT&T, T-Mobile, Cricket, H2O Wireless, Net10, Simple Mobile, TracFone, Mint Mobile, T Mobile Sim card not included.
+      6.5 inch HD+ touch screen - The extra large HD+ All Screen Display at 720 x 1600 resolution is matched with a slim body to comfortably fit in your hand.
+      Android 10 - A custom operating system for Android phones that delivers easy app usability and responses."
+    )
+    file36 = File.open('app/assets/images/blu.png')
+    item36.photo.attach(io: file36, filename: 'blu.png')
+
+    item37 = Item.create(
+    name: 'Klipsch - Reference 4" 35W 2-Way Powered Monitors (Pair) - Black',
+    price: '499.99',
+    department: 'audio',
+    description: 'Enjoy powerful sound in your study or bedroom with these flat-response Klipsch bookshelf speakers. The four-inch high-output woofer is made of stiff material for low distortion, and the one-inch titanium horn-loaded tweeter carries the highs clearly. These Klipsch bookshelf speakers handle up to 50W RMS, 200W peak for accurate music reproduction.',
+    details: "Designed for simple setup with your turntable, TV, computer, or wireless device
+    70W total system power, 35W per channel
+    Internal amplifier
+    4 inch copper spun magnetically shielded IMG woofer
+    Full-featured IR remote
+    Two-way bass reflex enclosure
+    Bluetooth wireless technology
+    You will find a phono/line analog, 3.5mm analog mini jack, USB, and Toslink (Optical) inputs."
+    )
+    file37 = File.open('app/assets/images/klipsch.png')
+    item37.photo.attach(io: file37, filename: 'klipsch.png')
+
+    item38 = Item.create(
+      name: 'Sony - Core Series 5" 3-Way Bookshelf Speakers (Pair) - Black',
+      price: '199.99',
+      department: 'audio',
+      description: 'Immerse yourself in room-filling sound with these Sony Core Series SSCS5 bookshelf speakers, which feature 5" woofers and 3/4" and 1" tweeters for precise instrument and vocal reproduction and dynamic acoustic depth.',
+      details: "100W maximum power handling
+      5 inch dual-layer, foam, mica-reinforced woofer
+      3/4 inch wide-dispersion super tweeter
+      High-quality crossover networks
+      3-way speaker system
+      Wood, bass-reflex enclosure
+      53Hz - 50kHz frequency response
+      87dB sensitivity (2.83V, 1m)"
+    )
+    file38 = File.open('app/assets/images/sony-speaker.png')
+    item38.photo.attach(io: file38, filename: 'sony-speaker.png')
+
+    item39 = Item.create(
+        name: 'Beats by Dr. Dre - Beats Studio³ Wireless Noise Cancelling Headphones - Matte Black',
+        price: '349.99',
+        department: 'audio',
+        description: 'Beats Studio Wireless headphones deliver a premium listening experience with Pure Adaptive Noise Cancelling (Pure ANC) to actively block external noise, and real-time audio calibration to preserve clarity, range, and emotion. It continuously pinpoints sounds to block while automatically responding to individual fit and music playback.',
+        details: "Pure Adaptive Noise Cancelling (Pure ANC) actively blocks external noise
+        Real-time audio calibration preserves a premium listening experience
+        Up to 22 hours of battery life enables full-featured all-day wireless playback
+        Apple W1 chip for Class 1 Wireless Bluetooth® connectivity and battery efficiency
+        With fast fuel, a 10-minute charge gives three hours of play when the battery is low
+        Pure ANC off for low-power mode provides up to 40 hours of battery life
+        Take calls, control music, and activate Siri with multifunction on-ear controls
+        Soft over-ear cushions for extended comfort and added noise isolation"
+    )
+    file39 = File.open('app/assets/images/beats.png')
+    item39.photo.attach(io: file39, filename: 'beats.png')
+
+    item40 = Item.create(
+    name: 'Cyberpunk 2077 Standard Edition - PlayStation 4, PlayStation 5',
+    price: '29.99',
+    department: 'game',
+    description: 'Cyberpunk 2077 is an open-world, action-adventure story set in Night City, a megalopolis obsessed with power, glamor, and body modification. You play as V, a mercenary outlaw going after a one-of-a-kind implant that is the key to immortality.',
+    details: "The game comes with the following physical items: a case with game discs, World Compendium detailing the game's setting and lore, postcards from Night City, a map of Night City, stickers
+    Become a cyberpunk, an urban mercenary equipped with cybernetic enhancements, and build your legend on the streets of Night City
+    Enter the massive open world of Night City, a place that sets new standards in terms of visuals, complexity, and depth
+    Take a risky job, and go after a prototype implant that is the key to immortality"
+    )
+    file40 = File.open('app/assets/images/2077.png')
+    item40.photo.attach(io: file40, filename: '2077.png')
+
+    item41 = Item.create(
+    name: 'Call of Duty: Modern Warfare II - PlayStation 5',
+    price: '69.99',
+    department: 'game',
+    description: 'Call of Duty: Modern Warfare II',
+    details: "Welcome to the new era of Call of Duty. Call of Duty: Modern Warfare II is the sequel to 2019’s blockbuster Modern Warfare.
+    From small-scale, high-stakes infiltration tactics to highly classified missions, players will need to leverage new weapons, vehicles, and cutting-edge equipment to take on their enemies.
+    Infinity Ward will immerse fans in heart-pounding next-gen, state-of-the-art gameplay.
+    Fight alongside friends in a truly immersive experience with stunningly realistic sound, lighting, and graphics that produce the most advanced Call of Duty in history."
+    )
+    file41 = File.open('app/assets/images/cod.png')
+    item41.photo.attach(io: file41, filename: 'cod.png')
+
+
     puts "Destroying reviews tables..."
 
     Review.destroy_all
@@ -549,9 +744,9 @@ All-day battery life and up to 29 hours of video playback"
       reviewer_id: d.id,
       item_id: item3.id,
       parent_review_id: nil,
-      title: "Suck!!",
-      body: "This camera sucks, only taken black and white photo!",
-      rating: 1
+      title: "Average!!",
+      body: "Average camera",
+      rating: 2.5
     )
 
 
@@ -562,15 +757,15 @@ All-day battery life and up to 29 hours of video playback"
 
 
 
-  # item9 = Item.create(
-    #   name: '',
-    #   price: '',
-    #   department: '',
-    #   description: '',
-    #   details: ""
-    # )
-    # file13 = File.open('app/assets/images/lenovo.png')
-    # item13.photo.attach(io: file12, filename: 'lenovo.png')
+  # item34 = Item.create(
+  #   name: '',
+  #   price: '',
+  #   department: '',
+  #   description: '',
+  #   details: ""
+  # )
+  # file34 = File.open('app/assets/images/lenovo.png')
+  # item34.photo.attach(io: file34, filename: 'lenovo.png')
 
 
 
