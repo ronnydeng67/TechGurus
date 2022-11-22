@@ -483,6 +483,40 @@ All-day battery life and up to 29 hours of video playback"
     file00 = File.open('app/assets/images/totaltech.png')
     item00.photo.attach(io: file00, filename: 'totaltech.png')
 
+    item27 = Item.create(
+      name: 'Dell - Inspiron 3511 15.6" Touch Laptop - Intel Core i5 - 8GB Memory - 256GB Solid State Drive - Black',
+      price: '379.99',
+      department: 'computer',
+      description: 'The Inspiron laptop is designed with you and the environment in mind, using recycled plastics. Plus, it’s ENERGY STAR 8.0 certified and built with an ergonomic lift hinge design to keep you comfortably connected all day. The Inspiron 15 3000 is expertly designed to keep you connected, powered by the latest processors.',
+      details: "Windows 11 Home (S mode)
+      15.6 inch Full HD touch screen for hands-on control
+      256GB M.2 PCIe NVMe Solid State Drive
+      8GB system memory for advanced multitasking
+      11th Generation Intel® Core™ i5-1135G7
+      Built-in HD webcam
+      Easy Everyday Use
+      Built-in media reader for simple photo transfer"
+    )
+    file27 = File.open('app/assets/images/dell.png')
+    item27.photo.attach(io: file27, filename: 'dell.png')
+
+    item28 = Item.create(
+      name: 'HP - Victus 15.6" Gaming Laptop - Intel Core i5-12450H - 8GB Memory - NVIDIA GeForce GTX 1650 - 512GB SSD - Mica Silver',
+      price: '479.99',
+      department: 'computer',
+      description: 'You will need this much power: Peak PC gaming is upon us and the compact Victus 15 is packed with the power of a desktop to keep up with the biggest games and the best players. Power up and feel your game elevate to where you want to be. Introducing the most refined design in the game: From its iconic color to its spritely designed 15 inch package, this picture of sophistication is a fashion statement rarely realized in the gaming space. This will be all you need to pack. Lets go. The updated thermal design keeps everything chill from max power gaming to after-hours streaming. Open up your game with a full gaming keyboard with the OMEN Gaming Hub key and a much bigger touchpad. The HD Camera features Temporal Noise Reduction for that crisp clarity on your streams or calls.',
+      details: "Operating system: Windows 11 Home
+      Display: 15.6-inch diagonal, FHD (1920 x 1080), 144 Hz, 9 ms response time, IPS, micro-edge, antiglare
+      Processor: 12th Generation Intel Core i5-12450H
+      Memory: 8 GB DDR4-3200 MHz RAM (1 X 8 GB)
+      Internal storage: 512 GB PCIe NVMe M.2 SSD
+      Graphics: NVIDIA GeForce GTX 1650 (4 GB GDDR5 dedicated)
+      Wireless: Wi-Fi 6 (2x2) and Bluetooth combo (Supporting Gigabit data rate)
+      Sound: Audio by Bang & Olufsen with dual speakers"
+    )
+    file28 = File.open('app/assets/images/hp-laptop.png')
+    item28.photo.attach(io: file28, filename: 'hp-laptop.png')
+
     puts "Destroying reviews tables..."
 
     Review.destroy_all
