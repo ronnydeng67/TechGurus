@@ -111,7 +111,7 @@ const Splash = () => {
                                             Deal
                                         </div>
                                         <div className="deal-rest-title">
-                                            of the day
+                                            &nbsp;of the day
                                         </div>
                                     </div>
                                     <div className="deal-item">

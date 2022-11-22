@@ -216,10 +216,11 @@
 }
 
 #outlet {
-    width: 55px;
+    width: 57px;
     color: yellow;
     background-color: #0346be;
     font-family: 'bestbuy-medium';
+    padding-left: 2px;
 }
 
 #deal {
