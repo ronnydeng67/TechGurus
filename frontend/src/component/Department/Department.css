@@ -48,8 +48,19 @@
     align-items: center;
 }
 
+.filter-item-pic {
+    margin-top: 30px;
+    height: 300px;
+    width: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+}
+
 #filter-item-pic {
-    width: 200px;
+    max-width: 300px;
+    max-height: 250px;
+    object-fit: cover;
     height: auto;
 }
 
@@ -58,10 +69,11 @@
 }
 
 
-.filter-item-text {
+.filter-item-name {
     text-align: center;
     color: #0346be;
     font-family: 'bestbuy-medium';
+    height: 85px;
 }
 
 .department-title {
