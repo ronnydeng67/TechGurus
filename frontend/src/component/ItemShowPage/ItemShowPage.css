@@ -636,3 +636,10 @@ li {
     font-size: small;
     color: #195bc8;
 }
+
+.one-review {
+    margin-top: 20px;
+    font-size: x-large;
+    text-align: center;
+    background-color: #c5cbd5;
+}

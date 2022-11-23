@@ -321,7 +321,9 @@ const ItemShowPage = () => {
                                         </div>
                                 </div>
                                 :
-                                ""    
+                                <div className="one-review">
+                                    Sorry, you can only leave one review, you can edit your previous review if you want.
+                                </div>
                                 }
 
                                 
