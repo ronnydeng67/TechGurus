@@ -36,49 +36,49 @@ ApplicationRecord.transaction do
   )
 
   d2 = User.create!(
-    name: 'Sharon'
+    name: 'Sharon',
     email: 'sharon@gmail.com',
     password: 'password'
   )
 
   d3 = User.create!(
-    name: 'Jason'
+    name: 'Jason',
     email: 'jason@gmail.com',
     password: 'password'
   )
 
   d4 = User.create!(
-    name: 'Garen'
+    name: 'Garen',
     email: 'garen@gmail.com',
     password: 'password'
   )
 
   d5 = User.create!(
-    name: 'Jenny'
+    name: 'Jenny',
     email: 'jenny@gmail.com',
     password: 'password'
   )
 
   d6 = User.create!(
-    name: 'Lynda'
+    name: 'Lynda',
     email: 'lynda@gmail.com',
     password: 'password'
   )
 
   c1 = User.create!(
-    name: 'Tim'
+    name: 'Tim',
     email: 'tim@gmail.com',
     password: 'password'
   )
 
   c2 = User.create!(
-    name: 'Kevin'
+    name: 'Kevin',
     email: 'kevin@gmail.com',
     password: 'password'
   )
 
   c3 = User.create!(
-    name: 'Paul'
+    name: 'Paul',
     email: 'paul@gmail.com',
     password: 'password'
   )
@@ -605,8 +605,8 @@ All-day battery life and up to 29 hours of video playback"
       Built-in Wi-Fi^ Technology
       Built-in Bluetooth®^^ Capability"
     )
-    file31 = File.open('app/assets/images/eos-m50.png')
-    item31.photo.attach(io: file31, filename: 'eos-m50.png')
+    file30 = File.open('app/assets/images/eos-m50.png')
+    item30.photo.attach(io: file30, filename: 'eos-m50.png')
 
     item32 = Item.create(
       name: 'Sony - ZV-1 20.1-Megapixel Digital Camera for Content Creators and Vloggers - Black',
@@ -628,7 +628,7 @@ All-day battery life and up to 29 hours of video playback"
 
     item33 = Item.create(
       name: 'Panasonic - HC-VX870K 4K Ultra HD Flash Memory Camcorder - Black',
-      price: '929.99'
+      price: '929.99',
       department: 'camera',
       description: 'Preserve important moments with this Panasonic HC-VX870K camcorder, which features a BSI MOS sensor that captures stunning footage with up to 4K Ultra HD (3840 x 2160) resolution and clear stereo sound. Hybrid image stabilization ensures smooth videos.',
       details: "20x optical/60x digital zoom

@@ -28,6 +28,7 @@
     height: auto;
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 100px;
 }
 
 .filter-item-container {
