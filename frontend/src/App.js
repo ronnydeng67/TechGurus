@@ -11,6 +11,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchCarts } from './store/carts';
 import Department from './component/Department/Department';
 import Search from './component/SearchResultPage/Search';
+import Footer from './component/Footer/Footer';
 
 
 function App() {
@@ -52,6 +53,7 @@ function App() {
             <Search />
           </Route>
         </Switch>
+        <Footer />
     </>
   );
 }

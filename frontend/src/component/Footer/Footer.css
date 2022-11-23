@@ -1,0 +1,36 @@
+.footer-container {
+    width: 100%;
+    height: 200px;
+    border-top: 1px solid #c5cbd5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-list {
+    width: 90%;
+    height: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer-linkedin,
+.footer-personal-site,
+.footer-github,
+.footer-angelist {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#linkedin-icon {
+    font-size: 5rem;
+    color: black;
+}
+
+#angelist {
+    width: 70px;
+    color: aqua;
+    margin-top: 6px;
+}
