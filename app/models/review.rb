@@ -13,9 +13,10 @@
 #  updated_at       :datetime         not null
 #
 class Review < ApplicationRecord
-    validates :reviewer_id, :item_id, :title, :body, presence: true
+    validates :item_id, :title, :body, presence: true
     validates :body, length: { in: 0..255 }
     validates :rating, inclusion: { in: 1..5 }, presence: true
+    validates :reviewer_id, :uniqueness => { :scope => :item_id, :message => "You may only leave one review per item." }
 
     belongs_to :item
     belongs_to :reviewer,

@@ -14,7 +14,7 @@ class Api::ReviewsController < ApplicationController
         if @review.save
             render :show
         else
-            render json: {errors: @review.errors.full_messages}, status: 422
+            render json: {errors: ["You may only leave one review!"] }, status: :unauthorized
         end
     end
 

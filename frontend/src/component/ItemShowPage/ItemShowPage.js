@@ -68,6 +68,8 @@ const ItemShowPage = () => {
         }
     }
 
+    console.log(reviews)
+
     useEffect(() => {
         dispatch(fetchReviews(itemId))
         dispatch(fetchItem(itemId)).then((res) => {
@@ -265,6 +267,10 @@ const ItemShowPage = () => {
                                         This product has no reviews yet.
                                     </div>
                                 }
+
+                                {reviews.every(review => (
+                                    review.reviewerId !== sessionUser?.id
+                                )) ? 
                                 <div className="write-review-container">
                                         <div className="leave-review-text">
                                             Leave a review
@@ -314,6 +320,11 @@ const ItemShowPage = () => {
                                             </div>
                                         </div>
                                 </div>
+                                :
+                                ""    
+                                }
+
+                                
                             </Typography>
                             </AccordionDetails>
                         </Accordion>   
