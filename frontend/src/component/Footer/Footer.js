@@ -9,28 +9,28 @@ const Footer = () => {
         <div className="footer-container">
             <div className="footer-list">
                 <div className="footer-linkedin">
-                    <a href="" target="_blank">
+                    <a href="https://www.linkedin.com/in/ronny-deng/" target="_blank">
                         <LinkedInIcon id="linkedin-icon"/>
                     </a>
-                    <a href="">LinkedIn</a> 
+                    <a href="https://www.linkedin.com/in/ronny-deng/" target="_blank">LinkedIn</a> 
                 </div>
                 <div className="footer-personal-site">
-                    <a href="">
+                    <a href="https://ronnydeng67.github.io/ronnydeng/" target="_blank">
                         <PermIdentityIcon id="linkedin-icon"/>
                     </a>
-                    <a href="">My Personal Site</a>
+                    <a href="https://ronnydeng67.github.io/ronnydeng/" target="_blank">My Personal Site</a>
                 </div>
                 <div className="footer-github">
-                    <a href="">
+                    <a href="https://github.com/ronnydeng67" target="_blank">
                         <GitHubIcon id="linkedin-icon"/>
                     </a>
-                    <a href="">GitHub</a> 
+                    <a href="https://github.com/ronnydeng67" target="_blank">GitHub</a> 
                 </div>
                 <div className="footer-angelist">
-                    <a href="">
+                    <a href="https://angel.co/u/jinjun-ronny-deng" target="_blank">
                         <img src={angelist} alt="" id="angelist"/>
                     </a>
-                    <a href="">Angelist</a> 
+                    <a href="https://angel.co/u/jinjun-ronny-deng" target="_blank">Angelist</a> 
                 </div>
             </div>
         </div>

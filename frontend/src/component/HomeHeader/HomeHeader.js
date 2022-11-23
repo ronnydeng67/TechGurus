@@ -133,17 +133,20 @@ const HomeHeader = () => {
                     </div>
                     <div className="recent-view">
                         {/* <button id="recently-button">Recently Views</button> */}
-                        <a href="http://www.linkedin.com" style={{color: 'white'}}>LinkedIn</a>
+                        <a href="https://www.linkedin.com/in/ronny-deng/" target="_blank" style={{color: 'white'}}>LinkedIn</a>
                     </div>
                     <div className="order-status">
                         {/* <Link to='/' id='order-status' style={{ color: 'white', fontSize: '0.9rem'}}>Order Status</Link> */}
                         {/* <Link to='/' id='order-status' style={{ color: 'white', fontSize: '0.9rem'}}>Contact Info</Link> */}
-                        <a href="https://en.wikipedia.org/wiki/Wikipedia:Contact_info" style={{color: 'white'}}>Contact Info</a>
+                        <a href="https://ronnydeng67.github.io/ronnydeng/" target="_blank" style={{color: 'white'}}>Personal Site</a>
                     </div>
                     <div className="Saved-items">
                         {/* <button id="save-button">Saved Items</button> */}
                         {/* <button id="save-button">Github</button> */}
-                        <a href="https://github.com/ronnydeng67" style={{color: 'white'}}>Github</a>
+                        <a href="https://github.com/ronnydeng67" target="_blank" style={{color: 'white'}}>Github</a>
+                    </div>
+                    <div className="angel-list">
+                        <a href="https://github.com/ronnydeng67" target="_blank" style={{color: 'white'}}>Angelist</a>
                     </div>
                 </div>
             </div>
