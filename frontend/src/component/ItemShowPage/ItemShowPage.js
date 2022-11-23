@@ -285,7 +285,7 @@ const ItemShowPage = () => {
                                             <div className="write-review-right">
                                                 <div className="write-review-rating">
                                                     <div className="rating-text">
-                                                        Rating*
+                                                        Rating
                                                     </div>
                                                     <div className="write-rating">
                                                         <Rating
@@ -298,15 +298,18 @@ const ItemShowPage = () => {
                                                     </div>
                                                 </div>
                                                 <div className="write-review-title">
-                                                    <div className="title-text">Title* </div>
+                                                    <div className="title-text">Title </div>
                                                     <input type="text" id='title-input' onChange={handleTitle} value={title}required/>
                                                 </div>
                                                 <div className="write-review-body">
-                                                    <div className="body-text">Your review* </div>
+                                                    <div className="body-text">Your review </div>
                                                     <textarea name="" id="body-input" cols="40" rows="5" onChange={handleBody} value={body} required></textarea>
                                                 </div>
                                                 <div className="submit-review-container">
                                                     <button id="submit-review-button" onClick={handleSubmit}>Submit Review</button>
+                                                </div>
+                                                <div className="require-text">
+                                                    All fields are require to filled in order to leave a review!
                                                 </div>
                                             </div>
                                         </div>

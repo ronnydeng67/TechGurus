@@ -630,3 +630,9 @@ li {
 .edit-error {
     color: red;
 }
+
+.require-text {
+    margin-top: 20px;
+    font-size: small;
+    color: #195bc8;
+}
