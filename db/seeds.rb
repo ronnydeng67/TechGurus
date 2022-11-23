@@ -29,6 +29,62 @@ ApplicationRecord.transaction do
     password: 'password'
   )
 
+  d1 = User.create!(
+    name: 'Mike',
+    email: 'milk@gmail.com',
+    password: 'password'
+  )
+
+  d2 = User.create!(
+    name: 'Sharon'
+    email: 'sharon@gmail.com',
+    password: 'password'
+  )
+
+  d3 = User.create!(
+    name: 'Jason'
+    email: 'jason@gmail.com',
+    password: 'password'
+  )
+
+  d4 = User.create!(
+    name: 'Garen'
+    email: 'garen@gmail.com',
+    password: 'password'
+  )
+
+  d5 = User.create!(
+    name: 'Jenny'
+    email: 'jenny@gmail.com',
+    password: 'password'
+  )
+
+  d6 = User.create!(
+    name: 'Lynda'
+    email: 'lynda@gmail.com',
+    password: 'password'
+  )
+
+  c1 = User.create!(
+    name: 'Tim'
+    email: 'tim@gmail.com',
+    password: 'password'
+  )
+
+  c2 = User.create!(
+    name: 'Kevin'
+    email: 'kevin@gmail.com',
+    password: 'password'
+  )
+
+  c3 = User.create!(
+    name: 'Paul'
+    email: 'paul@gmail.com',
+    password: 'password'
+  )
+
+  
+
   puts "Destroying item tables..."
 
   Item.destroy_all
@@ -747,6 +803,15 @@ All-day battery life and up to 29 hours of video playback"
       title: "Average!!",
       body: "Average camera",
       rating: 2.5
+    )
+
+    Review.create!(
+      reviewer_id: c1.id,
+      item_id: item4.id,
+      parent_review_id: nil,
+      title: "Nice",
+      body: "Works welll",
+      rating: 4
     )
 
 
