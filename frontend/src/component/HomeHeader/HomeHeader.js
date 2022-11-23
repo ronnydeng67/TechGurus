@@ -146,7 +146,7 @@ const HomeHeader = () => {
                         <a href="https://github.com/ronnydeng67" target="_blank" style={{color: 'white'}}>Github</a>
                     </div>
                     <div className="angel-list">
-                        <a href="https://github.com/ronnydeng67" target="_blank" style={{color: 'white'}}>Angelist</a>
+                        <a href="https://angel.co/u/jinjun-ronny-deng" target="_blank" style={{color: 'white'}}>Angelist</a>
                     </div>
                 </div>
             </div>

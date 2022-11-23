@@ -74,7 +74,7 @@ const reviewsReducer = (state = {}, action) => {
             return {...action.reviews};
         case RECEIVE_REVIEW:
             nextState[action.payload.id] = action.review;
-            return nextState
+            return nextState;
         // case CREATE_REVIEW:
         //     nextState[action.payload.id] = action.payload;
         //     return nextState

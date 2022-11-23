@@ -131,7 +131,7 @@ const ItemShowPage = () => {
                         <div className="item-price">
                             <div className="price-text">
                                 <div className="price">
-                                    ${lol.price}
+                                    {lol.price.toLocaleString("en-US", {style:"currency", currency:"USD"})}
                                 </div>
                                 <div className='price-divider'>
                                     <div style={{flex: '1 0 40%', borderLeft: '1px', border: '1px solid black', height: '8px'}}></div>

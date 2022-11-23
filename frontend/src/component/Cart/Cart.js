@@ -77,16 +77,16 @@ const Cart = () => {
                                 Estimated Saled Tax <br />
                             </div>
                             <div className="order-price">
-                                ${totalPrice}<br />
+                                {totalPrice.toLocaleString("en-US", {style:"currency", currency:"USD"})}<br />
                                 Free <br />
                                 Free <br />
-                                ${parseFloat((totalPrice * 0.0875)).toFixed(2)} <br />
+                                {(totalPrice * 0.0875).toLocaleString("en-US", {style:"currency", currency:"USD"})} <br />
                             </div>
                         </div>
                         <hr className='cart-hr'/>
                         <div className="order-total">
                             <div className="total-text">Total</div>
-                            <div className="total-num">${parseFloat(totalPrice * 1.0875).toFixed(2)}</div>
+                            <div className="total-num">{(totalPrice * 1.0875).toLocaleString("en-US", {style:"currency", currency:"USD"})}</div>
                         </div>
                         <div className="checkout-container">
                             {Object.values(cart).length ? 
