@@ -322,11 +322,9 @@ const ItemShowPage = () => {
                                 </div>
                                 :
                                 <div className="one-review">
-                                    Sorry, you can only leave one review, you can edit your previous review if you want.
+                                    Sorry, seems like you've already left a review on this item, you can edit or delete you previous review.
                                 </div>
                                 }
-
-                                
                             </Typography>
                             </AccordionDetails>
                         </Accordion>   

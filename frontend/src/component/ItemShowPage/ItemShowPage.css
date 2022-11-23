@@ -418,6 +418,11 @@ li {
     font-size: 1rem;
 }
 
+.review-title {
+    display: flex;
+    align-items: center;
+}
+
 #review-title {
     font-size: 1.5rem;
     font-family: 'bestbuy-medium';
@@ -425,6 +430,8 @@ li {
 
 #rating {
     font-size: 1.3rem;
+    padding-top: 5px;
+    margin-right: 5px;
 }
 
 .title {
