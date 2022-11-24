@@ -47,13 +47,19 @@ const CartItem = ({item}) => {
 
                     <div className="quantity-list">
                         <div className="select">
-                            <input id="quantity" defaultValue={item.quantity} onChange={updateQuantity}/>
-                                {/* <option value={1} selected>1</option>
+                            {/* <input id="quantity" defaultValue={item.quantity} onChange={updateQuantity}/> */}
+                            <select name="" id="quantity" value={parseInt(item.quantity)} onChange={updateQuantity}>
+                                <option value={1}>1</option>
                                 <option value={2}>2</option>
                                 <option value={3}>3</option>
                                 <option value={4}>4</option>
-                                <option value={4}>5</option>
-                            </select> */}
+                                <option value={5}>5</option>
+                                <option value={6}>6</option>
+                                <option value={7}>7</option>
+                                <option value={8}>8</option>
+                                <option value={9}>9</option>
+                                <option value={10}>10</option>
+                            </select>
                         </div>
                             <button id="remove-button" onClick={handleRemove}>Remove</button>
                     </div>
