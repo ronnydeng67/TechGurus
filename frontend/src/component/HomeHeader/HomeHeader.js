@@ -36,7 +36,8 @@ const HomeHeader = () => {
     // const[itemCount, setItemCount] = useState(Object.values(carts).length);
     // console.log(itemCount);
     const handleClick = () => {
-            dispatch(sessionActions.logoutUser());
+        dispatch(sessionActions.logoutUser());
+        window.location.reload(false);
     }
 
     const handleSearch = e => {
