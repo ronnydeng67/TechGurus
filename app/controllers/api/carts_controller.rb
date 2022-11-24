@@ -12,7 +12,11 @@ class Api::CartsController < ApplicationController
         @cart = Cart.find_by(item_id: params[:item_id], user_id: params[:user_id])
         
         if @cart
-            @cart.quantity += 1
+            if @cart.quantity == 10
+                render json: {errors: ["nonono"]}
+            else
+                @cart.quantity += 1
+            end
         else
             @cart = Cart.new(cart_params)
         end

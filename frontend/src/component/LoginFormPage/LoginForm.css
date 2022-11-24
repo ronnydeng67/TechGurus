@@ -309,3 +309,17 @@ a:visited {
 .login-error {
     margin-left: 10px;
 }
+
+.item-error {
+    width: 80%;
+    height: 20px;
+    display: flex;
+    flex-direction: row;
+    border: 2px solid #bb0628;
+    border-left: 8px solid #bb0628;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-family: "bestbuy-medium";
+    text-transform: uppercase;
+}

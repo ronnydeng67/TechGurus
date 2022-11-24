@@ -35,6 +35,7 @@ const ItemShowPage = () => {
     const [reviewError, setReviewError] = useState(false)
     const lol = useSelector(getItem(itemId))
     const carts = useSelector(state => state.carts)
+    const [errors, setErrors] = useState()
 
     const handleRating = e => {
         setRating(e.target.value)
@@ -68,8 +69,6 @@ const ItemShowPage = () => {
         }
     }
 
-    console.log(reviews)
-
     useEffect(() => {
         dispatch(fetchReviews(itemId))
         dispatch(fetchItem(itemId)).then((res) => {
@@ -84,6 +83,17 @@ const ItemShowPage = () => {
         // e.preventDefault();
         if (state.session.user) {
             dispatch(addToCart({itemId: itemId, userId: sessionUser.id, quantity: 1}))
+            .catch(async(res) => {
+                let data;
+                try {
+                    data = await res.clone().json();
+                } catch {
+                    data = await res.text();
+                }
+                if (data?.errors) setErrors(data.errors);
+                else if (data) setErrors([data]);
+                else setErrors([res.statusText]);
+            })
         } else {
             history.push('/login')
         }
@@ -115,6 +125,8 @@ const ItemShowPage = () => {
         }
     }
 
+    console.log(errors)
+
     if(isLoading) {
         return <div>Loading...</div>
     } else {
@@ -122,6 +134,7 @@ const ItemShowPage = () => {
             <div className="page-container">
                 <div className="item-container">
                     <div className="item-left">
+                    {errors ? <div className="item-error">Sorry, this item is limited to 10 per customer.</div> : "" }
                         <div className="item-name">{lol.name}</div>
                         <div className="item-pic" style={{textAlign: 'center'}}>
                             <img width='auto' height='350' style={{margin: '150px'}} src={lol.photoUrl} alt="" />
