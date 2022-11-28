@@ -37,7 +37,7 @@ const HomeHeader = () => {
     // console.log(itemCount);
     const handleClick = () => {
         dispatch(sessionActions.logoutUser());
-        window.location.reload(false);
+        // window.location.reload(false);
     }
 
     const handleSearch = e => {

@@ -137,7 +137,16 @@ const LoginFormPage = () => {
 
     const renderDemo = (e) => {
         e.preventDefault();
-        dispatch(sessionActions.loginUser({email: "demo@user.com", password: "password"}))
+        const demos = [
+            {email: "demo@user.com", password: "password"},
+            {email: "tim@gmail.com", password: "password"},
+            {email: "kevin@gmail.com", password: "password"},
+            {email: "paul@gmail.com", password: "password"}
+        ]
+        const ranIndex = Math.floor(Math.random() * demos.length);
+        console.log(demos[ranIndex])
+        dispatch(sessionActions.loginUser(demos[ranIndex])
+            )
             .catch(async(res) => {
                 let data;
                 try {
