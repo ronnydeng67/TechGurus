@@ -8,6 +8,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import './HomeHeader.css';
 import ShowAccForm from './ShowAccModal';
 import { getCarts } from '../../store/carts';
+import ShowLogout from './ShowLogout';
 
 const style = {
     '& .MuiModal-root': {
@@ -62,7 +63,8 @@ const HomeHeader = () => {
     if (sessionUser) {
         userId = sessionUser.id;
         sessionLinks = (
-        <button onClick={handleClick} id="acc">Logout</button>
+        // <button onClick={handleClick} id="acc">Logout</button>
+            <ShowLogout sessionUser={sessionUser}/>
         );
     } else {
         sessionLinks = (
