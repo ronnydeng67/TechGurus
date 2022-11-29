@@ -150,7 +150,6 @@ const LoginFormPage = () => {
             {email: "demo3@user.com", password: "password"}
         ]
         const ranIndex = Math.floor(Math.random() * demos.length);
-        console.log(demos[ranIndex])
         dispatch(sessionActions.loginUser(demos[ranIndex])
             )
             .catch(async(res) => {
