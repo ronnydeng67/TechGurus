@@ -139,7 +139,7 @@ const LoginFormPage = () => {
         e.preventDefault();
         const demos = [
             {email: "demo@user.com", password: "password"},
-            {email: "milk@gmail.com", password: "password"},
+            {email: "mike@gmail.com", password: "password"},
             {email: "jason@gmail.com", password: "password"},
             {email: "garen@gmail.com", password: "password"},
             {email: "jenny@gmail.com", password: "password"},

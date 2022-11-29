@@ -49,7 +49,7 @@ ApplicationRecord.transaction do
 
   d1 = User.create!(
     name: 'Mike',
-    email: 'milk@gmail.com',
+    email: 'mike@gmail.com',
     password: 'password'
   )
 
