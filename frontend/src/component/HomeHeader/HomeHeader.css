@@ -217,3 +217,12 @@ button {
 	align-items: center;
 	font-family: 'bestbuy';
 }
+
+#basic-logout {
+	color: #0346be;
+	transition: 0.4s;
+}
+
+#basic-logout:hover {
+	color: darkblue;
+}

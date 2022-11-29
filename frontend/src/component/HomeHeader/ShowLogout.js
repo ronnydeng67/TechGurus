@@ -46,7 +46,7 @@ const ShowLogout = ({ sessionUser }) => {
                 'aria-labelledby': 'basic-button',
                 }}
             >
-                <MenuItem onClick={handleLogout}>Logout</MenuItem>
+                <MenuItem onClick={handleLogout} id="basic-logout">Logout</MenuItem>
             </Menu>
         </>
     );

@@ -29,6 +29,24 @@ ApplicationRecord.transaction do
     password: 'password'
   )
 
+  de1 = User.create!(
+    name: 'Demo1',
+    email: 'demo1@user.com',
+    password: 'password'
+  )
+
+  de2 = User.create!(
+    name: 'Demo2',
+    email: 'demo2@user.com',
+    password: 'password'
+  )
+
+  de3 = User.create!(
+    name: 'Demo3',
+    email: 'demo3@user.com',
+    password: 'password'
+  )
+
   d1 = User.create!(
     name: 'Mike',
     email: 'milk@gmail.com',

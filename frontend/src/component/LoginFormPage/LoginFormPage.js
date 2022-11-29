@@ -139,9 +139,15 @@ const LoginFormPage = () => {
         e.preventDefault();
         const demos = [
             {email: "demo@user.com", password: "password"},
-            {email: "tim@gmail.com", password: "password"},
-            {email: "kevin@gmail.com", password: "password"},
-            {email: "paul@gmail.com", password: "password"}
+            {email: "milk@gmail.com", password: "password"},
+            {email: "jason@gmail.com", password: "password"},
+            {email: "garen@gmail.com", password: "password"},
+            {email: "jenny@gmail.com", password: "password"},
+            {email: "lynda@gmail.com", password: "password"},
+            {email: "sharon@gmail.com", password: "password"},
+            {email: "demo1@user.com", password: "password"},
+            {email: "demo2@user.com", password: "password"},
+            {email: "demo3@user.com", password: "password"}
         ]
         const ranIndex = Math.floor(Math.random() * demos.length);
         console.log(demos[ranIndex])
