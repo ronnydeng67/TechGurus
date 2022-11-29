@@ -14,7 +14,7 @@ const LogoutModal = () => {
     }
 
     return (
-        <div className="modal-container">
+        <div className="logout-modal-container">
             <div className="modal-top">
                 <div className="modal-signin">
                     <button id="modal-signin" onClick={handleLogout}>Logout</button>
