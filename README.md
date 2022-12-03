@@ -1,7 +1,7 @@
 # TechGurus
 
 
-### [TechGurus](https://tech-gurus.herokuapp.com/), a BestBuy clone, is a electronic online retails store. Users are able to create their own accounts and add their items to cart to checkout.
+### [TechGurus](https://tech-gurus.herokuapp.com/), a BestBuy clone, is a electronic online retails store. Shop at TechGurus and get the best deals!!
 
 ## Technologies/Libraries
 
