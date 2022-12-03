@@ -1,9 +1,7 @@
 # TechGurus
 
-#### _Please Refresh multiple times!!!! For some reason it won't show any content when access it the first time. Even after the content is loaded up, try refresh for at least twice for the font and pictures to load up!! Thank you!!_
-[TechGurus](https://tech-gurus.herokuapp.com/)
 
-### TechGurus, a BestBuy clone, is a electronic online retails store. Users are able to create their own accounts and add their items to cart to checkout.
+### [TechGurus](https://tech-gurus.herokuapp.com/), a BestBuy clone, is a electronic online retails store. Users are able to create their own accounts and add their items to cart to checkout.
 
 ## Technologies/Libraries
 
@@ -20,6 +18,7 @@
 - Moment.js
 - MUI
 - AWS S3
+- Fuse.js
 
 
 ## Functionlities
@@ -28,6 +27,9 @@
 - User able to sign in/sign out account
 - User able to add items to cart
 - User able to edit item quantity and remove items from cart
+- User able to checkout items in the cart
+- User able to search items based on key word
+- User able to leave, edit, and delete reviews
 
 Modal is implemented for users to choose if they want to sign up accounts or sign in with their existing accounts. BestBuy is actually using this same modal to prompt users for their account management
 
@@ -81,10 +83,4 @@ The code snippet below contains the logic to handle validating the errors of sig
         }
     }
 ```
-
-## Future plans
-
-- Finish up the cart checkout function
-- Implement the search bar function
-- Implement Google map API to show store location
 
