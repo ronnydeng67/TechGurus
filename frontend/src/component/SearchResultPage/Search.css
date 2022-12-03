@@ -94,3 +94,11 @@
     justify-content: center;
     align-items: center;
 }
+
+.no-results {
+    height: 100px;
+    width: auto;
+    font-size: large;
+    font-family: 'bestbuy-medium';
+    margin-bottom: 200px;
+}
