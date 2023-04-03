@@ -105,10 +105,11 @@ const HomeHeader = () => {
                     </div>
                 </div>
                 <div className="home-header-right">
-                    {/* <div className="store-finder">
+                    <div className="store-finder">
                         <i className="fa-solid fa-shop"></i>
                         <p style={{fontFamily: "bestbuy-medium", fontSize: "1.3rem"}}>&nbsp;Union Square</p>
-                    </div> */}
+                    </div>
+                    
                     <div className="cart">
                         <i className="fa-solid fa-cart-shopping"></i>
                         {carts && <span id='cart-num'>&nbsp;{cartQuan}</span>}
