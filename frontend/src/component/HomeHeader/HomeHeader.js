@@ -9,6 +9,7 @@ import './HomeHeader.css';
 import ShowAccForm from './ShowAccModal';
 import { getCarts } from '../../store/carts';
 import ShowLogout from './ShowLogout';
+import ShowStoreInfo from '../GoogleMap/ShowStoreInfo';
 
 const style = {
     '& .MuiModal-root': {
@@ -105,10 +106,7 @@ const HomeHeader = () => {
                     </div>
                 </div>
                 <div className="home-header-right">
-                    <div className="store-finder">
-                        <i className="fa-solid fa-shop"></i>
-                        <p style={{fontFamily: "bestbuy-medium", fontSize: "1.3rem"}}>&nbsp;Union Square</p>
-                    </div>
+                    <ShowStoreInfo/>
                     
                     <div className="cart">
                         <i className="fa-solid fa-cart-shopping"></i>

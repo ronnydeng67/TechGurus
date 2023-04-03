@@ -1,0 +1,9 @@
+.store-finder {
+	display: flex;
+	flex-direction: row;
+	font-size: x-large;
+	padding-top: 25px;
+	color: white;
+	padding-right: 50px;
+	cursor: pointer;
+}
