@@ -18,13 +18,15 @@ const ShowStoreInfo = (ref) => {
 
     const styles: SxProps = {
         position: 'absolute',
-        top: 28,
+        top: 70,
         right: 0,
-        left: 0,
+        left: -78,
         zIndex: 1,
-        border: '1px solid',
+        border: '1px solid grey',
         p: 1,
-        bgcolor: 'background.paper',
+        bgcolor: 'white',
+        width: 320,
+        height: 260
     };
     return (
         // <>
@@ -40,12 +42,13 @@ const ShowStoreInfo = (ref) => {
         // </>
         <ClickAwayListener onClickAway={handleClickAway}>
             <Box sx={{ position: 'relative' }}>
-                <button type="button" onClick={handleClick}>
-                Open menu dropdown
-                </button>
+            <button className="store-finder" onClick={handleClick}>
+                 <i className="fa-solid fa-shop"></i>
+                 <p style={{fontFamily: "bestbuy-medium", fontSize: "1.3rem"}}>&nbsp;Union Square</p>
+             </button>
                 {open ? (
                 <Box sx={styles}>
-                    Click me, I will stay visible until you click outside.
+                    Union Square
                 </Box>
                 ) : null}
             </Box>
