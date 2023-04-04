@@ -7,3 +7,31 @@
 	padding-right: 50px;
 	cursor: pointer;
 }
+
+.map-outer-container {
+    margin-top: 55px;
+    display: flex;
+    flex-direction: row;
+    width: 1490px;
+    height: auto;
+    border: 1px solid black;
+}
+
+.map-page-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.google-map {
+    width: 1086px;
+    height: 820px;
+    border: 1px solid black;
+}
+
+.store-list {
+    width: 372px;
+    height: 1000px;
+    border: 1px solid black;
+}

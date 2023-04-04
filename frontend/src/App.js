@@ -12,6 +12,7 @@ import { fetchCarts } from './store/carts';
 import Department from './component/Department/Department';
 import Search from './component/SearchResultPage/Search';
 import Footer from './component/Footer/Footer';
+import GoogleMap from './component/GoogleMap/GoogleMap';
 
 
 function App() {
@@ -42,6 +43,9 @@ function App() {
           <Route path='/signup'>
             <Header />
             <SignUpFormPage/>
+          </Route>
+          <Route path='/store'>
+            <GoogleMap />
           </Route>
           <Route exact path='/carts'>
             <Cart />

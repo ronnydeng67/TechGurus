@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import './ShowStoreInfo.css';
 import ClickAwayListener from '@mui/base/ClickAwayListener';
 import { Box } from '@mui/system';
+import { Link } from 'react-router-dom';
 
 
 const ShowStoreInfo = (ref) => {
@@ -48,7 +49,18 @@ const ShowStoreInfo = (ref) => {
              </button>
                 {open ? (
                 <Box sx={styles}>
-                    Union Square
+                    <div className="store-name">
+                        Union Square
+                    </div>
+                    <div className="store-address">
+                        Store address
+                    </div>
+                    <div className="store-details">
+                        <Link to="/">Store details</Link>
+                    </div>
+                    <div className="other-store">
+                        <button id='find-store-button'>Find other store</button>
+                    </div>
                 </Box>
                 ) : null}
             </Box>

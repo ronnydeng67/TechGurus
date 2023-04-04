@@ -1,10 +1,16 @@
 import './GoogleMap.css';
-import StoreIcon from '@mui/icons-material/Store';
 
 const GoogleMap = () => {
     return (
-        <div className='locationName'>
-            <StoreIcon/>
+        <div className="map-page-container">
+            <div className="map-outer-container">
+                <div className="store-list">
+
+                </div>
+                <div className="google-map">
+                    
+                </div>
+            </div>
         </div>
     );
 }
