@@ -138,6 +138,7 @@
 	height: 38px;
 	/* border: 2px solid black; */
 	margin-left: 190px;	
+	min-width: 400px;
 }
 
 .lower-right {
@@ -150,6 +151,7 @@
 	align-items: center;
 	color: white;
 	font-size: 0.9rem;
+	flex-shrink: 0;
 }
 
 button {
