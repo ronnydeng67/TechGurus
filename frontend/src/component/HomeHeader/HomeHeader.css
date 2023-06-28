@@ -130,7 +130,7 @@
 	height: 42px;
 	display: flex;
 	margin-top: 74px;
-	justify-content: space-evenly;
+	justify-content: space-between;
 }
 
 .lower-left {
