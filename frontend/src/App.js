@@ -1,3 +1,4 @@
+import ReactGA from 'react-ga';
 import React, { useEffect } from 'react';
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
 import LoginFormPage from './component/LoginFormPage/LoginFormPage';
@@ -15,6 +16,10 @@ import Footer from './component/Footer/Footer';
 
 
 function App() {
+
+  const TRACKING_ID = "G-1WC0GNK0LW"
+  ReactGA.initialize(TRACKING_ID);
+  ReactGA.pageview(document.location.pathname)
 
   const signup = useRouteMatch("/signup");
   const login = useRouteMatch("/login");
